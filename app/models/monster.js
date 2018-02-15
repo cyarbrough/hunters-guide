@@ -1,9 +1,12 @@
 import DS from 'ember-data';
-const { attr, Model } = DS;
+const { attr, belongsTo, hasMany, Model } = DS;
 
 export default Model.extend({
   name: attr('string'),
   image: attr('string'),
   moreLink: attr('string'),
-  physiology: attr()
+  physiology: attr(),
+
+  ailments: hasMany('ailment'),
+  species: belongsTo('species')
 });

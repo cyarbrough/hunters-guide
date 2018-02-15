@@ -27,11 +27,10 @@
             "id": "bruteWyvern"
           }
         },
-        "aliment": {
-          "data": {
-            "type": "aliment",
-            "id": "fireBlight"
-          }
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "fireBlight" }
+          ]
         }
       }
     },
@@ -62,11 +61,10 @@
             "id": "bruteWyvern"
           }
         },
-        "aliment": {
-          "data": {
-            "type": "aliment",
-            "id": "waterBlight"
-          }
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "waterBlight" }
+          ]
         }
       }
     }
@@ -108,6 +106,14 @@
       "attributes": {
         "name": "Dragonblight",
         "image": "/images/icons/dragon-blight.png"
+      }
+    },
+    {
+      "type": "ailments",
+      "id": "fireBlight",
+      "attributes": {
+        "name": "Fireblight",
+        "image": "/images/icons/fire-blight.png"
       }
     },
     {
