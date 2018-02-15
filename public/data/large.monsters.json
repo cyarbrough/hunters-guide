@@ -1,0 +1,178 @@
+{
+  "data": [
+    {
+      "type": "monsters",
+      "id": "1",
+      "attributes": {
+        "name": "Anjanath",
+        "image": "/images/monsters/anjanath.png",
+        "more-link": "https://mhworld.kiranico.com/monster/anjanath",
+        "physiology": {
+          "fire": 0,
+          "water": 3,
+          "thunder": 2,
+          "ice": 2,
+          "dragon": 2,
+          "blast": 1,
+          "stun": 2,
+          "poison": 1,
+          "sleep":2,
+          "paralysis": 2
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": {
+            "type": "species",
+            "id": "bruteWyvern"
+          }
+        },
+        "aliment": {
+          "data": {
+            "type": "aliment",
+            "id": "fireBlight"
+          }
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "2",
+      "attributes": {
+        "name": "Barroth",
+        "image": "/images/monsters/barroth.png",
+        "more-link": "https://mhworld.kiranico.com/monster/barroth",
+        "physiology": {
+          "fire": 3,
+          "water": 0,
+          "thunder": 0,
+          "ice": 2,
+          "dragon": 1,
+          "blast": 3,
+          "stun": 1,
+          "poison": 3,
+          "sleep":2,
+          "paralysis": 3
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": {
+            "type": "species",
+            "id": "bruteWyvern"
+          }
+        },
+        "aliment": {
+          "data": {
+            "type": "aliment",
+            "id": "waterBlight"
+          }
+        }
+      }
+    }
+  ],
+  "included": [
+    {
+      "type": "species",
+      "id": "bruteWyvern",
+      "attributes": {
+        "name": "Brute Wyvern"
+      }
+    },
+    {
+      "type": "species",
+      "id": "flyingWyvern",
+      "attributes": {
+        "name": "Flying Wyvern"
+      }
+    },
+    {
+      "type": "ailments",
+      "id": "bleeding",
+      "attributes": {
+        "name": "Bleeding",
+        "image": "/images/icons/bleeding.png"
+      }
+    },
+    {
+      "type": "ailments",
+      "id": "blastBlight",
+      "attributes": {
+        "name": "Blastblight",
+        "image": "/images/icons/blast-blight.png"
+      }
+    },
+    {
+      "type": "ailments",
+      "id": "dragonBlight",
+      "attributes": {
+        "name": "Dragonblight",
+        "image": "/images/icons/dragon-blight.png"
+      }
+    },
+    {
+      "type": "ailments",
+      "id": "effluvialBuildup",
+      "attributes": {
+        "name": "Effluvial Buildup",
+        "image": "/images/icons/effluvial-buildup.png"
+      }
+    },
+    {
+      "type": "ailments",
+      "id": "iceBlight",
+      "attributes": {
+        "name": "Iceblight",
+        "image": "/images/icons/ice-blight.png"
+      }
+    },
+    {
+      "type": "ailments",
+      "id": "paralysis",
+      "attributes": {
+        "name": "Paralysis",
+        "image": "/images/icons/paralysis.png"
+      }
+    },
+    {
+      "type": "ailments",
+      "id": "poison",
+      "attributes": {
+        "name": "Poison",
+        "image": "/images/icons/poison.png"
+      }
+    },
+    {
+      "type": "ailments",
+      "id": "sleep",
+      "attributes": {
+        "name": "Sleep",
+        "image": "/images/icons/sleep.png"
+      }
+    },
+    {
+      "type": "ailments",
+      "id": "stun",
+      "attributes": {
+        "name": "Stun",
+        "image": "/images/icons/stun.png"
+      }
+    },
+    {
+      "type": "ailments",
+      "id": "thunderBlight",
+      "attributes": {
+        "name": "Thunderblight",
+        "image": "/images/icons/thunder-blight.png"
+      }
+    },
+    {
+      "type": "ailments",
+      "id": "waterBlight",
+      "attributes": {
+        "name": "Waterblight",
+        "image": "/images/icons/water-blight.png"
+      }
+    }
+  ]
+}
