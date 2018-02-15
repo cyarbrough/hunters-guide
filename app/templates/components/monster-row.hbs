@@ -1,0 +1,26 @@
+<h2>{{monster.name}}</h2>
+<h3>{{monster.species.name}}</h3>
+<div class="logo">
+  {{monster.image}}
+</div>
+<div class="elements">
+  fire: {{monster.physiology.fire}}<br/>
+  water: {{monster.physiology.water}}<br/>
+  thunder: {{monster.physiology.thunder}}<br/>
+  ice: {{monster.physiology.ice}}<br/>
+  dragon: {{monster.physiology.dragon}}<br/>
+</div>
+<div class="status">
+  blast: {{monster.physiology.blast}}<br/>
+  stun: {{monster.physiology.stun}}<br/>
+  poison: {{monster.physiology.poison}}<br/>
+  sleep: {{monster.physiology.sleep}}<br/>
+  paralysis: {{monster.physiology.paralysis}}<br/>
+</div>
+<div>
+  inflicts:
+  {{#each monster.ailments as |ailment|}}
+    {{ailment.name}}
+    {{ailment.image}}
+  {{/each}}
+</div>
