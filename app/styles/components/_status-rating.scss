@@ -1,0 +1,78 @@
+/**
+  * Styles for status rating component
+  */
+
+.status-rating {
+  background: no-repeat left center;
+  background-size: 32px;
+  height: 32px;
+  padding-left: 32px;
+  $icon-star-dim: 25px;
+
+  &.is-element-fire {
+    background-image: url('/images/icons/fire.svg');
+  }
+
+  &.is-element-water {
+    background-image: url('/images/icons/water.svg');
+  }
+
+  &.is-element-thunder {
+    background-image: url('/images/icons/thunder.svg');
+  }
+
+  &.is-element-ice {
+    background-image: url('/images/icons/ice.svg');
+  }
+
+  &.is-element-dragon {
+    background-image: url('/images/icons/dragon.svg');
+  }
+
+  &.is-element-blast {
+    background-image: url('/images/icons/blast.svg');
+  }
+
+  &.is-element-stun {
+    background-image: url('/images/icons/stun.svg');
+  }
+
+  &.is-element-poison {
+    background-image: url('/images/icons/poison.svg');
+  }
+
+  &.is-element-sleep {
+    background-image: url('/images/icons/sleep.svg');
+  }
+
+  &.is-element-paralysis {
+    background-image: url('/images/icons/paralysis.svg');
+  }
+
+  .star-rating {
+    background: url('/images/icons/star.svg') no-repeat left center;
+    background-size: $icon-star-dim;
+    display: inline-block;
+    height: $icon-star-dim;
+    margin: 3px -14px 0 0;
+    position: relative;
+    width: $icon-star-dim;
+
+    &.is-star-x {
+      background-image: url('/images/icons/star-x.svg');
+      margin-top: 6px;
+    }
+
+    &.is-star-1 {
+      z-index: 3;
+    }
+
+    &.is-star-2 {
+      z-index: 2;
+    }
+
+    &.is-star-3 {
+      z-index: 1;
+    }
+  }
+}

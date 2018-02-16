@@ -1,5 +1,6 @@
-@import 'base/variables.scss';
-@import 'base/app-structure.scss';
+@import 'base/variables';
+@import 'base/app-structure';
+@import 'components/_status-rating';
 
 body {
   background: #FFF;
