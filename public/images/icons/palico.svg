@@ -86,15 +86,11 @@
          in2="offset" />
     </filter>
     <filter
-       height="1.1536"
-       y="-0.0768"
-       width="1.1536"
-       x="-0.0768"
-       id="filter24881"
-       style="color-interpolation-filters:sRGB">
-      <feGaussianBlur
-         id="feGaussianBlur24883"
-         stdDeviation="0.035983334" />
+       id="filter24967"
+       style="color-interpolation-filters:sRGB;">
+      <feColorMatrix
+         id="feColorMatrix24965"
+         values="3.65 3.59 3.51 -2.7 0 3.65 3.59 3.51 -2.7 0 3.65 3.59 3.51 -2.7 0 0 0 0 1 0 " />
     </filter>
   </defs>
   <metadata
@@ -2525,7 +2521,7 @@ ZYK6AAAAAElFTkSuQmCC
      style="display:none"
      id="layer16">
     <image
-       style="filter:url(#filter23832)"
+       style="filter:url(#filter24967)"
        width="63.5"
        height="63.5"
        preserveAspectRatio="none"
@@ -2888,6 +2884,7 @@ h8AOHDhwCOzAgQOHwA4cOAR24MCBz+P/RTZuIZTWLs4AAAAASUVORK5CYII=
        y="6.803575" />
   </g>
   <g
+     style="display:inline"
      id="layer17">
     <image
        width="82.169533"
@@ -4774,18 +4771,12 @@ MjUtMDc6MDA7KQpnAAAAAElFTkSuQmCC
        style="opacity:1;fill:#ababab;fill-opacity:0.83512543;stroke:none;stroke-width:0.67347741;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
   <g
-     style="display:inline"
+     style="display:inline;opacity:0.817"
      id="layer19">
     <path
        id="path23858"
-       d="M 55.031296,50.438557 A 12.347651,10.852867 0 0 0 42.68375,61.291754 12.347651,10.852867 0 0 0 55.031296,72.144437 12.347651,10.852867 0 0 0 67.37934,61.291754 12.347651,10.852867 0 0 0 55.031296,50.438557 Z m 0.134205,2.881978 a 9.345352,8.9894198 0 0 1 9.34523,8.989681 9.345352,8.9894198 0 0 1 -9.34523,8.989165 9.345352,8.9894198 0 0 1 -9.345731,-8.989165 9.345352,8.9894198 0 0 1 9.345731,-8.989681 z"
-       style="opacity:1;fill:#bc8f4d;fill-opacity:0.9605735;stroke:none;stroke-width:0.54871428;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-    <circle
-       transform="matrix(1.127125,0,0,1.127125,-5.834521,-8.5533696)"
-       r="0.56223959"
-       cy="67.93177"
-       cx="45.243752"
-       id="path24283"
-       style="opacity:1;fill:#1e1c15;fill-opacity:1;stroke:none;stroke-width:0.50400001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter24881)" />
+       transform="scale(0.26458334)"
+       d="M 207.99219 190.63477 A 46.668287 41.018709 0 0 0 161.32422 231.6543 A 46.668287 41.018709 0 0 0 169.66211 255.0293 A 2.3951407 2.3951407 0 0 1 170.58203 254.84375 A 2.3951407 2.3951407 0 0 1 172.97656 257.23828 A 2.3951407 2.3951407 0 0 1 172.66211 258.42188 A 46.668287 41.018709 0 0 0 207.99219 272.67188 A 46.668287 41.018709 0 0 0 254.66211 231.6543 A 46.668287 41.018709 0 0 0 207.99219 190.63477 z M 208.5 201.52734 A 35.321015 33.975759 0 0 1 243.82031 235.50391 A 35.321015 33.975759 0 0 1 208.5 269.47852 A 35.321015 33.975759 0 0 1 173.17773 235.50391 A 35.321015 33.975759 0 0 1 208.5 201.52734 z "
+       style="opacity:1;fill:#bc8f4d;fill-opacity:0.9605735;stroke:none;stroke-width:2.07388067;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
 </svg>
