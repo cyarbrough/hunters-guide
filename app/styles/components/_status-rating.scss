@@ -3,13 +3,13 @@
   */
 
 .status-rating {
-  $icon-size: 30px;
+  $icon-size: 24px;
   background: no-repeat left center;
   background-size: $icon-size;
   height: $icon-size;
   min-width: $icon-size * 3;
   overflow: hidden;
-  padding-left: $icon-size - 3;
+  padding-left: $icon-size;
 
   &.is-element-fire {
     background-image: $img-fire;
@@ -51,20 +51,36 @@
     background-image: $img-paralysis;
   }
 
+  &.is-rating-0 {
+    opacity: 1;
+  }
+
+  &.is-rating-1 {
+    opacity: 0.33;
+  }
+
+  &.is-rating-2 {
+    opacity: 0.66;
+  }
+
+  &.is-rating-3 {
+    opacity: 1;
+  }
+
   .star-rating {
-    $icon-star-dim: 25px;
-    $star-indent: -14px;
+    $icon-star-dim: 22px;
+    $star-indent: -11px;
     background: $img-star no-repeat left center;
     background-size: $icon-star-dim;
     display: inline-block;
     height: $icon-star-dim;
-    margin: 1px $star-indent 0 0;
+    margin: 0 $star-indent 0 0;
     position: relative;
     width: $icon-star-dim;
 
     &.is-star-x {
       background-image: $img-star-x;
-      margin-top: 3px;
+      margin-top: 2px;
     }
 
     &.is-star-1 {

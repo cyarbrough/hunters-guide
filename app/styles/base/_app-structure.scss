@@ -7,6 +7,11 @@
   font-family: $font-default;
 }
 
-.monster-grid {
+.ember-application {
+  padding: 0 0 0 5px;
+}
+
+.monster-grid,
+.ailment-row {
   display: flex;
 }

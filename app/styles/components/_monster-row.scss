@@ -4,4 +4,45 @@
 
 .monster-row {
   font-size: 1em;
+  margin: 10px 0;
+
+  .break {
+    border: 0;
+    margin: 15px 0;
+
+    &::before {
+      color: $color-font-break;
+      content: "\2255\00A0\2254";
+      display: block;
+      font-size: 25px;
+      margin: -10px 0;
+      text-align: center;
+    }
+  }
+
+  &:last-child {
+    .break {
+      display: none;
+    }
+  }
+
+  .title {
+    display: inline-block;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+    width: 49%;
+  }
+
+  .subtitle {
+    color: $color-font-sub;
+    display: inline-block;
+    font-size: 1.1em;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0;
+    padding: 0 10px 0 0;
+    text-align: right;
+    width: 49%;
+  }
 }

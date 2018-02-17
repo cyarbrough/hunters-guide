@@ -3,11 +3,13 @@
   */
 
 .status-grid {
-  min-width: 180px;
+  display: flex;
+  min-width: 200px;
 
   .element-grid,
   .ailment-grid {
     display: inline-block;
+    flex-grow: 1;
     margin: 5px 0 0;
   }
 }

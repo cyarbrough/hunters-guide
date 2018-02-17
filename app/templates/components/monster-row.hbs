@@ -1,12 +1,12 @@
-<h2>{{monster.name}}</h2>
-<h3>{{monster.species.name}}</h3>
+<h2 class="title">{{monster.name}}</h2>
+<h3 class="subtitle">{{monster.species.name}}</h3>
 <div class="monster-grid">
   {{monster-logo slug=monster.slug}}
   {{status-grid physiology=monster.physiology}}
 </div>
-<div>
-  inflicts:
+<div class="ailment-row">
   {{#each monster.ailments as |ailment|}}
     {{ailment-info ailment=ailment}}
   {{/each}}
 </div>
+<hr class="break">
