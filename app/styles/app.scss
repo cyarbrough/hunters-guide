@@ -5,8 +5,13 @@
 @import 'components/ailment-info';
 @import 'components/status-rating';
 @import 'components/monster-logo';
+@import 'components/footer-nav';
 
 .ember-application {
   background: $color-bg-main;
   color: $color-font-default;
+
+  a {
+    color: $color-font-sub;
+  }
 }

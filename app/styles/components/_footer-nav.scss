@@ -1,0 +1,38 @@
+/**
+  * Styles for footer-nav component
+  */
+
+.footer-nav {
+  margin-top: 40px;
+  text-align: center;
+  text-transform: lowercase;
+
+  .creator {
+    margin-top: 5px;
+
+    .logo {
+      $img-logo-dim: 75px;
+      background: $img-palico center center no-repeat;
+      background-size: contain;
+      display: block;
+      height: $img-logo-dim;
+      margin: 0 auto 10px;
+      text-decoration: none;
+      width: $img-logo-dim;
+    }
+  }
+
+  .developer {
+    .logo {
+      $img-logo-dim: 100px;
+      background: $img-guild center center no-repeat;
+      background-size: contain;
+      display: block;
+      height: $img-logo-dim;
+      margin: 0 auto 10px;
+      opacity: 0.5;
+      text-decoration: none;
+      width: $img-logo-dim;
+    }
+  }
+}

@@ -1,6 +1,8 @@
 <h1>Hunter's Guide</h1>
-
-{{#each model.monsters as |monster|}}
-  {{monster-row monster=monster}}
-{{/each}}
 {{outlet}}
+<div class="monster-list">
+  {{#each model.monsters as |monster|}}
+    {{monster-row monster=monster}}
+  {{/each}}
+</div>
+{{footer-nav}}
