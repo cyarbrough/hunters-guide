@@ -1,0 +1,13 @@
+/**
+  * Styles for status-grid component
+  */
+
+.status-grid {
+  width: 60%;
+
+  .element-grid,
+  .ailment-grid {
+    display: inline-block;
+    margin: 3%;
+  }
+}

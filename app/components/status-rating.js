@@ -23,7 +23,6 @@ export default Component.extend({
   elementClassName: computed('elementType', function() {
     let elementName = this.get('elementType') || 'unknown';
     
-    elementName = elementName.toLowerCase();
     return `is-element-${elementName}`;
   }),
   /**

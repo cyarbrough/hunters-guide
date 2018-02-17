@@ -6,8 +6,9 @@
   background: no-repeat left center;
   background-size: 32px;
   height: 32px;
+  min-width: 90px;
+  overflow: hidden;
   padding-left: 32px;
-  $icon-star-dim: 25px;
 
   &.is-element-fire {
     background-image: $img-fire;
@@ -50,11 +51,13 @@
   }
 
   .star-rating {
+    $icon-star-dim: 25px;
+    $star-indent: -14px;
     background: $img-star no-repeat left center;
     background-size: $icon-star-dim;
     display: inline-block;
     height: $icon-star-dim;
-    margin: 3px -14px 0 0;
+    margin: 3px $star-indent 0 0;
     position: relative;
     width: $icon-star-dim;
 
