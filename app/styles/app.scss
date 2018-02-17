@@ -1,6 +1,7 @@
 @import 'base/variables';
 @import 'base/app-structure';
-@import 'components/_status-rating';
+@import 'components/ailment-info';
+@import 'components/status-rating';
 
 .ember-application {
   background: $color-bg-main;

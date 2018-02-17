@@ -1,0 +1,58 @@
+/**
+  * Styles for info-ailment component
+  */
+
+.info-ailment {
+  background: no-repeat left center;
+  background-size: 32px;
+  height: 32px;
+  padding: 8px 0 0 32px;
+
+  &.is-ailment-bleeding {
+    background-image: $img-bleeding;
+  }
+
+  &.is-ailment-blast {
+    background-image: $img-blast;
+  }
+
+  &.is-ailment-dragon {
+    background-image: $img-dragon;
+  }
+
+  &.is-ailment-fire {
+    background-image: $img-fire;
+  }
+
+  &.is-ailment-effluvial {
+    background-image: $img-effluvial;
+  }
+
+  &.is-ailment-ice {
+    background-image: $img-ice;
+  }
+
+  &.is-ailment-paralysis {
+    background-image: $img-paralysis;
+  }
+
+  &.is-ailment-poison {
+    background-image: $img-poison;
+  }
+
+  &.is-ailment-sleep {
+    background-image: $img-sleep;
+  }
+
+  &.is-ailment-stun {
+    background-image: $img-stun;
+  }
+
+  &.is-ailment-thunder {
+    background-image: $img-thunder;
+  }
+
+  &.is-ailment-water {
+    background-image: $img-water;
+  }
+}

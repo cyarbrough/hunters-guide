@@ -6,7 +6,6 @@
 <div>
   inflicts:
   {{#each monster.ailments as |ailment|}}
-    {{ailment.name}}
-    {{ailment.image}}
+    {{ailment-info ailment=ailment}}
   {{/each}}
 </div>
