@@ -10,47 +10,47 @@
   $icon-star-dim: 25px;
 
   &.is-element-fire {
-    background-image: url('/images/icons/fire.svg');
+    background-image: $img-fire;
   }
 
   &.is-element-water {
-    background-image: url('/images/icons/water.svg');
+    background-image: $img-water;
   }
 
   &.is-element-thunder {
-    background-image: url('/images/icons/thunder.svg');
+    background-image: $img-thunder;
   }
 
   &.is-element-ice {
-    background-image: url('/images/icons/ice.svg');
+    background-image: $img-ice;
   }
 
   &.is-element-dragon {
-    background-image: url('/images/icons/dragon.svg');
+    background-image: $img-dragon;
   }
 
   &.is-element-blast {
-    background-image: url('/images/icons/blast.svg');
+    background-image: $img-blast;
   }
 
   &.is-element-stun {
-    background-image: url('/images/icons/stun.svg');
+    background-image: $img-stun;
   }
 
   &.is-element-poison {
-    background-image: url('/images/icons/poison.svg');
+    background-image: $img-poison;
   }
 
   &.is-element-sleep {
-    background-image: url('/images/icons/sleep.svg');
+    background-image: $img-sleep;
   }
 
   &.is-element-paralysis {
-    background-image: url('/images/icons/paralysis.svg');
+    background-image: $img-paralysis;
   }
 
   .star-rating {
-    background: url('/images/icons/star.svg') no-repeat left center;
+    background: $img-star no-repeat left center;
     background-size: $icon-star-dim;
     display: inline-block;
     height: $icon-star-dim;
@@ -59,7 +59,7 @@
     width: $icon-star-dim;
 
     &.is-star-x {
-      background-image: url('/images/icons/star-x.svg');
+      background-image: $img-star-x;
       margin-top: 6px;
     }
 

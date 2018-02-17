@@ -1,22 +1,8 @@
 <h2>{{monster.name}}</h2>
 <h3>{{monster.species.name}}</h3>
 <div class="logo">
-  {{monster.image}}
 </div>
-<div class="elements">
-  {{status-rating elementType="fire" ratingAmount=monster.physiology.fire}}
-  {{status-rating elementType="water" ratingAmount=monster.physiology.water}}
-  {{status-rating elementType="thunder" ratingAmount=monster.physiology.thunder}}
-  {{status-rating elementType="ice" ratingAmount=monster.physiology.ice}}
-  {{status-rating elementType="dragon" ratingAmount=monster.physiology.dragon}}
-</div>
-<div class="status">
-  {{status-rating elementType="blast" ratingAmount=monster.physiology.blast}}
-  {{status-rating elementType="stun" ratingAmount=monster.physiology.stun}}
-  {{status-rating elementType="poison" ratingAmount=monster.physiology.poison}}
-  {{status-rating elementType="sleep" ratingAmount=monster.physiology.sleep}}
-  {{status-rating elementType="paralysis" ratingAmount=monster.physiology.paralysis}}
-</div>
+{{status-grid physiology=monster.physiology}}
 <div>
   inflicts:
   {{#each monster.ailments as |ailment|}}

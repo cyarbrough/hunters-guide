@@ -21,13 +21,18 @@ export default Component.extend({
    * @var {string}
    */
   elementClassName: computed('elementType', function() {
-    return `is-element-${this.get('elementType')}`;
+    let elementName = this.get('elementType') || 'unknown';
+    
+    elementName = elementName.toLowerCase();
+    return `is-element-${elementName}`;
   }),
   /**
    * @var {string}
    */
   starClassName: computed('ratingAmount', function() {
-    return `is-rating-${this.get('ratingAmount')}`;
+    let rating = this.get('ratingAmount') || 0;
+    
+    return `is-rating-${rating}`;
   }),
   /**
    * Array of items, based on ratingAmount

@@ -1,10 +1,23 @@
 /******************************** App Variables */
 
 /******************************** Colors */
-$color-building-sprite-color: #FFF;
-$color-building-canvas-bgcolor: #145B9A;
-$color-building-menu-bgcolor: lighten($color-building-canvas-bgcolor, 10%);
-$color-building-menu-bgcolor-hover: lighten($color-building-canvas-bgcolor, 20%);
+$color-bg-main: #656565;
 
 /******************************** Fonts */
 $font-default: 'Asap Condensed', sans-serif;
+
+/******************************** Icon Images */
+$img-blast: url('/images/icons/blast.svg');
+$img-bleeding: url('/images/icons/bleeding.svg');
+$img-fire: url('/images/icons/fire.svg');
+$img-dragon: url('/images/icons/dragon.svg');
+$img-effluvial: url('/images/icons/dragon.svg');
+$img-ice: url('/images/icons/ice.svg');
+$img-thunder: url('/images/icons/thunder.svg');
+$img-paralysis: url('/images/icons/paralysis.svg');
+$img-poison: url('/images/icons/poison.svg');
+$img-sleep: url('/images/icons/sleep.svg');
+$img-star: url('/images/icons/star.svg');
+$img-star-x: url('/images/icons/star-x.svg');
+$img-stun: url('/images/icons/stun.svg');
+$img-water: url('/images/icons/water.svg');
