@@ -3,11 +3,11 @@
   */
 
 .status-grid {
-  width: 60%;
+  min-width: 180px;
 
   .element-grid,
   .ailment-grid {
     display: inline-block;
-    margin: 3%;
+    margin: 5px 0 0;
   }
 }

@@ -3,12 +3,13 @@
   */
 
 .status-rating {
+  $icon-size: 30px;
   background: no-repeat left center;
-  background-size: 32px;
-  height: 32px;
-  min-width: 90px;
+  background-size: $icon-size;
+  height: $icon-size;
+  min-width: $icon-size * 3;
   overflow: hidden;
-  padding-left: 32px;
+  padding-left: $icon-size - 3;
 
   &.is-element-fire {
     background-image: $img-fire;
@@ -57,13 +58,13 @@
     background-size: $icon-star-dim;
     display: inline-block;
     height: $icon-star-dim;
-    margin: 3px $star-indent 0 0;
+    margin: 1px $star-indent 0 0;
     position: relative;
     width: $icon-star-dim;
 
     &.is-star-x {
       background-image: $img-star-x;
-      margin-top: 6px;
+      margin-top: 3px;
     }
 
     &.is-star-1 {

@@ -1,7 +1,8 @@
 /******************************** App Variables */
 
 /******************************** Colors */
-$color-bg-main: #656565;
+$color-bg-main: #333;
+$color-font-default: #EEE;
 
 /******************************** Fonts */
 $font-default: 'Asap Condensed', sans-serif;
@@ -21,3 +22,7 @@ $img-star: url('/images/icons/star.svg');
 $img-star-x: url('/images/icons/star-x.svg');
 $img-stun: url('/images/icons/stun.svg');
 $img-water: url('/images/icons/water.svg');
+
+/******************************** Monster Images */
+$img-anjanath: url('/images/monsters/anjanath.svg');
+$img-barroth: url('/images/monsters/barroth.svg');

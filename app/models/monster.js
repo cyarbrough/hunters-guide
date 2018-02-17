@@ -5,6 +5,7 @@ export default Model.extend({
   name: attr('string'),
   moreLink: attr('string'),
   physiology: attr(),
+  slug: attr('string'),
 
   ailments: hasMany('ailment'),
   species: belongsTo('species')
