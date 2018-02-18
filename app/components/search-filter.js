@@ -10,6 +10,11 @@ export default Component.extend({
   classNames: ['search-filter'],
 
   actions: {
+    clearSearch() {
+      if($.isFunction(this.actionSearch)) {
+        this.actionSearch(null);
+      }
+    },
     onKeyUp() {
       if($.isFunction(this.actionSearch)) {
         this.actionSearch(this.get('searchTerm'));

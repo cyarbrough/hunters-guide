@@ -1,1 +1,3 @@
-{{input placeholder="Monster or species" value=searchTerm keyUp=(action "onKeyUp")}}
+{{input type="button" class="close" click=(action 'clearSearch')}}
+{{input placeholder="Monster or Species" value=searchTerm keyUp=(action "onKeyUp") class="input"}}
+{{input type="button" class="search"}}

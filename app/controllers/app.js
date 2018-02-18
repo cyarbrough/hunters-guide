@@ -31,15 +31,16 @@ export default Controller.extend({
 
     if(search) {
       search = search.toLowerCase();
+
+      return monsters.filter((monster) => {
+        let nameMatch = monster.get('name').toLowerCase().indexOf(search),
+          speciesMatch = monster.get('species.name').toLowerCase().indexOf(search);
+  
+        return nameMatch >= 0 || speciesMatch >= 0;
+      });
     }
 
-    return monsters.filter((monster) => {
-      let name = monster.get('name').toLowerCase(),
-        species = monster.get('species.name').toLowerCase();
-
-      return name.indexOf(search) >= 0 || species.indexOf(search) >= 0;
-    });
-
+    return monsters;
   }),
   /**
    * Sorted List
@@ -68,9 +69,13 @@ export default Controller.extend({
    */
   setSearchQueryTask: task(function * () {
     yield timeout(1000);
-    if(this.get('searchTerm')) {
-      this.set('searchQuery', this.get('searchTerm'));
+    
+    let searchTerm = this.get('searchTerm');
+
+    if(!searchTerm){
+      searchTerm = null;
     }
+    this.set('searchQuery', searchTerm);
   }).restartable(),
 
   actions: {

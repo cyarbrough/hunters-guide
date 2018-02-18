@@ -1,5 +1,6 @@
 @import 'base/variables';
 @import 'base/app-structure';
+@import 'components/search-filter';
 @import 'components/monster-row';
 @import 'components/status-grid';
 @import 'components/ailment-info';
@@ -13,5 +14,6 @@
 
   a {
     color: $color-font-sub;
+    text-decoration: none;
   }
 }
