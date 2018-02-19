@@ -3,18 +3,19 @@
   */
 
 .search-filter {
+  $btn-size: 30px;
   background: transparent;
   border: 0;
   border-radius: 5px;
-  display: flex;
-  padding: 1px 5px;
-  transition: all $transition-duration;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  transition: all $transition-duration-slow;
+  width: 30px;
 
   input,
   button {
     background: transparent;
-    color: $color-input-bg;
-    transition: all $transition-duration;
 
     &:focus {
       outline: none;
@@ -23,33 +24,48 @@
 
   .input {
     border: 0;
+    color: $color-input-bg;
     flex-grow: 3;
     font-size: 1.1em;
     font-weight: normal;
-    opacity: 0.75;
+    height: $btn-size;
+    min-width: $btn-size;
+    opacity: 0;
+    padding: 0 0 0 $btn-size;
+    position: relative;
+    transition: all $transition-duration;
     width: 100%;
+    z-index: 10;
   }
 
   .close,
   .search {
-    $btn-size: 30px;
-    background: transparent;
     border: 0;
+    color: $color-input-bg;
     cursor: pointer;
     font-size: 0.95em;
     height: $btn-size;
+    left: 0;
     opacity: 0.5;
     padding: 0;
-    width: $btn-size;
+    position: absolute;
+    top: 0;
+    transition: all $transition-duration;
+    z-index: 5;
+  }
 
-    svg {
-      vertical-align: text-bottom;
-    }
+  .search {
+    margin: 0 5px;
+    padding-left: 2px;
   }
 
   .close {
-    margin-left: -5px;
+    left: auto;
     opacity: 0;
+    right: 0;
+    visibility: hidden;
+    width: $btn-size;
+    z-index: 15;
 
     &.is-shown {
       opacity: 0.75;
@@ -57,25 +73,31 @@
   }
 
   &.has-content {
-    background: $color-input-bg-sub;
-
-    input,
-    button {
+    .input,
+    .close,
+    .search {
       color: $color-input-bg;
       opacity: 0.75;
+    }
+
+    .close {
+      visibility: visible;
     }
   }
 
   &.is-focused {
     background: $color-input-bg;
 
-    input,
-    button {
+    .input {
       color: $color-bg-main;
+      margin-left: 0;
+      opacity: 1;
     }
 
-    .input {
-      opacity: 1;
+    .close,
+    .search {
+      color: $color-bg-main;
+      opacity: 0.75;
     }
   }
 }

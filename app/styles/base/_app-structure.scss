@@ -7,11 +7,53 @@
   font-family: $font-default;
 }
 
-.monster-grid,
-.ailment-row {
+.header-nav {
+  align-items: center;
   display: flex;
+  justify-content: space-between;
+  left: 0;
+  padding: 5px 10px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 50;
+
+  .search-filter {
+    flex-grow: 0;
+
+    &.is-focused,
+    &.has-content {
+      flex-grow: 5;
+      margin-left: 10px;
+    }
+  }
+
+  .title {
+    flex-grow: 3;
+    overflow: hidden;
+    text-align: center;
+    transition: all $transition-duration;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  &.search-is-open {
+    .title {
+      flex-grow: 0;
+      width: 0;
+    }
+  }
 }
 
-.monster-list {
-  padding: 0 0 0 5px;
+.container {
+  margin: 50px 0;
+
+  .monster-list {
+    padding: 0 0 0 5px;
+  }
+
+  .monster-grid,
+  .ailment-row {
+    display: flex;
+  }
 }

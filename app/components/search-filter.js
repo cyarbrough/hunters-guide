@@ -9,6 +9,7 @@ export default Component.extend({
    */
   classNames: ['search-filter'],
   classNameBindings: ['isFocused', 'hasContent'],
+  actionFocused: 'inputFocused',
   /**
    * @var {string}
    */
@@ -40,6 +41,7 @@ export default Component.extend({
   setFocusInTask: task(function * () {
     this.get('setFocusOutTask').cancelAll();
     this.set('isFocused', true);
+    this.sendAction('actionFocused', true);
     yield timeout(1);
   }).drop(),
   /**
@@ -48,15 +50,16 @@ export default Component.extend({
   setFocusOutTask: task(function * () {
     yield timeout(500);
     this.set('isFocused', false);
+    if(!this.get('hasContent')) {
+      this.sendAction('actionFocused', false);
+    }
   }).restartable(),
 
   actions: {
-    activateSearch() {
-      $(':focus').blur();
-    },
     clearSearch() {
       if($.isFunction(this.actionSearch)) {
         this.actionSearch(null);
+        this.get('setFocusOutTask').perform();
       }
     },
     onFocusIn() {

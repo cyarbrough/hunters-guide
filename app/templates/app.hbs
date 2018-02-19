@@ -1,11 +1,13 @@
-{{search-filter 
+{{header-nav 
   searchTerm=(readonly searchTerm) 
   actionSearch=(action "updateSearchTerm")
-  }}
-{{outlet}}
-<div class="monster-list">
-  {{#each monsterList as |monster|}}
-    {{monster-row monster=monster}}
-  {{/each}}
+}}
+<div class="container">
+  {{outlet}}
+  <div class="monster-list">
+    {{#each monsterList as |monster|}}
+      {{monster-row monster=monster}}
+    {{/each}}
+  </div>
 </div>
 {{footer-nav}}
