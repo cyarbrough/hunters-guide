@@ -1,5 +1,7 @@
-<h1>Hunter's Guide</h1>
-{{search-filter searchTerm=(readonly searchTerm) actionSearch=(action "updateSearchTerm")}}
+{{search-filter 
+  searchTerm=(readonly searchTerm) 
+  actionSearch=(action "updateSearchTerm")
+  }}
 {{outlet}}
 <div class="monster-list">
   {{#each monsterList as |monster|}}

@@ -6,9 +6,13 @@ $color-font-default: #AAA;
 $color-font-sub: #777;
 $color-font-break: #665;
 $color-input-bg: #CCC;
+$color-input-bg-sub: #555;
 
 /******************************** Fonts */
 $font-default: 'Cabin Condensed', sans-serif;
+
+/******************************** Borders */
+$border-radius: 3px;
 
 /******************************** Icon Images */
 $img-blast: url('/images/icons/blast.svg');
@@ -32,3 +36,10 @@ $img-palico: url('/images/icons/palico.svg');
 /******************************** Monster Images */
 $img-anjanath: url('/images/monsters/anjanath.svg');
 $img-barroth: url('/images/monsters/barroth.svg');
+
+/******************************** Animation */
+$transition-duration: 0.5s;
+$transition-duration-fast: 0.3s;
+$transition-duration-slow: 0.8s;
+$transition-duration-very-slow: 1s;
+$transition-ease: cubic-bezier(0.42, 0, 0.58, 1);

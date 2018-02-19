@@ -3,15 +3,18 @@
   */
 
 .search-filter {
-  background: $color-input-bg;
+  background: transparent;
   border: 0;
   border-radius: 5px;
   display: flex;
   padding: 1px 5px;
+  transition: all $transition-duration;
 
   input,
   button {
     background: transparent;
+    color: $color-input-bg;
+    transition: all $transition-duration;
 
     &:focus {
       outline: none;
@@ -20,10 +23,10 @@
 
   .input {
     border: 0;
-    color: $color-bg-main;
     flex-grow: 3;
-    font-size: normal;
     font-size: 1.1em;
+    font-weight: normal;
+    opacity: 0.75;
     width: 100%;
   }
 
@@ -33,12 +36,46 @@
     background: transparent;
     border: 0;
     cursor: pointer;
+    font-size: 0.95em;
     height: $btn-size;
     opacity: 0.5;
+    padding: 0;
     width: $btn-size;
+
+    svg {
+      vertical-align: text-bottom;
+    }
   }
 
   .close {
     margin-left: -5px;
+    opacity: 0;
+
+    &.is-shown {
+      opacity: 0.75;
+    }
+  }
+
+  &.has-content {
+    background: $color-input-bg-sub;
+
+    input,
+    button {
+      color: $color-input-bg;
+      opacity: 0.75;
+    }
+  }
+
+  &.is-focused {
+    background: $color-input-bg;
+
+    input,
+    button {
+      color: $color-bg-main;
+    }
+
+    .input {
+      opacity: 1;
+    }
   }
 }

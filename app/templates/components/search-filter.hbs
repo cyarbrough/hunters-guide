@@ -1,3 +1,14 @@
-<button class="close" {{action 'clearSearch'}}><i class="fas fa-times"></i></button>
-{{input placeholder="Monster or Species" value=searchTerm keyUp=(action "onKeyUp") class="input"}}
-<button class="search"><i class="fas fa-search"></i></button>
+<button class="search" {{action 'activateSearch'}}>
+  <i class="fas fa-search"></i>
+</button>
+{{input 
+  placeholder="Monster"
+  class="input"
+  value=searchTerm 
+  keyUp=(action "onKeyUp") 
+  focusIn=(action "onFocusIn")
+  focusOut=(action "onFocusOut")
+  }}
+<button class="{{closeBtnClassName}}" {{action 'clearSearch'}}>
+  <i class="fas fa-times"></i>
+</button>
