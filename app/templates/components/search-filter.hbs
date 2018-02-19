@@ -1,3 +1,3 @@
-{{input type="button" class="close" click=(action 'clearSearch')}}
+<button class="close" {{action 'clearSearch'}}><i class="fas fa-times"></i></button>
 {{input placeholder="Monster or Species" value=searchTerm keyUp=(action "onKeyUp") class="input"}}
-{{input type="button" class="search"}}
+<button class="search"><i class="fas fa-search"></i></button>

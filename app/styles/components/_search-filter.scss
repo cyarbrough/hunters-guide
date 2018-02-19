@@ -9,26 +9,28 @@
   display: flex;
   padding: 1px 5px;
 
-  .input {
+  input,
+  button {
     background: transparent;
-    border: 0;
-    color: $color-bg-main;
-    flex-grow: 3;
-    font-size: normal;
-    font-size: 1.1em;
-    width: 100%;
 
     &:focus {
       outline: none;
     }
   }
 
+  .input {
+    border: 0;
+    color: $color-bg-main;
+    flex-grow: 3;
+    font-size: normal;
+    font-size: 1.1em;
+    width: 100%;
+  }
+
   .close,
   .search {
     $btn-size: 30px;
-    background: transparent no-repeat center center;
-    background-image: $img-close;
-    background-size: $btn-size - 15;
+    background: transparent;
     border: 0;
     cursor: pointer;
     height: $btn-size;
@@ -37,16 +39,6 @@
   }
 
   .close {
-    &:focus {
-      outline: 0;
-    }
-  }
-
-  .search {
-    background-image: $img-search;
-
-    &:focus {
-      outline: 0;
-    }
+    margin-left: -5px;
   }
 }
