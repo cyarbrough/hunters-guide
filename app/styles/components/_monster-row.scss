@@ -1,5 +1,5 @@
 /**
-  * Styles for monster-logo component
+  * Styles for monster-row component
   */
 
 .monster-row {
@@ -12,7 +12,7 @@
 
     &::before {
       color: $color-font-break;
-      content: "\2255\00A0\2254";
+      content: '\2255\00A0\2254';
       display: block;
       font-size: 25px;
       margin: -10px 0;

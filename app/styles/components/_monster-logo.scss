@@ -2,18 +2,55 @@
   * Styles for monster-logo component
   */
 
+$monster-list: anjanath 
+  barroth
+  bazelgeuse 
+  diablos 
+  black-diablos 
+  dodogama 
+  great-girros 
+  great-jagras
+  jyuratodus
+  kulu-ya-ku
+  lavasioth
+  legiana
+  odogaron
+  paolumu
+  pukei-pukei
+  radobaan
+  rathalos
+  azure-rathalos
+  rathian
+  pink-rathian
+  tobi-kadachi
+  tzitzi-ya-ku
+  uragaan;
+
+@mixin monster-imgs {
+  @each $monster in $monster-list {
+    &.is-#{$monster} {
+      background-image: url('/images/monsters/#{$monster}.svg');
+    }
+  }
+}
+
 .monster-logo {
+  @include monster-imgs();
   background: no-repeat center top;
   background-size: contain;
   flex-grow: 2;
   max-width: 175px;
   min-height: 130px;
 
-  &.is-anjanath {
-    background-image: $img-anjanath;
+  &.is-barroth-mud {
+    background-image: url('/images/monsters/barroth.svg');
   }
 
-  &.is-barroth {
-    background-image: $img-barroth;
+  &.is-jyuratodus-mud {
+    background-image: url('/images/monsters/jyuratodus.svg');
+  }
+
+  &.is-lavasioth-hard {
+    background-image: url('/images/monsters/lavasioth.svg');
   }
 }

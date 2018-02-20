@@ -5,7 +5,6 @@
       "id": "anjanath",
       "attributes": {
         "name": "Anjanath",
-        "more-link": "https://mhworld.kiranico.com/monster/anjanath",
         "slug": "anjanath",
         "physiology": {
           "fire": 0,
@@ -16,16 +15,13 @@
           "blast": 1,
           "stun": 2,
           "poison": 1,
-          "sleep":2,
+          "sleep": 2,
           "paralysis": 2
         }
       },
       "relationships": {
         "species": {
-          "data": {
-            "type": "species",
-            "id": "bruteWyvern"
-          }
+          "data": { "type": "species", "id": "bruteWyvern"}
         },
         "ailments": {
           "data": [
@@ -39,7 +35,6 @@
       "id": "barroth",
       "attributes": {
         "name": "Barroth",
-        "more-link": "https://mhworld.kiranico.com/monster/barroth",
         "slug": "barroth",
         "physiology": {
           "fire": 3,
@@ -50,16 +45,13 @@
           "blast": 3,
           "stun": 1,
           "poison": 3,
-          "sleep":2,
+          "sleep": 2,
           "paralysis": 3
         }
       },
       "relationships": {
         "species": {
-          "data": {
-            "type": "species",
-            "id": "bruteWyvern"
-          }
+          "data": { "type": "species", "id": "bruteWyvern"}
         },
         "ailments": {
           "data": [
@@ -67,9 +59,718 @@
           ]
         }
       }
+    },
+    {
+      "type": "monsters",
+      "id": "barrothMud",
+      "attributes": {
+        "name": "Mud Barroth",
+        "slug": "barroth-mud",
+        "physiology": {
+          "fire": 0,
+          "water": 3,
+          "thunder": 0,
+          "ice": 2,
+          "dragon": 1,
+          "blast": 3,
+          "stun": 1,
+          "poison": 3,
+          "sleep": 2,
+          "paralysis": 3
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "bruteWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "waterBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "bazelgeuse",
+      "attributes": {
+        "name": "Bazelgeuse",
+        "slug": "bazelgeuse",
+        "physiology": {
+          "fire": 0,
+          "water": 1,
+          "thunder": 3,
+          "ice": 2,
+          "dragon": 2,
+          "blast": 1,
+          "stun": 1,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 2
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "flyingWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "fireBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "Diablos",
+      "attributes": {
+        "name": "Diablos",
+        "slug": "diablos",
+        "physiology": {
+          "fire": 0,
+          "water": 2,
+          "thunder": 1,
+          "ice": 3,
+          "dragon": 2,
+          "blast": 2,
+          "stun": 1,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 3
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "flyingWyvern"}
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "diablosBlack",
+      "attributes": {
+        "name": "Black Diablos",
+        "slug": "black-diablos",
+        "physiology": {
+          "fire": 0,
+          "water": 2,
+          "thunder": 1,
+          "ice": 3,
+          "dragon": 0,
+          "blast": 2,
+          "stun": 1,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 3
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "flyingWyvern"}
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "dodogama",
+      "attributes": {
+        "name": "Dodogama",
+        "slug": "dodogama",
+        "physiology": {
+          "fire": 0,
+          "water": 2,
+          "thunder": 3,
+          "ice": 2,
+          "dragon": 1,
+          "blast": 1,
+          "stun": 2,
+          "poison": 3,
+          "sleep": 2,
+          "paralysis": 2
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "fangedWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "blastBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "girrosGreat",
+      "attributes": {
+        "name": "Great Girros",
+        "slug": "great-girros",
+        "physiology": {
+          "fire": 2,
+          "water": 3,
+          "thunder": 0,
+          "ice": 2,
+          "dragon": 1,
+          "blast": 2,
+          "stun": 2,
+          "poison": 2,
+          "sleep": 3,
+          "paralysis": 1
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "fangedWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "paralysis" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "jagrasGreat",
+      "attributes": {
+        "name": "Great Jagras",
+        "slug": "great-jagras",
+        "physiology": {
+          "fire": 3,
+          "water": 0,
+          "thunder": 2,
+          "ice": 2,
+          "dragon": 1,
+          "blast": 3,
+          "stun": 3,
+          "poison": 3,
+          "sleep": 3,
+          "paralysis": 3
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "fangedWyvern"}
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "jyuratodus",
+      "attributes": {
+        "name": "Jyuratodus",
+        "slug": "jyuratodus",
+        "physiology": {
+          "fire": 1,
+          "water": 0,
+          "thunder": 3,
+          "ice": 1,
+          "dragon": 1,
+          "blast": 1,
+          "stun": 3,
+          "poison": 2,
+          "sleep": 1,
+          "paralysis": 2
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "piscineWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "waterBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "jyuratodusMud",
+      "attributes": {
+        "name": "Mud Jyuratodus",
+        "slug": "jyuratodus-mud",
+        "physiology": {
+          "fire": 0,
+          "water": 3,
+          "thunder": 0,
+          "ice": 1,
+          "dragon": 1,
+          "blast": 1,
+          "stun": 3,
+          "poison": 2,
+          "sleep": 1,
+          "paralysis": 2
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "piscineWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "waterBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "kulu-ya-ku",
+      "attributes": {
+        "name": "Kulu-Ya-Ku",
+        "slug": "kulu-ya-ku",
+        "physiology": {
+          "fire": 2,
+          "water": 3,
+          "thunder": 2,
+          "ice": 2,
+          "dragon": 2,
+          "blast": 2,
+          "stun": 2,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 2
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "birdWyvern"}
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "Lavasioth",
+      "attributes": {
+        "name": "lavasioth",
+        "slug": "lavasioth",
+        "physiology": {
+          "fire": 0,
+          "water": 3,
+          "thunder": 2,
+          "ice": 2,
+          "dragon": 1,
+          "blast": 1,
+          "stun": 2,
+          "poison": 3,
+          "sleep": 1,
+          "paralysis": 2
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "piscineWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "fireBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "lavasiothHard",
+      "attributes": {
+        "name": "Hard Lavasioth",
+        "slug": "lavasioth-hard",
+        "physiology": {
+          "fire": 1,
+          "water": 2,
+          "thunder": 0,
+          "ice": 0,
+          "dragon": 1,
+          "blast": 1,
+          "stun": 2,
+          "poison": 3,
+          "sleep": 1,
+          "paralysis": 2
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "piscineWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "fireBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "legiana",
+      "attributes": {
+        "name": "Legiana",
+        "slug": "legiana",
+        "physiology": {
+          "fire": 2,
+          "water": 1,
+          "thunder": 3,
+          "ice": 0,
+          "dragon": 1,
+          "blast": 2,
+          "stun": 2,
+          "poison": 3,
+          "sleep": 2,
+          "paralysis": 2
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "flyingWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "iceBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "odogaron",
+      "attributes": {
+        "name": "Odogaron",
+        "slug": "odogaron",
+        "physiology": {
+          "fire": 1,
+          "water": 1,
+          "thunder": 2,
+          "ice": 3,
+          "dragon": 0,
+          "blast": 2,
+          "stun": 2,
+          "poison": 1,
+          "sleep": 2,
+          "paralysis": 3
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "fangedWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "bleeding" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "paolumu",
+      "attributes": {
+        "name": "Paolumu",
+        "slug": "paolumu",
+        "physiology": {
+          "fire": 3,
+          "water": 0,
+          "thunder": 2,
+          "ice": 1,
+          "dragon": 1,
+          "blast": 3,
+          "stun": 3,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 2
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "flyingWyvern"}
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "pukei-pukei",
+      "attributes": {
+        "name": "Pukei-Pukei",
+        "slug": "pukei-pukei",
+        "physiology": {
+          "fire": 2,
+          "water": 0,
+          "thunder": 3,
+          "ice": 2,
+          "dragon": 1,
+          "blast": 2,
+          "stun": 2,
+          "poison": 1,
+          "sleep": 3,
+          "paralysis": 3
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "birdWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "poison" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "radobaan",
+      "attributes": {
+        "name": "Radobaan",
+        "slug": "radobaan",
+        "physiology": {
+          "fire": 1,
+          "water": 1,
+          "thunder": 1,
+          "ice": 2,
+          "dragon": 3,
+          "blast": 3,
+          "stun": 2,
+          "poison": 2,
+          "sleep": 1,
+          "paralysis": 2
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "bruteWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "sleep" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "Rathalos",
+      "attributes": {
+        "name": "Rathalos",
+        "slug": "rathalos",
+        "physiology": {
+          "fire": 0,
+          "water": 1,
+          "thunder": 2,
+          "ice": 1,
+          "dragon": 3,
+          "blast": 1,
+          "stun": 2,
+          "poison": 1,
+          "sleep": 2,
+          "paralysis": 2
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "flyingWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "fireBlight" },
+            { "type": "ailment", "id": "poison" },
+            { "type": "ailment", "id": "stun" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "rathalosAzure",
+      "attributes": {
+        "name": "Azure Rathalos",
+        "slug": "azure-rathalos",
+        "physiology": {
+          "fire": 0,
+          "water": 1,
+          "thunder": 1,
+          "ice": 2,
+          "dragon": 3,
+          "blast": 1,
+          "stun": 2,
+          "poison": 1,
+          "sleep": 2,
+          "paralysis": 2
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "flyingWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "fireBlight" },
+            { "type": "ailment", "id": "poison" },
+            { "type": "ailment", "id": "stun" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "rathian",
+      "attributes": {
+        "name": "Rathian",
+        "slug": "rathian",
+        "physiology": {
+          "fire": 0,
+          "water": 1,
+          "thunder": 2,
+          "ice": 1,
+          "dragon": 3,
+          "blast": 1,
+          "stun": 3,
+          "poison": 1,
+          "sleep": 2,
+          "paralysis": 2
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "flyingWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "fireBlight" },
+            { "type": "ailment", "id": "poison" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "rathianPink",
+      "attributes": {
+        "name": "Pink Rathian",
+        "slug": "pink-rathian",
+        "physiology": {
+          "fire": 0,
+          "water": 1,
+          "thunder": 2,
+          "ice": 1,
+          "dragon": 3,
+          "blast": 1,
+          "stun": 3,
+          "poison": 1,
+          "sleep": 2,
+          "paralysis": 2
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "flyingWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "fireBlight" },
+            { "type": "ailment", "id": "poison" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "tobi-kadachi",
+      "attributes": {
+        "name": "Tobi-Kadachi",
+        "slug": "tobi-kadachi",
+        "physiology": {
+          "fire": 2,
+          "water": 3,
+          "thunder": 0,
+          "ice": 2,
+          "dragon": 1,
+          "blast": 2,
+          "stun": 2,
+          "poison": 3,
+          "sleep": 2,
+          "paralysis": 2
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "fangedWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "thunderBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "tzitzi-ya-ku",
+      "attributes": {
+        "name": "Tzitzi-Ya-Ku",
+        "slug": "tzitzi-ya-ku",
+        "physiology": {
+          "fire": 2,
+          "water": 2,
+          "thunder": 3,
+          "ice": 3,
+          "dragon": 2,
+          "blast": 2,
+          "stun": 2,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 2
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "birdWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "stun" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "uragaan",
+      "attributes": {
+        "name": "Uragaan",
+        "slug": "uragaan",
+        "physiology": {
+          "fire": 0,
+          "water": 3,
+          "thunder": 1,
+          "ice": 2,
+          "dragon": 2,
+          "blast": 2,
+          "stun": 3,
+          "poison": 3,
+          "sleep": 1,
+          "paralysis": 2
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "bruteWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "fireBlight" },
+            { "type": "ailment", "id": "sleep" }
+          ]
+        }
+      }
     }
   ],
   "included": [
+    {
+      "type": "species",
+      "id": "birdWyvern",
+      "attributes": {
+        "name": "Bird Wyvern"
+      }
+    },
     {
       "type": "species",
       "id": "bruteWyvern",
@@ -82,6 +783,20 @@
       "id": "flyingWyvern",
       "attributes": {
         "name": "Flying Wyvern"
+      }
+    },
+    {
+      "type": "species",
+      "id": "fangedWyvern",
+      "attributes": {
+        "name": "Fanged Wyvern"
+      }
+    },
+    {
+      "type": "species",
+      "id": "piscineWyvern",
+      "attributes": {
+        "name": "Piscine Wyvern"
       }
     },
     {

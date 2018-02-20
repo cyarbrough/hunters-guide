@@ -21,6 +21,7 @@
     "update-app": "rm -rf node_modules bower_components dist tmp && yarn install"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.1",
     "broccoli-asset-rev": "^2.4.5",
     "cross-env": "^5.1.3",
     "ember-ajax": "^3.0.0",
@@ -54,13 +55,12 @@
     "loader.js": "^4.2.3",
     "normalize.css": "^8.0.0",
     "stylelint-config-standard": "^18.0.0",
+    "stylelint-config-sass-guidelines": "^4.1.0",
     "stylelint-declaration-use-variable": "^1.6.0",
-    "stylelint-order": "^0.8.0"
+    "stylelint-order": "^0.8.1",
+    "stylelint-scss": "^2.3.0"
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"
-  },
-  "dependencies": {
-    "babel-eslint": "^8.2.1"
   }
 }

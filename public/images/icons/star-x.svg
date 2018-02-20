@@ -261,6 +261,24 @@
        style="fill:#dfcb50;fill-opacity:1;stroke:#323232;stroke-width:0.16108067;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
   <g
+     id="layer12"
+     style="display:none">
+    <g
+       id="g5559"
+       transform="matrix(1.107808,0,0,1.107808,-92.048502,-167.24913)">
+      <text
+         id="text15309-3"
+         y="174.43143"
+         x="88.405533"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:29.80982399px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#c10000;fill-opacity:1;stroke:#323232;stroke-width:0.37253663;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:29.80982399px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#c10000;fill-opacity:1;stroke:#323232;stroke-width:0.37253663;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           y="174.43143"
+           x="88.405533"
+           id="tspan15307-0">x</tspan></text>
+    </g>
+  </g>
+  <g
      id="layer14"
      style="display:none">
     <image

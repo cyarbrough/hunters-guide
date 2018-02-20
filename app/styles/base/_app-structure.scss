@@ -56,4 +56,8 @@
   .ailment-row {
     display: flex;
   }
+
+  .ailment-row {
+    flex-direction: column;
+  }
 }
