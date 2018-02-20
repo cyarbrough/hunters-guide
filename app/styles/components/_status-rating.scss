@@ -2,54 +2,36 @@
   * Styles for status rating component
   */
 
+$status-list: blast
+  dragon
+  fire
+  ice
+  paralysis
+  poison
+  sleep
+  stun
+  thunder
+  water;
+
+@mixin status-imgs {
+  @each $status in $status-list {
+    &.is-status-#{$status} {
+      background-image: url('/images/icons/#{$status}.png');
+    }
+  }
+}
+
 .status-rating {
-  $icon-size: 24px;
+  $icon-size: 22px;
+  @include status-imgs();
   background: no-repeat left center;
   background-size: $icon-size;
   height: $icon-size;
+  margin: 4px 0;
   min-width: $icon-size * 3;
   overflow: hidden;
   padding-left: $icon-size;
 
-  &.is-element-fire {
-    background-image: $img-fire;
-  }
-
-  &.is-element-water {
-    background-image: $img-water;
-  }
-
-  &.is-element-thunder {
-    background-image: $img-thunder;
-  }
-
-  &.is-element-ice {
-    background-image: $img-ice;
-  }
-
-  &.is-element-dragon {
-    background-image: $img-dragon;
-  }
-
-  &.is-element-blast {
-    background-image: $img-blast;
-  }
-
-  &.is-element-stun {
-    background-image: $img-stun;
-  }
-
-  &.is-element-poison {
-    background-image: $img-poison;
-  }
-
-  &.is-element-sleep {
-    background-image: $img-sleep;
-  }
-
-  &.is-element-paralysis {
-    background-image: $img-paralysis;
-  }
 
   &.is-rating-0 {
     opacity: 1;
@@ -68,9 +50,9 @@
   }
 
   .star-rating {
-    $icon-star-dim: 22px;
-    $star-indent: -11px;
-    background: $img-star no-repeat left center;
+    $icon-star-dim: 20px;
+    $star-indent: -$icon-star-dim / 2;
+    background: url('/images/icons/star.png') no-repeat left center;
     background-size: $icon-star-dim;
     display: inline-block;
     height: $icon-star-dim;
@@ -79,7 +61,7 @@
     width: $icon-star-dim;
 
     &.is-star-x {
-      background-image: $img-star-x;
+      background-image: url('/images/icons/star-x.png');
       margin-top: 1px;
     }
 

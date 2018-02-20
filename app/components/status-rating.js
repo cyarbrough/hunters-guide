@@ -23,7 +23,7 @@ export default Component.extend({
   elementClassName: computed('elementType', function() {
     let elementName = this.get('elementType') || 'unknown';
     
-    return `is-element-${elementName}`;
+    return `is-status-${elementName}`;
   }),
   /**
    * @var {string}

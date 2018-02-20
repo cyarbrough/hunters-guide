@@ -344,7 +344,7 @@
       "type": "monsters",
       "id": "Lavasioth",
       "attributes": {
-        "name": "lavasioth",
+        "name": "Lavasioth",
         "slug": "lavasioth",
         "physiology": {
           "fire": 0,
