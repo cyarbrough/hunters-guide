@@ -317,6 +317,36 @@
     },
     {
       "type": "monsters",
+      "id": "kirin",
+      "attributes": {
+        "name": "Kirin",
+        "slug": "kirin",
+        "physiology": {
+          "fire": 3,
+          "water": 2,
+          "thunder": 0,
+          "ice": 2,
+          "dragon": 1,
+          "blast": 2,
+          "stun": 1,
+          "poison": 1,
+          "sleep": 2,
+          "paralysis": 0
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "elderDragon"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "thunderBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
       "id": "kulu-ya-ku",
       "attributes": {
         "name": "Kulu-Ya-Ku",
@@ -337,6 +367,37 @@
       "relationships": {
         "species": {
           "data": { "type": "species", "id": "birdWyvern"}
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "kushalaDaora",
+      "attributes": {
+        "name": "Kushala Daora",
+        "slug": "kushala-daora",
+        "physiology": {
+          "fire": 1,
+          "water": 0,
+          "thunder": 3,
+          "ice": 0,
+          "dragon": 2,
+          "blast": 3,
+          "stun": 2,
+          "poison": 3,
+          "sleep": 1,
+          "paralysis": 1
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "elderDragon"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "iceBlight" },
+            { "type": "ailment", "id": "dragonBlight" }
+          ]
         }
       }
     },
@@ -427,6 +488,31 @@
           "data": [
             { "type": "ailment", "id": "iceBlight" }
           ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "nergigante",
+      "attributes": {
+        "name": "Nergigante",
+        "slug": "nergigante",
+        "physiology": {
+          "fire": 1,
+          "water": 1,
+          "thunder": 3,
+          "ice": 1,
+          "dragon": 2,
+          "blast": 2,
+          "stun": 2,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 2
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "elderDragon"}
         }
       }
     },
@@ -673,6 +759,37 @@
     },
     {
       "type": "monsters",
+      "id": "teostra",
+      "attributes": {
+        "name": "Teostra",
+        "slug": "teostra",
+        "physiology": {
+          "fire": 0,
+          "water": 3,
+          "thunder": 1,
+          "ice": 3,
+          "dragon": 1,
+          "blast": 1,
+          "stun": 2,
+          "poison": 2,
+          "sleep": 1,
+          "paralysis": 1
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "elderDragon"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "fireBlight" },
+            { "type": "ailment", "id": "blastBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
       "id": "tobi-kadachi",
       "attributes": {
         "name": "Tobi-Kadachi",
@@ -761,6 +878,96 @@
           ]
         }
       }
+    },
+    {
+      "type": "monsters",
+      "id": "vaalHazak",
+      "attributes": {
+        "name": "Vaal Hazak",
+        "slug": "vaal-hazak",
+        "physiology": {
+          "fire": 3,
+          "water": 0,
+          "thunder": 1,
+          "ice": 2,
+          "dragon": 3,
+          "blast": 2,
+          "stun": 2,
+          "poison": 1,
+          "sleep": 1,
+          "paralysis": 1
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "elderDragon"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "effluvialBuildup" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "xenoJiiva",
+      "attributes": {
+        "name": "Xeno'jiiva",
+        "slug": "xeno-jiiva",
+        "physiology": {
+          "fire": 2,
+          "water": 2,
+          "thunder": 2,
+          "ice": 2,
+          "dragon": 2,
+          "blast": 2,
+          "stun": 1,
+          "poison": 3,
+          "sleep": 0,
+          "paralysis": 1
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "elderDragon"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "dragonBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "zorahMagdaros",
+      "attributes": {
+        "name": "Zorah Magdaros",
+        "slug": "zorah-magdaros",
+        "physiology": {
+          "fire": 0,
+          "water": 3,
+          "thunder": 1,
+          "ice": 2,
+          "dragon": 3,
+          "blast": 0,
+          "stun": 0,
+          "poison": 0,
+          "sleep": 0,
+          "paralysis": 0
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "elderDragon"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "fireBlight" }
+          ]
+        }
+      }
     }
   ],
   "included": [
@@ -776,6 +983,13 @@
       "id": "bruteWyvern",
       "attributes": {
         "name": "Brute Wyvern"
+      }
+    },
+    {
+      "type": "species",
+      "id": "elderDragon",
+      "attributes": {
+        "name": "Elder Dragon"
       }
     },
     {
@@ -825,18 +1039,18 @@
     },
     {
       "type": "ailments",
-      "id": "fireBlight",
-      "attributes": {
-        "name": "Fireblight",
-        "slug": "fire"
-      }
-    },
-    {
-      "type": "ailments",
       "id": "effluvialBuildup",
       "attributes": {
         "name": "Effluvial Buildup",
         "slug": "effluvial"
+      }
+    },
+    {
+      "type": "ailments",
+      "id": "fireBlight",
+      "attributes": {
+        "name": "Fireblight",
+        "slug": "fire"
       }
     },
     {

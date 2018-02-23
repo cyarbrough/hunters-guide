@@ -11,9 +11,12 @@ $monster-list: anjanath
   great-girros 
   great-jagras
   jyuratodus
+  kirin
   kulu-ya-ku
+  kushala-daora
   lavasioth
   legiana
+  nergigante
   odogaron
   paolumu
   pukei-pukei
@@ -22,9 +25,13 @@ $monster-list: anjanath
   azure-rathalos
   rathian
   pink-rathian
+  teostra
   tobi-kadachi
   tzitzi-ya-ku
-  uragaan;
+  uragaan
+  vaal-hazak
+  xeno-jiiva
+  zorah-magdaros;
 
 @mixin monster-imgs {
   @each $monster in $monster-list {
