@@ -28,7 +28,7 @@ module.exports = function(environment) {
   if (environment === 'development') {
     ENV.contentSecurityPolicy = {
       'default-src': '\'none\'',
-      'script-src': '\'self\' \'unsafe-inline\' \'unsafe-eval\' \'about\' https://www.google-analytics.com/',
+      'script-src': '\'self\' \'unsafe-inline\' \'unsafe-eval\' https://www.google-analytics.com/',
       'font-src': '\'self\' https://fonts.gstatic.com/',
       'connect-src': '\'self\'',
       'img-src': '\'self\' https://www.google-analytics.com/',

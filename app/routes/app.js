@@ -7,6 +7,28 @@ export default Route.extend({
    * Services
    */
   ajax: inject.service(),
+  afterModel() {
+    let description = 'Mobile Hunter\'s Guide for Monster Hunter: World',
+      siteName = 'Hunter\'s Guide',
+      title = 'Hunter\'s Guide',
+      url = 'http://hunters-guide.herokuapp.com/',
+      urlImg = url + 'assets/images/icons/palico.png';
+
+    this.get('meta').update({
+      title,
+      description,
+      'og:title': title,
+      'og:site_name': siteName,
+      'og:url': url,
+      'og:image': urlImg,
+      'og:description': description,
+      'twitter:card': 'summary',
+      'twitter:site': url,
+      'twitter:title': title,
+      'twitter:description': description,
+      'twitter:image': urlImg
+    });
+  },
   /**
    * Pushes data into the payload, returns
    * @param {*} monsterData
