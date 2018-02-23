@@ -11,10 +11,10 @@
           "water": 3,
           "thunder": 2,
           "ice": 2,
-          "dragon": 2,
+          "dragon": 1,
           "blast": 1,
           "stun": 2,
-          "poison": 1,
+          "poison": 2,
           "sleep": 2,
           "paralysis": 2
         }
