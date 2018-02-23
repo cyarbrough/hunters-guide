@@ -28,13 +28,17 @@ module.exports = function(environment) {
   if (environment === 'development') {
     ENV.contentSecurityPolicy = {
       'default-src': '\'none\'',
-      'script-src': '\'self\' \'unsafe-inline\' \'unsafe-eval\'',
+      'script-src': '\'self\' \'unsafe-inline\' \'unsafe-eval\' \'about\' https://www.google-analytics.com/',
       'font-src': '\'self\' https://fonts.gstatic.com/',
       'connect-src': '\'self\'',
-      'img-src': '\'self\'',
+      'img-src': '\'self\' https://www.google-analytics.com/',
       'style-src': '\'self\' \'unsafe-inline\' \'unsafe-eval\' https://fonts.gstatic.com/ https://fonts.googleapis.com',
       'media-src': '\'self\'',
       'manifest-src': '\'self\''
+    };
+
+    ENV.googleAnalytics = {
+      webPropertyId: 'UA-XXXX-Y'
     };
     
     // ENV.APP.LOG_RESOLVER = true;
@@ -58,6 +62,9 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.googleAnalytics = {
+      webPropertyId: process.env.GA_KEY
+    };
   }
 
   return ENV;
