@@ -49,7 +49,14 @@
   margin: 50px 0;
 
   .monster-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     padding: 0 0 0 5px;
+  }
+
+  .monster-row {
+    width: 375px;
   }
 
   .monster-grid,
