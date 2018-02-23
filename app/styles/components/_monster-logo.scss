@@ -36,7 +36,7 @@ $monster-list: anjanath
 @mixin monster-imgs {
   @each $monster in $monster-list {
     &.is-#{$monster} {
-      background-image: url('/images/monsters/#{$monster}.png');
+      background-image: url('/assets/images/monsters/#{$monster}.png');
     }
   }
 }
@@ -50,14 +50,14 @@ $monster-list: anjanath
   min-height: 130px;
 
   &.is-barroth-mud {
-    background-image: url('/images/monsters/barroth.png');
+    background-image: url('/assets/images/monsters/barroth.png');
   }
 
   &.is-jyuratodus-mud {
-    background-image: url('/images/monsters/jyuratodus.png');
+    background-image: url('/assets/images/monsters/jyuratodus.png');
   }
 
   &.is-lavasioth-hard {
-    background-image: url('/images/monsters/lavasioth.png');
+    background-image: url('/assets/images/monsters/lavasioth.png');
   }
 }

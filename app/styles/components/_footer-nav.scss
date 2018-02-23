@@ -12,7 +12,7 @@
 
     .logo {
       $img-logo-dim: 75px;
-      background: url('/images/icons/palico.png') center center no-repeat;
+      background: url('/assets/images/icons/palico.png') center center no-repeat;
       background-size: contain;
       display: block;
       height: $img-logo-dim;
@@ -25,7 +25,7 @@
   .developer {
     .logo {
       $img-logo-dim: 100px;
-      background: url('/images/icons/guild.png') center center no-repeat;
+      background: url('/assets/images/icons/guild.png') center center no-repeat;
       background-size: contain;
       display: block;
       height: $img-logo-dim;

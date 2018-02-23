@@ -25,6 +25,6 @@ export default Route.extend({
    * Main model data for App
    */
   model() {
-    return this.get('ajax').request('data/large.monsters.json').then((monsterData) => { return this.handleMonsterSuccess(monsterData); });
+    return this.get('ajax').request('/assets/data/large.monsters.json').then((monsterData) => { return this.handleMonsterSuccess(monsterData); });
   }
 });

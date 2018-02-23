@@ -18,7 +18,7 @@ $ailment-list: bleeding
 @mixin ailment-imgs {
   @each $ailment in $ailment-list {
     &.is-ailment-#{$ailment} {
-      background-image: url('/images/icons/#{$ailment}.png');
+      background-image: url('/assets/images/icons/#{$ailment}.png');
     }
   }
 }

@@ -16,7 +16,7 @@ $status-list: blast
 @mixin status-imgs {
   @each $status in $status-list {
     &.is-status-#{$status} {
-      background-image: url('/images/icons/#{$status}.png');
+      background-image: url('/assets/images/icons/#{$status}.png');
     }
   }
 }
@@ -52,7 +52,7 @@ $status-list: blast
   .star-rating {
     $icon-star-dim: 20px;
     $star-indent: -$icon-star-dim / 2;
-    background: url('/images/icons/star.png') no-repeat left center;
+    background: url('/assets/images/icons/star.png') no-repeat left center;
     background-size: $icon-star-dim;
     display: inline-block;
     height: $icon-star-dim;
@@ -61,7 +61,7 @@ $status-list: blast
     width: $icon-star-dim;
 
     &.is-star-x {
-      background-image: url('/images/icons/star-x.png');
+      background-image: url('/assets/images/icons/star-x.png');
       margin-top: 1px;
     }
 
