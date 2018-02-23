@@ -35,29 +35,32 @@ $monster-list: anjanath
 
 @mixin monster-imgs {
   @each $monster in $monster-list {
-    &.is-#{$monster} {
+    .is-#{$monster} {
       background-image: url('/assets/images/monsters/#{$monster}.png');
     }
   }
 }
 
 .monster-logo {
-  @include monster-imgs();
   background: no-repeat center top;
   background-size: contain;
   flex-grow: 2;
   max-width: 175px;
   min-height: 130px;
+}
 
-  &.is-barroth-mud {
+.is-active {
+  @include monster-imgs();
+
+  .is-barroth-mud {
     background-image: url('/assets/images/monsters/barroth.png');
   }
 
-  &.is-jyuratodus-mud {
+  .is-jyuratodus-mud {
     background-image: url('/assets/images/monsters/jyuratodus.png');
   }
 
-  &.is-lavasioth-hard {
+  .is-lavasioth-hard {
     background-image: url('/assets/images/monsters/lavasioth.png');
   }
 }
