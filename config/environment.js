@@ -7,6 +7,7 @@ module.exports = function(environment) {
     modulePrefix: 'hunters-guide',
     environment,
     rootURL: '/',
+    webURL: '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -22,6 +23,11 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    emberTracker: {
+      analyticsSettings: {
+        trackingId: 'UA-########-#'
+      }
     }
   };
 
@@ -30,16 +36,14 @@ module.exports = function(environment) {
       'default-src': '\'none\'',
       'script-src': '\'self\' \'unsafe-inline\' \'unsafe-eval\' https://www.google-analytics.com/',
       'font-src': '\'self\' https://fonts.gstatic.com/',
-      'connect-src': '\'self\'',
+      'connect-src': '\'self\' http://hunters-guide.herokuapp.com/',
       'img-src': '\'self\' https://www.google-analytics.com/',
       'style-src': '\'self\' \'unsafe-inline\' \'unsafe-eval\' https://fonts.gstatic.com/ https://fonts.googleapis.com',
       'media-src': '\'self\'',
       'manifest-src': '\'self\''
     };
 
-    ENV.googleAnalytics = {
-      webPropertyId: 'UA-XXXX-Y'
-    };
+    ENV.webUrl = 'http://localhost:4200/';
     
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -62,9 +66,8 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
-    ENV.googleAnalytics = {
-      webPropertyId: process.env.GA_KEY
-    };
+    ENV.emberTracker.analyticsSettings.trackingId = process.env.GA_KEY;
+    ENV.webUrl = process.env.WEB_URL;
   }
 
   return ENV;
