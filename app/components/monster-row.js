@@ -17,7 +17,6 @@ export default Component.extend(InViewportMixin, {
       viewportEnabled: true,
       viewportUseRAF: true,
       viewportSpy: false,
-      viewportUseIntersectionObserver: true,
       viewportScrollSensitivity: 1,
       viewportRefreshRate: 150,
       intersectionThreshold: 0,
