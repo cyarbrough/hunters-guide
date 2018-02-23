@@ -33,7 +33,8 @@ module.exports = function(environment) {
       'connect-src': '\'self\'',
       'img-src': '\'self\'',
       'style-src': '\'self\' \'unsafe-inline\' \'unsafe-eval\' https://fonts.gstatic.com/ https://fonts.googleapis.com',
-      'media-src': '\'self\''
+      'media-src': '\'self\'',
+      'manifest-src': '\'self\''
     };
     
     // ENV.APP.LOG_RESOLVER = true;
