@@ -1,10 +1,9 @@
 import Controller from '@ember/controller';
 import Ember from 'ember';
 import { task, timeout } from 'ember-concurrency';
-const { computed, observer } = Ember;
+const { $, computed, observer } = Ember;
 
 export default Controller.extend({
-  googleAnalytics: Ember.inject.service(),
   /**
    * Overrides
    */
@@ -69,19 +68,28 @@ export default Controller.extend({
    * Sets searchQuery after debounce
    */
   setSearchQueryTask: task(function * () {
-    yield timeout(1000);
-    
+    // Re-position window
+    yield timeout(1);
+    this.scrollToTop();
+
     let searchTerm = this.get('searchTerm');
 
+    // clear out strings
     if(!searchTerm){
       searchTerm = null;
     }
-    this.set('searchQuery', searchTerm);
-    
+
     if(searchTerm) {
-      this.get('googleAnalytics').event('Search', 'search', searchTerm);
+      yield timeout(1500);
     }
+    
+    // Set term
+    this.set('searchQuery', searchTerm);
   }).restartable(),
+
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  },
 
   actions: {
     /**
