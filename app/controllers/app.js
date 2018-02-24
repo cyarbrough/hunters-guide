@@ -4,6 +4,7 @@ import { task, timeout } from 'ember-concurrency';
 const { computed, observer } = Ember;
 
 export default Controller.extend({
+  googleAnalytics: Ember.inject.service(),
   /**
    * Overrides
    */
@@ -76,6 +77,10 @@ export default Controller.extend({
       searchTerm = null;
     }
     this.set('searchQuery', searchTerm);
+    
+    if(searchTerm) {
+      this.get('googleAnalytics').event('Search', 'search', searchTerm);
+    }
   }).restartable(),
 
   actions: {
