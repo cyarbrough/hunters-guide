@@ -1,4 +1,6 @@
 import Component from '@ember/component';
+import Ember from 'ember';
+const { computed } = Ember;
 
 export default Component.extend({
   /**
@@ -11,11 +13,23 @@ export default Component.extend({
   /**
    * @var {boolean}
    */
-  searchIsOpen: false,
+  hasContent: computed.bool('searchTerm'),
+  /**
+   * @var {boolean}
+   */
+  openSearch: false,
+  /**
+   * @var {boolean}
+   */
+  searchIsOpen: computed.or('hasContent', 'openSearch'),
+  /**
+   * @var {string}
+   */
+  searchTerm: null,
 
   actions: {
     inputFocused(value) {
-      this.set('searchIsOpen', value);
+      this.set('openSearch', value);
     }
   }
 });
