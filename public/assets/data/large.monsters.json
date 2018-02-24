@@ -392,12 +392,6 @@
       "relationships": {
         "species": {
           "data": { "type": "species", "id": "elderDragon"}
-        },
-        "ailments": {
-          "data": [
-            { "type": "ailment", "id": "iceBlight" },
-            { "type": "ailment", "id": "dragonBlight" }
-          ]
         }
       }
     },
