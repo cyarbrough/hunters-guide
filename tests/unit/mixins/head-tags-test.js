@@ -8,6 +8,7 @@ describe('Unit | Mixin | head tags', function() {
   it('works', function() {
     let HeadTagsObject = EmberObject.extend(HeadTagsMixin);
     let subject = HeadTagsObject.create();
+
     expect(subject).to.be.ok;
   });
 });

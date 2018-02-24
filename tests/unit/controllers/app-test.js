@@ -5,7 +5,7 @@ import { setupTest } from 'ember-mocha';
 describe('Unit | Controller | app', function() {
   setupTest('controller:app', {
     // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
+    needs: ['service:google-analytics']
   });
 
   // Replace this with your real tests.

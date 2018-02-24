@@ -7,7 +7,7 @@ const { run } = Ember;
 describe('Unit | Route | app', function() {
   setupTest('route:app', {
     // Specify the other units that are required for this test.
-    needs: ['model:monster', 'service:ajax']
+    needs: ['model:monster', 'service:ajax', 'service:google-analytics']
   });
 
   it('exists', function() {

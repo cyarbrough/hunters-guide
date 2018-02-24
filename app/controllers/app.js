@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
 import Ember from 'ember';
 import { task, timeout } from 'ember-concurrency';
-const { $, computed, observer } = Ember;
+const { computed, observer } = Ember;
 
 export default Controller.extend({
   /**
