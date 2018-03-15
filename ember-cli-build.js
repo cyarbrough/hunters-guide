@@ -10,6 +10,9 @@ module.exports = function(defaults) {
         'assets/**/*',
         'https://fonts.googleapis.com/css?family=Cabin+Condensed'
       ]
+    },
+    fingerprint: {
+      exclude: ['images/icons/app/']
     }
   });
 
