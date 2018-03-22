@@ -44,6 +44,7 @@ module.exports = function(environment) {
     };
 
     ENV.webUrl = 'http://localhost:4200/';
+    // ENV.webUrl = 'http://192.168.1.10:4200/';
     
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

@@ -122,6 +122,36 @@
     },
     {
       "type": "monsters",
+      "id": "deviljho",
+      "attributes": {
+        "name": "Deviljho",
+        "slug": "deviljho",
+        "physiology": {
+          "fire": 2,
+          "water": 2,
+          "thunder": 3,
+          "ice": 1,
+          "dragon": 3,
+          "blast": 2,
+          "stun": 2,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 2
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "bruteWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "dragonBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
       "id": "Diablos",
       "attributes": {
         "name": "Diablos",
