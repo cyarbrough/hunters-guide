@@ -4,9 +4,9 @@ import config from 'hunters-guide/config/environment';
 export default Mixin.create({
   headTags() {
     let bgColor = '#DDDDDD',
-      description = 'Mobile Hunter\'s Guide for Monster Hunter: World',
-      siteName = 'Hunter\'s Guide',
-      title = 'Hunter\'s Guide',
+      description = 'Mobile Field Guide for Monster Hunter: World',
+      siteName = 'Hunter\'s Field Guide',
+      title = 'Hunter\'s Field Guide',
       url = config.webUrl,
       urlFav = url + 'assets/images/icons/app/favicon.png',
       urlImg = url + 'assets/images/icons/palico.png';
