@@ -1,5 +1,16 @@
-{{#each starList as |star index|}}
-  <div class="star-rating is-star-{{star.count}}"></div>
-{{else}}
-  <div class="star-rating is-star-x"></div>
-{{/each}}
+<div class="is-rating">
+  {{#each starList as |star index|}}
+    <i class="star-rating is-star-{{star.count}}">&Star;</i>
+  {{else}}
+    <i class="star-rating is-star-x">x</i>
+  {{/each}}
+</div>
+{{#if showRatingAlt}}
+  <div class="is-alt-rating">
+    {{#each starListAlt as |star index|}}
+      <i class="star-rating is-star-{{star.count}}">&Star;</i>
+    {{else}}
+      <i class="star-rating is-star-x">x</i>
+    {{/each}}
+  </div>
+{{/if}}

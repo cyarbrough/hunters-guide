@@ -26,16 +26,13 @@ $status-list: blast
   @include status-imgs();
   background: no-repeat left center;
   background-size: $icon-size;
+  font-size: 0;
   height: $icon-size;
   margin: 4px 0;
   min-width: $icon-size * 3;
   overflow: hidden;
   padding-left: $icon-size;
-
-
-  &.is-rating-0 {
-    opacity: 1;
-  }
+  white-space: nowrap;
 
   &.is-rating-1 {
     opacity: 0.33;
@@ -45,19 +42,22 @@ $status-list: blast
     opacity: 0.66;
   }
 
+  &.is-rating-0,
   &.is-rating-3 {
     opacity: 1;
   }
 
   .star-rating {
     $icon-star-dim: 20px;
-    $star-indent: -$icon-star-dim / 2;
     background: url('/assets/images/icons/star.png') no-repeat left center;
     background-size: $icon-star-dim;
     display: inline-block;
     height: $icon-star-dim;
-    margin: 0 $star-indent 0 0;
+    margin: 0 -7px 0 0;
+    overflow: hidden;
+    text-indent: $icon-star-dim * 2;
     position: relative;
+    vertical-align: bottom;
     width: $icon-star-dim;
 
     &.is-star-x {
@@ -75,6 +75,37 @@ $status-list: blast
 
     &.is-star-3 {
       z-index: 1;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .is-rating,
+  .is-alt-rating {
+    display: inline-block;
+    position: relative;
+  }
+
+  .is-alt-rating {
+    margin-left: 1px;
+    padding: 0 3px;
+
+    &:after,
+    &:before {
+      display: block;
+      content: '(';
+      font-size: 17px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &:after {
+      content: ')';
+      left: auto;
+      right: 0;
     }
   }
 }

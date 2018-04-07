@@ -34,41 +34,13 @@
       "type": "monsters",
       "id": "barroth",
       "attributes": {
-        "name": "Barroth",
+        "name": "Barroth (Mud)",
         "slug": "barroth",
         "physiology": {
           "fire": 3,
+          "fireAlt": 0,
           "water": 0,
-          "thunder": 0,
-          "ice": 2,
-          "dragon": 1,
-          "blast": 3,
-          "stun": 1,
-          "poison": 3,
-          "sleep": 2,
-          "paralysis": 3
-        }
-      },
-      "relationships": {
-        "species": {
-          "data": { "type": "species", "id": "bruteWyvern"}
-        },
-        "ailments": {
-          "data": [
-            { "type": "ailment", "id": "waterBlight" }
-          ]
-        }
-      }
-    },
-    {
-      "type": "monsters",
-      "id": "barrothMud",
-      "attributes": {
-        "name": "Mud Barroth",
-        "slug": "barroth-mud",
-        "physiology": {
-          "fire": 0,
-          "water": 3,
+          "waterAlt": 3,
           "thunder": 0,
           "ice": 2,
           "dragon": 1,
@@ -152,7 +124,7 @@
     },
     {
       "type": "monsters",
-      "id": "Diablos",
+      "id": "diablos",
       "attributes": {
         "name": "Diablos",
         "slug": "diablos",
@@ -289,42 +261,15 @@
       "type": "monsters",
       "id": "jyuratodus",
       "attributes": {
-        "name": "Jyuratodus",
+        "name": "Jyuratodus (Mud)",
         "slug": "jyuratodus",
         "physiology": {
           "fire": 1,
+          "fireAlt": 0,
           "water": 0,
+          "waterAlt": 3,
           "thunder": 3,
-          "ice": 1,
-          "dragon": 1,
-          "blast": 1,
-          "stun": 3,
-          "poison": 2,
-          "sleep": 1,
-          "paralysis": 2
-        }
-      },
-      "relationships": {
-        "species": {
-          "data": { "type": "species", "id": "piscineWyvern"}
-        },
-        "ailments": {
-          "data": [
-            { "type": "ailment", "id": "waterBlight" }
-          ]
-        }
-      }
-    },
-    {
-      "type": "monsters",
-      "id": "jyuratodusMud",
-      "attributes": {
-        "name": "Mud Jyuratodus",
-        "slug": "jyuratodus-mud",
-        "physiology": {
-          "fire": 0,
-          "water": 3,
-          "thunder": 0,
+          "thunderAlt": 0,
           "ice": 1,
           "dragon": 1,
           "blast": 1,
@@ -429,43 +374,17 @@
       "type": "monsters",
       "id": "Lavasioth",
       "attributes": {
-        "name": "Lavasioth",
+        "name": "Lavasioth (Hard)",
         "slug": "lavasioth",
         "physiology": {
           "fire": 0,
+          "fireAlt": 1,
           "water": 3,
+          "waterAlt": 2,
           "thunder": 2,
+          "thunderAlt": 0,
           "ice": 2,
-          "dragon": 1,
-          "blast": 1,
-          "stun": 2,
-          "poison": 3,
-          "sleep": 1,
-          "paralysis": 2
-        }
-      },
-      "relationships": {
-        "species": {
-          "data": { "type": "species", "id": "piscineWyvern"}
-        },
-        "ailments": {
-          "data": [
-            { "type": "ailment", "id": "fireBlight" }
-          ]
-        }
-      }
-    },
-    {
-      "type": "monsters",
-      "id": "lavasiothHard",
-      "attributes": {
-        "name": "Hard Lavasioth",
-        "slug": "lavasioth-hard",
-        "physiology": {
-          "fire": 1,
-          "water": 2,
-          "thunder": 0,
-          "ice": 0,
+          "iceAlt": 0,
           "dragon": 1,
           "blast": 1,
           "stun": 2,
