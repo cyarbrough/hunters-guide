@@ -10,11 +10,11 @@ export default Component.extend({
   classNames: ['search-filter'],
   classNameBindings: ['isFocused', 'hasContent'],
   actionFocused: 'inputFocused',
+
   /**
    * @var {string}
    */
   searchTerm: null,
-
   /**
    * @var {boolean}
    */
@@ -36,7 +36,7 @@ export default Component.extend({
     return classNames;
   }),
   /**
-   *
+   * Set focus state then debounce
    */
   setFocusInTask: task(function * () {
     this.get('setFocusOutTask').cancelAll();
@@ -55,6 +55,13 @@ export default Component.extend({
     }
   }).restartable(),
 
+  /**
+   * Scrolls window to top of content
+   */
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  },
+
   actions: {
     clearSearch() {
       if($.isFunction(this.actionSearch)) {
@@ -72,6 +79,7 @@ export default Component.extend({
       if($.isFunction(this.actionSearch)) {
         this.actionSearch(this.get('searchTerm'));
       }
+      this.scrollToTop();
     }
   }
 });
