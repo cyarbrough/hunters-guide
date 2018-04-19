@@ -347,6 +347,40 @@
     },
     {
       "type": "monsters",
+      "id": "kulveTaroth",
+      "attributes": {
+        "name": "Kulve Taroth (Golden)",
+        "slug": "kulve-taroth",
+        "physiology": {
+          "fire": 0,
+          "fireAlt": 1,
+          "water": 2,
+          "thunder": 0,
+          "thunderAlt": 3,
+          "ice": 3,
+          "iceAlt": 0,
+          "dragon": 2,
+          "dragonAlt": 1,
+          "blast": 1,
+          "stun": 1,
+          "poison": 1,
+          "sleep": 1,
+          "paralysis": 1
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "elderDragon"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "fireBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
       "id": "kushalaDaora",
       "attributes": {
         "name": "Kushala Daora",

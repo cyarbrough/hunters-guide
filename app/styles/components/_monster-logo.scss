@@ -14,6 +14,7 @@ $monster-list: anjanath
   jyuratodus
   kirin
   kulu-ya-ku
+  kulve-taroth
   kushala-daora
   lavasioth
   legiana
@@ -53,15 +54,7 @@ $monster-list: anjanath
 .is-active {
   @include monster-imgs();
 
-  .is-barroth-mud {
-    background-image: url('/assets/images/monsters/barroth.png');
-  }
-
-  .is-jyuratodus-mud {
-    background-image: url('/assets/images/monsters/jyuratodus.png');
-  }
-
-  .is-lavasioth-hard {
-    background-image: url('/assets/images/monsters/lavasioth.png');
+  .is-kulve-taroth {
+    background-image: url('/assets/images/monsters/unknown.png');
   }
 }
