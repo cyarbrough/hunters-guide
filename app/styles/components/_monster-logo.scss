@@ -53,8 +53,4 @@ $monster-list: anjanath
 
 .is-active {
   @include monster-imgs();
-
-  .is-kulve-taroth {
-    background-image: url('/assets/images/monsters/unknown.png');
-  }
 }
