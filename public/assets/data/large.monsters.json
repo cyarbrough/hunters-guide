@@ -25,6 +25,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "weakRoar" },
             { "type": "ailment", "id": "fireBlight" }
           ]
         }
@@ -57,6 +58,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "weakRoar" },
             { "type": "ailment", "id": "waterBlight" }
           ]
         }
@@ -87,6 +89,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "fireBlight" }
           ]
         }
@@ -117,6 +120,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "dragonBlight" }
           ]
         }
@@ -144,6 +148,11 @@
       "relationships": {
         "species": {
           "data": { "type": "species", "id": "flyingWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "strongRoar" }
+          ]
         }
       }
     },
@@ -169,6 +178,11 @@
       "relationships": {
         "species": {
           "data": { "type": "species", "id": "flyingWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "strongRoar" }
+          ]
         }
       }
     },
@@ -197,6 +211,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "weakRoar" },
             { "type": "ailment", "id": "blastBlight" }
           ]
         }
@@ -374,6 +389,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "fireBlight" }
           ]
         }
@@ -402,6 +418,11 @@
         "species": {
           "data": { "type": "species", "id": "elderDragon"}
         }
+      },
+      "ailments": {
+        "data": [
+          { "type": "ailment", "id": "fireBlight" }
+        ]
       }
     },
     {
@@ -463,6 +484,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "iceBlight" }
           ]
         }
@@ -490,6 +512,11 @@
       "relationships": {
         "species": {
           "data": { "type": "species", "id": "elderDragon"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "strongRoar" }
+          ]
         }
       }
     },
@@ -518,6 +545,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "weakRoar" },
             { "type": "ailment", "id": "bleeding" }
           ]
         }
@@ -545,6 +573,11 @@
       "relationships": {
         "species": {
           "data": { "type": "species", "id": "flyingWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "weakRoar" }
+          ]
         }
       }
     },
@@ -573,6 +606,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "weakRoar" },
             { "type": "ailment", "id": "poison" }
           ]
         }
@@ -603,6 +637,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "weakRoar" },
             { "type": "ailment", "id": "sleep" }
           ]
         }
@@ -633,6 +668,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "fireBlight" },
             { "type": "ailment", "id": "poison" },
             { "type": "ailment", "id": "stun" }
@@ -665,6 +701,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "fireBlight" },
             { "type": "ailment", "id": "poison" },
             { "type": "ailment", "id": "stun" }
@@ -697,6 +734,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "weakRoar" },
             { "type": "ailment", "id": "fireBlight" },
             { "type": "ailment", "id": "poison" }
           ]
@@ -728,6 +766,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "weakRoar" },
             { "type": "ailment", "id": "fireBlight" },
             { "type": "ailment", "id": "poison" }
           ]
@@ -759,6 +798,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "fireBlight" },
             { "type": "ailment", "id": "blastBlight" }
           ]
@@ -790,6 +830,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "weakRoar" },
             { "type": "ailment", "id": "thunderBlight" }
           ]
         }
@@ -850,6 +891,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "weakRoar" },
             { "type": "ailment", "id": "fireBlight" },
             { "type": "ailment", "id": "sleep" }
           ]
@@ -881,6 +923,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "effluvialBuildup" }
           ]
         }
@@ -911,6 +954,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "dragonBlight" }
           ]
         }
@@ -1092,6 +1136,22 @@
       "attributes": {
         "name": "Waterblight",
         "slug": "water"
+      }
+    },
+    {
+      "type": "ailments",
+      "id": "weakRoar",
+      "attributes": {
+        "name": "Weak Roar",
+        "slug": "weak-roar"
+      }
+    },
+    {
+      "type": "ailments",
+      "id": "strongRoar",
+      "attributes": {
+        "name": "Strong Roar",
+        "slug": "strong-roar"
       }
     }
   ]

@@ -13,7 +13,9 @@ $ailment-list: bleeding
   sleep
   stun
   thunder
-  water;
+  water
+  weak-roar
+  strong-roar;
 
 @mixin ailment-imgs {
   @each $ailment in $ailment-list {
