@@ -1,7 +1,7 @@
 <h2 class="title">{{monster.name}}</h2>
 <h3 class="subtitle">{{monster.species.name}}</h3>
 <div class="monster-grid">
-  {{monster-logo slug=monster.slug}}
+  {{monster-logo slug=monster.slug alternate=showAlternate toggle=(action 'toggleLogo')}}
   <a href="javascript:void(0);" class="grids" {{action 'toggleGrid'}}>
     {{status-grid physiology=monster.physiology showGrid=showStatusGrid}} 
     {{weakness-grid weaknesses=monster.weaknesses showGrid=showWeaknessGrid}}

@@ -38,12 +38,6 @@ export default Component.extend({
    * Handles the click action
    */
   mouseUp() {
-    this.toggleAlternate();
-  },
-  /**
-   * Toggles `alternate` boolean
-   */
-  toggleAlternate() {
-    this.toggleProperty('alternate');
+    this.toggle();
   }
 });

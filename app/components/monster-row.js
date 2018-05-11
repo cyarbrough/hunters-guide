@@ -20,6 +20,7 @@ export default Component.extend(InViewportMixin, {
   /**
    * @var {boolean}
    */
+  showAlternate: false,
   showStatusGrid: true,
   showWeaknessGrid: computed.not('showStatusGrid'),
   /**
@@ -43,14 +44,26 @@ export default Component.extend(InViewportMixin, {
     });
   }),
   /**
+   * Toggles `showAlternate` boolean
+   */
+  toggleAlternateLogo() {
+    this.toggleProperty('showAlternate');
+  },
+  /**
    * Toggles `showStatusGrid` boolean
    */
   toggleStatusGrid() {
     this.toggleProperty('showStatusGrid');
+    if(this.get('showWeaknessGrid')) {
+      this.set('showAlternate', true);
+    }
   },
   actions: {
     toggleGrid() {
       this.toggleStatusGrid();
+    },
+    toggleLogo() {
+      this.toggleAlternateLogo();
     }
   }
 });
