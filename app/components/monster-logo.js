@@ -7,7 +7,12 @@ export default Component.extend({
    * Overrides
    */
   classNames: ['monster-logo'],
-  classNameBindings: ['logoClassName'],
+  classNameBindings: ['logoClassName', 'logoAltClassName'],
+  tagName: 'button',
+  /**
+   * @var {boolean}
+   */
+  alternate: false,
   /**
    * @var {string}
    */
@@ -19,5 +24,26 @@ export default Component.extend({
     let slug = this.get('slug') || 'unknown';
 
     return `is-${slug}`;
-  })
+  }),
+  /**
+   * @var {string}
+   */
+  logoAltClassName: computed('alternate', function() {
+    if(this.get('alternate')) {
+      return 'is-alt';
+    }
+    return null;
+  }),
+  /**
+   * Handles the click action
+   */
+  mouseUp() {
+    this.toggleAlternate();
+  },
+  /**
+   * Toggles `alternate` boolean
+   */
+  toggleAlternate() {
+    this.toggleProperty('alternate');
+  }
 });

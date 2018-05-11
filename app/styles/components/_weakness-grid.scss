@@ -2,28 +2,28 @@
   * Styles for weakness-grid component
   */
 
-.monster-weakness-grid {
-    display: flex;
-    min-width: 200px;
-}
 .weakness-grid {
+  display: none;
+  min-width: 200px;
+
+  &.is-visible {
     display: flex;
-    min-width: 200px;
+  }
+  
+  .grid-item {
+    display: inline-block;
+    flex-grow: 1;
+    margin: 5px 0 0;
+  }
 
-    .grid-item {
-        display: inline-block;
-        flex-grow: 1;
-        margin: 5px 0 0;
+  .title {
+    margin: 0;
+    padding: 0 0 2px;
+
+    .subtitle {
+      display: block;
+      font-size: 13px;
+      font-style: italic;
     }
-
-    h4 {
-        margin: 0;
-        padding: 0 0 2px;
-
-        span {
-            display: block;
-            font-size: 13px;
-            font-style: italic;
-        }
-    }
+  }
 }

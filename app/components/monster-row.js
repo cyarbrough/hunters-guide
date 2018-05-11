@@ -1,17 +1,30 @@
 import Component from '@ember/component';
 import Ember from 'ember';
 import InViewportMixin from 'ember-in-viewport';
+const { computed } = Ember;
 
 export default Component.extend(InViewportMixin, {
   /**
    * Overrides
    */
   classNames: ['monster-row'],
-  classNameBindings: [ 'viewportEntered:is-active' ],
-  
+  classNameBindings: ['viewportEntered:is-active'],
+  /**
+   * @var {boolean}
+   */
   inViewport: false,
+  /**
+   * @var {object}
+   */
   monster: null,
-
+  /**
+   * @var {boolean}
+   */
+  showStatusGrid: true,
+  showWeaknessGrid: computed.not('showStatusGrid'),
+  /**
+   * Viewport Options
+   */
   viewportOptionsOverride: Ember.on('didInsertElement', function() {
     Ember.setProperties(this, {
       viewportEnabled: true,
@@ -28,5 +41,16 @@ export default Component.extend(InViewportMixin, {
         right: 20
       }
     });
-  })
+  }),
+  /**
+   * Toggles `showStatusGrid` boolean
+   */
+  toggleStatusGrid() {
+    this.toggleProperty('showStatusGrid');
+  },
+  actions: {
+    toggleGrid() {
+      this.toggleStatusGrid();
+    }
+  }
 });
