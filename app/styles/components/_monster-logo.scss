@@ -48,9 +48,13 @@ $monster-list: anjanath
   background-size: contain;
   flex-grow: 2;
   max-width: 175px;
-  min-height: 130px;
+  min-height: 140px;
 }
 
 .is-active {
   @include monster-imgs();
+
+  .alt-view .is-anjanath {
+    background-image: url('/assets/images/monsters/anjanath-alt.png');
+  }
 }

@@ -17,7 +17,23 @@
           "poison": 2,
           "sleep": 2,
           "paralysis": 2
-        }
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Tail",
+            "type": "Severable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 2
+          }
+        ]
       },
       "relationships": {
         "species": {
