@@ -40,6 +40,11 @@ $monster-list: anjanath
   @each $monster in $monster-list {
     .is-#{$monster} {
       background-image: url('/assets/images/monsters/#{$monster}.png');
+      transition: background-image $transition-duration-fast $transition-ease;
+
+      &.is-alt {
+        background-image: url('/assets/images/monsters/#{$monster}-alt.png');
+      }
     }
   }
 }
@@ -47,9 +52,11 @@ $monster-list: anjanath
 .monster-logo {
   background: no-repeat center top;
   background-size: contain;
+  border: 0;
   flex-grow: 2;
   max-width: 175px;
-  min-height: 130px;
+  min-height: 140px;
+  outline: none;
 }
 
 .is-active {
@@ -57,5 +64,9 @@ $monster-list: anjanath
 
   .is-lunastra {
     background-image: url('/assets/images/monsters/unknown.png');
+  }
+  
+  .alt-view .is-anjanath {
+    background-image: url('/assets/images/monsters/anjanath-alt.png');
   }
 }

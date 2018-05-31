@@ -1,0 +1,29 @@
+/**
+  * Styles for weakness-grid component
+  */
+
+.weakness-grid {
+  display: none;
+  min-width: 200px;
+
+  &.is-visible {
+    display: flex;
+  }
+  
+  .grid-item {
+    display: inline-block;
+    flex-grow: 1;
+    margin: 5px 0 0;
+  }
+
+  .title {
+    margin: 0;
+    padding: 0 0 2px;
+
+    .subtitle {
+      display: block;
+      font-size: 13px;
+      font-style: italic;
+    }
+  }
+}

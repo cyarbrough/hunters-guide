@@ -11,7 +11,10 @@ $status-list: blast
   sleep
   stun
   thunder
-  water;
+  water
+  ammo
+  blunt
+  cut;
 
 @mixin status-imgs {
   @each $status in $status-list {

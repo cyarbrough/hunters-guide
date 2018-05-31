@@ -3,8 +3,12 @@
   */
 
 .status-grid {
-  display: flex;
+  display: none;
   min-width: 200px;
+
+  &.is-visible {
+    display: flex;
+  }
 
   .element-grid,
   .ailment-grid {
