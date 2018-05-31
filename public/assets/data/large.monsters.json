@@ -493,6 +493,37 @@
     },
     {
       "type": "monsters",
+      "id": "lunastra",
+      "attributes": {
+        "name": "Lunastra",
+        "slug": "lunastra",
+        "physiology": {
+          "fire": 0,
+          "water": 1,
+          "thunder": 1,
+          "ice": 3,
+          "dragon": 2,
+          "blast": 2,
+          "stun": 2,
+          "poison": 1,
+          "sleep": 1,
+          "paralysis": 1
+        }
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "elderDragon"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "strongRoar" },
+            { "type": "ailment", "id": "fireBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
       "id": "nergigante",
       "attributes": {
         "name": "Nergigante",
