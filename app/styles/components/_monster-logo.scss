@@ -61,12 +61,4 @@ $monster-list: anjanath
 
 .is-active {
   @include monster-imgs();
-
-  .is-lunastra {
-    background-image: url('/assets/images/monsters/unknown.png');
-  }
-  
-  .alt-view .is-anjanath {
-    background-image: url('/assets/images/monsters/anjanath-alt.png');
-  }
 }
