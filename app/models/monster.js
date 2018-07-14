@@ -6,6 +6,7 @@ export default Model.extend({
   moreLink: attr('string'),
   physiology: attr(),
   weaknesses: attr(),
+  breakpoints: attr(),
   slug: attr('string'),
 
   ailments: hasMany('ailment'),

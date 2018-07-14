@@ -3,7 +3,15 @@
         <h4 class="title">{{weakness.area}}
             <span class="subtitle">{{weakness.type}}</span>
         </h4>
-        {{status-rating elementType="cut" ratingAmount=weakness.cut}} {{status-rating elementType="blunt" ratingAmount=weakness.blunt}}
+        {{status-rating elementType="cut" ratingAmount=weakness.cut}} 
+        {{status-rating elementType="blunt" ratingAmount=weakness.blunt}}
         {{status-rating elementType="ammo" ratingAmount=weakness.ammo}}
     </div>
 {{/each}}
+<div class="grid-item">
+{{#each breakpoints as |breakpoint|}}
+    <h4 class="title">{{breakpoint.area}}
+        <span class="subtitle">{{breakpoint.type}}</span>
+    </h4>
+{{/each}}
+</div>

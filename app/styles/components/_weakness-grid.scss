@@ -3,8 +3,10 @@
   */
 
 .weakness-grid {
-  display: none;
+  display: flex;
+  justify-content: center;
   min-width: 200px;
+  transition: line-height $transition-duration $transition-ease;
 
   &.is-visible {
     display: flex;
@@ -12,11 +14,18 @@
   
   .grid-item {
     display: inline-block;
-    flex-grow: 1;
+    flex-grow: 0;
     margin: 5px 0 0;
+    min-width: 25%;
+
+    &:first-child,
+    &:last-child {
+      flex-grow: 0;
+    }
   }
 
   .title {
+    display: block;
     margin: 0;
     padding: 0 0 2px;
 
