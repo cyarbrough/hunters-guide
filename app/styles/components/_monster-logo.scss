@@ -57,6 +57,10 @@ $monster-list: anjanath
   max-width: 175px;
   min-height: 140px;
   outline: none;
+
+  &.is-hidden {
+    display: none;
+  }
 }
 
 .is-active {

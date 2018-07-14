@@ -7,7 +7,7 @@ export default Component.extend({
    * Overrides
    */
   classNames: ['monster-logo'],
-  classNameBindings: ['logoClassName', 'logoAltClassName'],
+  classNameBindings: ['logoClassName', 'logoAltClassName', 'isHidden'],
   tagName: 'button',
   /**
    * @var {boolean}
