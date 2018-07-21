@@ -785,8 +785,7 @@
         },
         "ailments": {
           "data": [
-            { "type": "ailment", "id": "strongRoar" },
-            { "type": "ailment", "id": "fireBlight" }
+            { "type": "ailment", "id": "strongRoar" }
           ]
         }
       }
