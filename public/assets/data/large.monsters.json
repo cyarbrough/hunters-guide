@@ -36,7 +36,7 @@
         ],
         "breakpoints": [
           {
-            "area": "Hindfeet",
+            "area": "Hindclaws",
             "type": "Breakable"
           }
         ]
@@ -395,7 +395,7 @@
         ],
         "breakpoints": [
           {
-            "area": "Feet",
+            "area": "Foreclaws",
             "type": "Breakable"
           }
         ]
@@ -439,7 +439,7 @@
             "ammo": 3
           },
           {
-            "area": "Forefeet",
+            "area": "Foreclaws",
             "type": "Breakable",
             "cut": 2,
             "blunt": 2,
@@ -500,7 +500,7 @@
             "ammo": 3
           },
           {
-            "area": "Forefeet",
+            "area": "Foreclaws",
             "type": "Breakable",
             "cut": 2,
             "blunt": 2,
@@ -697,7 +697,7 @@
             "ammo": 2
           },
           {
-            "area": "Forefeet",
+            "area": "Foreclaws",
             "type": "Breakable",
             "cut": 2,
             "blunt": 2,
@@ -819,12 +819,12 @@
             "type": "Breakable",
             "cut": 3,
             "blunt": 3,
-            "ammo": 2
+            "ammo": 3
           },
           {
             "area": "Stomach",
             "type": "Breakable",
-            "cut": 2,
+            "cut": 3,
             "blunt": 2,
             "ammo": 3
           }
@@ -832,6 +832,10 @@
         "breakpoints": [
           {
             "area": "Back",
+            "type": "Breakable"
+          },
+          {
+            "area": "Hindfins",
             "type": "Breakable"
           },
           {
@@ -875,7 +879,7 @@
             "type": "Breakable",
             "cut": 3,
             "blunt": 3,
-            "ammo": 2
+            "ammo": 3
           },
           {
             "area": "Wings",
@@ -986,13 +990,6 @@
         },
         "weaknesses": [
           {
-            "area": "Horns",
-            "type": "Breakable",
-            "cut": 3,
-            "blunt": 3,
-            "ammo": 3
-          },
-          {
             "area": "Head",
             "type": "Breakable",
             "cut": 2,
@@ -1008,6 +1005,10 @@
           }
         ],
         "breakpoints": [
+          {
+            "area": "Horns",
+            "type": "Breakable"
+          },
           {
             "area": "Tail",
             "type": "Severable"
@@ -1699,6 +1700,10 @@
           {
             "area": "Back",
             "type": "Breakable"
+          },
+          {
+            "area": "Tail",
+            "type": "Severable"
           }
         ]
       },
@@ -1869,7 +1874,7 @@
             "ammo": 2
           },
           {
-            "area": "Magma Core",
+            "area": "Magmacore",
             "type": "Breakable",
             "cut": 3,
             "blunt": 3,
