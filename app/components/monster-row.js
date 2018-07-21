@@ -1,14 +1,14 @@
 import Component from '@ember/component';
 import Ember from 'ember';
 import InViewportMixin from 'ember-in-viewport';
-const { computed } = Ember;
+const { $ } = Ember;
 
 export default Component.extend(InViewportMixin, {
   /**
    * Overrides
    */
   classNames: ['monster-row'],
-  classNameBindings: ['viewportEntered:is-active'],
+  classNameBindings: ['viewportEntered:is-active', 'showAlternate:is-open'],
   /**
    * @var {boolean}
    */
@@ -21,8 +21,6 @@ export default Component.extend(InViewportMixin, {
    * @var {boolean}
    */
   showAlternate: false,
-  showStatusGrid: true,
-  showWeaknessGrid: computed.not('showStatusGrid'),
   /**
    * Viewport Options
    */
@@ -50,17 +48,25 @@ export default Component.extend(InViewportMixin, {
     this.toggleProperty('showAlternate');
   },
   /**
-   * Toggles `showStatusGrid` boolean
+   * Toggles Weakness Grid & Alt Image
    */
-  toggleStatusGrid() {
-    this.toggleProperty('showStatusGrid');
-    if(this.get('showWeaknessGrid')) {
-      this.set('showAlternate', true);
-    }
+  toggleWeaknessGrid() {
+    this.toggleProperty('showAlternate');
+    this.toggleWeaknessSlide();
   },
+  /**
+   * Activates slideToggle on weakness grid
+   */
+  toggleWeaknessSlide() {
+    let elementId = this.get('elementId'),
+      elementObj = $(`#${elementId} .weakness-grid`);
+
+    elementObj.slideToggle(300);
+  },
+
   actions: {
     toggleGrid() {
-      this.toggleStatusGrid();
+      this.toggleWeaknessGrid();
     },
     toggleLogo() {
       this.toggleAlternateLogo();

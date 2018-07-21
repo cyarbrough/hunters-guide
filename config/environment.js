@@ -43,8 +43,8 @@ module.exports = function(environment) {
       'manifest-src': '\'self\''
     };
 
-    ENV.webUrl = 'http://localhost:4200/';
-    // ENV.webUrl = 'http://192.168.1.19:4200/';
+    // ENV.webUrl = 'http://localhost:4200/';
+    ENV.webUrl = 'http://192.168.1.15:4200/';
     
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

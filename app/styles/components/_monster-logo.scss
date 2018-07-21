@@ -39,11 +39,13 @@ $monster-list: anjanath
 @mixin monster-imgs {
   @each $monster in $monster-list {
     .is-#{$monster} {
-      background-image: url('/assets/images/monsters/#{$monster}.png');
-      transition: background-image $transition-duration-fast $transition-ease;
+      background-image: url('/assets/images/monsters/#{$monster}.png');      
 
       &.is-alt {
+        background-color: $color-bg-main-alt;
         background-image: url('/assets/images/monsters/#{$monster}-alt.png');
+        border-color: $color-bg-main-alt;
+        transition: background-image $transition-duration-fast $transition-ease, background-color $transition-duration-fast $transition-ease, border-color $transition-duration-fast $transition-ease 0.5s;
       }
     }
   }
@@ -52,14 +54,25 @@ $monster-list: anjanath
 .monster-logo {
   background: no-repeat center top;
   background-size: contain;
-  border: 0;
+  border: 3px solid transparent;
+  border-radius: $border-radius $border-radius 0 0;
   flex-grow: 2;
+  margin: 0;
   max-width: 175px;
   min-height: 140px;
   outline: none;
+  position: relative;
+  transition: background-image $transition-duration-fast $transition-ease 0.05s, background-color $transition-duration-fast $transition-ease 0.05s, border-color $transition-duration-fast $transition-ease;
+  z-index: 10;
 
   &.is-hidden {
-    display: none;
+    height: 0;
+    min-height: 0;
+    padding: 0;
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+    z-index: 0;
   }
 }
 

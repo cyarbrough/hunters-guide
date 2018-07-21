@@ -3,17 +3,22 @@
   */
 
 .status-grid {
-  display: none;
+  display: flex;
   min-width: 200px;
-
-  &.is-visible {
-    display: flex;
-  }
+  opacity: 1;
+  padding: 0 0 5px 5px;
+  transition: opacity $transition-duration $transition-ease;
 
   .element-grid,
   .ailment-grid {
     display: inline-block;
     flex-grow: 1;
     margin: 5px 0 0;
+  }
+}
+
+.is-open {
+  .status-grid {
+    opacity: 0.4;
   }
 }

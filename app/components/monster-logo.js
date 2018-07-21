@@ -1,6 +1,6 @@
 import Component from '@ember/component';
 import Ember from 'ember';
-const { computed } = Ember;
+const { $, computed } = Ember;
 
 export default Component.extend({
   /**
@@ -13,6 +13,10 @@ export default Component.extend({
    * @var {boolean}
    */
   alternate: false,
+  /**
+   * @var {boolean}
+   */
+  isHidden: false,
   /**
    * @var {string}
    */
@@ -38,6 +42,8 @@ export default Component.extend({
    * Handles the click action
    */
   mouseUp() {
-    this.toggle();
+    if($.isFunction(this.toggle)) {
+      this.toggle();
+    }
   }
 });

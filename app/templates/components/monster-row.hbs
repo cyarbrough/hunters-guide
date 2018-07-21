@@ -1,15 +1,11 @@
 <h2 class="title">{{monster.name}}</h2>
 <h3 class="subtitle">{{monster.species.name}}</h3>
-<div class="monster-grid" {{action 'toggleGrid'}}>
-  {{monster-logo slug=monster.slug alternate=showAlternate toggle=(action 'toggleLogo')}}
-  {{status-grid physiology=monster.physiology showGrid=true}}
+<div class="monster-grid">
+  {{monster-logo slug=monster.slug alternate=showAlternate toggle=(action 'toggleGrid')}}
+  {{status-grid physiology=monster.physiology}}
 </div>
 {{monster-logo slug=monster.slug alternate=true isHidden=true}}
-{{weakness-grid 
-  weaknesses=monster.weaknesses 
-  breakpoints=monster.breakpoints 
-  showGrid=showWeaknessGrid
-  }}
+{{weakness-grid weaknesses=monster.weaknesses breakpoints=monster.breakpoints}}
 <div class="ailment-row">
   {{#each monster.ailments as |ailment|}}
     {{ailment-info ailment=ailment}}

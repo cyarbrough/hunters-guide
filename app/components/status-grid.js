@@ -4,6 +4,5 @@ export default Component.extend({
   /**
    * Overrides
    */
-  classNames: ['status-grid'],
-  classNameBindings: ['showGrid:is-visible']
+  classNames: ['status-grid']
 });

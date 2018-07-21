@@ -3,14 +3,15 @@
   */
 
 .weakness-grid {
+  background-color: $color-bg-main-alt;
+  border-radius: 0 $border-radius $border-radius $border-radius;
   display: flex;
-  justify-content: center;
+  margin: 0 0 10px;
   min-width: 200px;
+  padding: 5px 10px;
+  position: relative;
   transition: line-height $transition-duration $transition-ease;
-
-  &.is-visible {
-    display: flex;
-  }
+  z-index: 5;
   
   .grid-item {
     display: inline-block;
@@ -28,6 +29,7 @@
     display: block;
     margin: 0;
     padding: 0 0 2px;
+    width: auto;
 
     .subtitle {
       display: block;
