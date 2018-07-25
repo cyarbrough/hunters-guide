@@ -42,6 +42,19 @@ export default Component.extend(InViewportMixin, {
     });
   }),
   /**
+   * Sends logEvent action with Open/Close panel info
+   */
+  logToggle() {
+    let action = 'Close Panel',
+      isAlt = this.get('showAlternate'),
+      slug = this.get('monster.slug');
+
+    if(isAlt) {
+      action = 'Open Panel';
+    }
+    this.logEvent('Monster', action, slug);
+  },
+  /**
    * Toggles `showAlternate` boolean
    */
   toggleAlternateLogo() {
@@ -53,6 +66,7 @@ export default Component.extend(InViewportMixin, {
   toggleWeaknessGrid() {
     this.toggleProperty('showAlternate');
     this.toggleWeaknessSlide();
+    this.logToggle();
   },
   /**
    * Activates slideToggle on weakness grid

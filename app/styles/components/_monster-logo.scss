@@ -39,7 +39,7 @@ $monster-list: anjanath
 @mixin monster-imgs {
   @each $monster in $monster-list {
     .is-#{$monster} {
-      background-image: url('/assets/images/monsters/#{$monster}.png');      
+      background-image: url('/assets/images/monsters/#{$monster}.png');
 
       &.is-alt {
         background-color: $color-bg-main-alt;

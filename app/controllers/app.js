@@ -4,6 +4,7 @@ import { task, timeout } from 'ember-concurrency';
 const { computed, observer } = Ember;
 
 export default Controller.extend({
+  googleAnalytics: Ember.inject.service(),
   /**
    * Overrides
    */
@@ -115,6 +116,15 @@ export default Controller.extend({
   },
 
   actions: {
+    /**
+     * Logs event to GA
+     * @param {string} category
+     * @param {string} action
+     * @param {string} label
+     */
+    logEvent(category, action, label) {
+      this.get('googleAnalytics').event(category, action, label);
+    },
     /**
      * @param {string} term
      */

@@ -43,6 +43,9 @@ module.exports = function(environment) {
       'manifest-src': '\'self\''
     };
 
+    ENV.emberTracker.analyticsSettings.LOG_PAGEVIEW = true;
+    ENV.emberTracker.analyticsSettings.LOG_EVENTS = true;
+
     // ENV.webUrl = 'http://localhost:4200/';
     ENV.webUrl = 'http://192.168.1.15:4200/';
     
