@@ -4,8 +4,6 @@ import config from 'hunters-guide/config/environment';
 import HeadTagsMixin from 'hunters-guide/mixins/head-tags';
 
 export default Route.extend(HeadTagsMixin, {
-  
-
   /**
    * Pushes data into the payload, returns
    * @param {*} monsterData

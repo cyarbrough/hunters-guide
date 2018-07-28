@@ -2,19 +2,33 @@ import Mixin from '@ember/object/mixin';
 import config from 'hunters-guide/config/environment';
 
 export default Mixin.create({
-  headTags() {
+  headTags: null,
+  title: 'Hunter\'s Field Guide',
+
+  afterModel() {
+    this.setHeadTags();
+  },
+
+  setHeadTags(titlePre = '') {
     let bgColor = '#DDDDDD',
       description = 'Mobile Field Guide for Monster Hunter: World',
+      routeUrl = this.get('router.url').replace('/', ''),
       siteName = 'Hunter\'s Field Guide',
-      title = 'Hunter\'s Field Guide',
-      url = config.webUrl,
+      tags,
+      title = this.get('title'),
+      url = `${config.webUrl}${routeUrl}`,
       urlFav = url + 'assets/images/icons/app/favicon.png',
       urlImg = url + 'assets/images/icons/palico.png';
 
-    return [
+    if(titlePre) {
+      title = `${titlePre} :: ${title}`;
+    }
+
+    tags = [
       // Icon Links
       {
         type: 'link',
+        tagId: 'apple-touch-icon',
         attrs: {
           rel: 'apple-touch-icon',
           href: url + 'assets/images/icons/app/apple-touch-icon.png',
@@ -23,6 +37,7 @@ export default Mixin.create({
       },
       {
         type: 'link',
+        tagId: 'icon32',
         attrs: {
           rel: 'icon',
           href: urlFav,
@@ -32,6 +47,7 @@ export default Mixin.create({
       },
       {
         type: 'link',
+        tagId: 'icon16',
         attrs: {
           rel: 'icon',
           href: urlFav,
@@ -41,6 +57,7 @@ export default Mixin.create({
       },
       {
         type: 'link',
+        tagId: 'mask-icon',
         attrs: {
           rel: 'mask-icon',
           href: url + 'assets/images/icons/app/safari-pinned-tab.svg'
@@ -48,6 +65,7 @@ export default Mixin.create({
       },
       {
         type: 'link',
+        tagId: 'manifest',
         attrs: {
           rel: 'manifest',
           href: url + 'manifest.webmanifest'
@@ -55,7 +73,13 @@ export default Mixin.create({
       },
       // Basic Meta
       {
+        type: 'title',
+        tagId: 'title',
+        content: title
+      },
+      {
         type: 'meta',
+        tagId: 'meta-title',
         attrs: {
           name: 'title',
           content: title
@@ -63,6 +87,7 @@ export default Mixin.create({
       },
       {
         type: 'meta',
+        tagId: 'meta-description',
         attrs: {
           name: 'description',
           content: description
@@ -70,6 +95,7 @@ export default Mixin.create({
       },
       {
         type: 'meta',
+        tagId: 'theme-color',
         attrs: {
           name: 'theme-color',
           content: bgColor
@@ -78,6 +104,7 @@ export default Mixin.create({
       // Apple Meta
       {
         type: 'meta',
+        tagId: 'apple-mobile-web-app-title',
         attrs: {
           name: 'apple-mobile-web-app-title',
           content: title
@@ -85,6 +112,7 @@ export default Mixin.create({
       },
       {
         type: 'meta',
+        tagId: 'apple-mobile-web-app-capable',
         attrs: {
           name: 'apple-mobile-web-app-capable',
           content: 'yes'
@@ -93,6 +121,7 @@ export default Mixin.create({
       // MS Meta
       {
         type: 'meta',
+        tagId: 'application-name',
         attrs: {
           name: 'application-name',
           content: title
@@ -100,6 +129,7 @@ export default Mixin.create({
       },
       {
         type: 'meta',
+        tagId: 'msapplication-TileColor',
         attrs: {
           name: 'msapplication-TileColor',
           content: bgColor
@@ -108,6 +138,7 @@ export default Mixin.create({
       // Facebook Meta
       {
         type: 'meta',
+        tagId: 'facebook-title',
         attrs: {
           name: 'og:title',
           content: title
@@ -115,6 +146,7 @@ export default Mixin.create({
       },
       {
         type: 'meta',
+        tagId: 'facebook-site-name',
         attrs: {
           name: 'og:site_name',
           content: siteName
@@ -122,6 +154,7 @@ export default Mixin.create({
       },
       {
         type: 'meta',
+        tagId: 'facebook-url',
         attrs: {
           name: 'og:url',
           content: url
@@ -129,6 +162,7 @@ export default Mixin.create({
       },
       {
         type: 'meta',
+        tagId: 'facebook-image',
         attrs: {
           name: 'og:image',
           content: urlImg
@@ -136,6 +170,7 @@ export default Mixin.create({
       },
       {
         type: 'meta',
+        tagId: 'facebook-description',
         attrs: {
           name: 'og:description',
           content: description
@@ -144,6 +179,7 @@ export default Mixin.create({
       // Twitter Meta
       {
         type: 'meta',
+        tagId: 'twitter-card',
         attrs: {
           name: 'twitter:card',
           content: 'summary'
@@ -151,6 +187,7 @@ export default Mixin.create({
       },
       {
         type: 'meta',
+        tagId: 'twitter-site',
         attrs: {
           name: 'twitter:site',
           content: url
@@ -158,6 +195,7 @@ export default Mixin.create({
       },
       {
         type: 'meta',
+        tagId: 'twitter-title',
         attrs: {
           name: 'twitter:title',
           content: title
@@ -165,6 +203,7 @@ export default Mixin.create({
       },
       {
         type: 'meta',
+        tagId: 'twitter-description',
         attrs: {
           name: 'twitter:description',
           content: description
@@ -172,11 +211,15 @@ export default Mixin.create({
       },
       {
         type: 'meta',
+        tagId: 'twitter-image',
         attrs: {
           name: 'twitter:image',
           content: urlImg
         }
       }
     ];
+
+    this.set('headTags', tags);
+    this.set('title', title);
   }
 });
