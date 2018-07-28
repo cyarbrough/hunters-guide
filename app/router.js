@@ -8,7 +8,9 @@ const Router = EmberRouter.extend(GoogleAnalyticsRoute, {
 });
 
 Router.map(function() {
-  this.route('app', { path: '/' });
+  this.route('app', { path: '/' }, function() {
+    this.route('news');
+  });
 });
 
 export default Router;
