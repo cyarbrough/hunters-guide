@@ -42,10 +42,7 @@ $monster-list: anjanath
       background-image: url('/assets/images/monsters/#{$monster}.png');
 
       &.is-alt {
-        background-color: $color-bg-main-alt;
         background-image: url('/assets/images/monsters/#{$monster}-alt.png');
-        border-color: $color-bg-main-alt;
-        transition: background-image $transition-duration-fast $transition-ease, background-color $transition-duration-fast $transition-ease, border-color $transition-duration-fast $transition-ease 0.5s;
       }
     }
   }
@@ -53,6 +50,7 @@ $monster-list: anjanath
 
 .monster-logo {
   background: no-repeat center top;
+  background-image: url('/assets/images/monsters/unknown.png');
   background-size: contain;
   border: 3px solid transparent;
   border-radius: $border-radius $border-radius 0 0;
@@ -73,6 +71,12 @@ $monster-list: anjanath
     visibility: hidden;
     width: 0;
     z-index: 0;
+  }
+
+  &.is-alt {
+    background-color: $color-bg-main-alt;
+    border-color: $color-bg-main-alt;
+    transition: background-image $transition-duration-fast $transition-ease, background-color $transition-duration-fast $transition-ease, border-color $transition-duration-fast $transition-ease 0.5s;
   }
 }
 
