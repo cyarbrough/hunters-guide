@@ -1,21 +1,30 @@
 import Mixin from '@ember/object/mixin';
 import config from 'hunters-guide/config/environment';
 
+const TITLE = 'Hunter\'s Field Guide';
+
 export default Mixin.create({
+  /**
+   * Base Variables
+   */
   headTags: null,
-  title: 'Hunter\'s Field Guide',
+  title: TITLE,
 
   afterModel() {
     this.setHeadTags();
   },
 
+  /**
+   * Sets various head meta tags
+   * @param {string} titlePre string to prepend to base title
+   */
   setHeadTags(titlePre = '') {
     let bgColor = '#DDDDDD',
       description = 'Mobile Field Guide for Monster Hunter: World',
       routeUrl = this.get('router.url').replace('/', ''),
       siteName = 'Hunter\'s Field Guide',
       tags,
-      title = this.get('title'),
+      title = TITLE,
       url = `${config.webUrl}${routeUrl}`,
       urlFav = url + 'assets/images/icons/app/favicon.png',
       urlImg = url + 'assets/images/icons/palico.png';
@@ -23,6 +32,8 @@ export default Mixin.create({
     if(titlePre) {
       title = `${titlePre} :: ${title}`;
     }
+
+    console.log(title);
 
     tags = [
       // Icon Links

@@ -9,6 +9,7 @@ export default Component.extend({
   classNames: ['header-nav'],
   classNameBindings: ['searchIsOpen'],
   
+  actionButton: null,
   actionSearch: null,
   /**
    * @var {boolean}

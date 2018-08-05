@@ -1,7 +1,8 @@
 import Controller from '@ember/controller';
 import Ember from 'ember';
 import { task, timeout } from 'ember-concurrency';
-const { computed, observer } = Ember;
+const { $, computed, observer } = Ember;
+const TIMER_TRANSITION_FAST = 300;
 
 export default Controller.extend({
   googleAnalytics: Ember.inject.service(),
@@ -11,6 +12,12 @@ export default Controller.extend({
   queryParams: {
     searchQuery: 's'
   },
+
+  /**
+   * Holds the last route the side panel has accessed (not currently setting)
+   * @var {string}
+   */
+  lastSidePanelRoute: 'app.news',
   /**
    * Holds query term (generally not referenced, use searchTerm instead)
    * @var {string}
@@ -21,6 +28,16 @@ export default Controller.extend({
    * @var {string}
    */
   searchTerm: null,
+  /**
+   * Indicates if side-panel is visible
+   * @var {boolean}
+   */
+  sidePanelIsOpen: false,
+  /**
+   * Array of strings, of valid routes for the side panel
+   * @var {array}
+   */
+  sidePanelRoutes: ['app.news'],
   
   /**
    * Filtered List
@@ -58,7 +75,6 @@ export default Controller.extend({
       this.set('searchTerm', this.get('searchQuery'));
     }
   }),
-
   /**
    * Calls setSearchQueryTask when searchTerm is changed
    */
@@ -66,9 +82,51 @@ export default Controller.extend({
     this.get('setSearchQueryTask').perform();
   }),
   /**
-   * Sets searchQuery after debounce
+   * Toggles no-scroll css when side panel opens or closes
    */
-  setSearchQueryTask: task(function * () {
+  toggleNoScroll: observer('sidePanelIsOpen', function() {
+    if(this.get('sidePanelIsOpen')) {
+      $('body').addClass('no-scroll');
+    } else {
+      $('body').removeClass('no-scroll');
+    }
+  }),
+
+  /**
+   * Checks route and auto opens side panel
+   */
+  checkForSidePanel() {
+    let currentRoute = Ember.getOwner(this).lookup('router:main').get('currentRouteName'),
+      sidePanelRoutes = this.get('sidePanelRoutes');
+
+    if(sidePanelRoutes.contains(currentRoute)) {
+      this.get('openSidePanelTask').perform();
+    }
+  },
+  /**
+   * Task to open side panel after delay
+   * @var {task; drops}
+   * @param {numer} timer
+   */
+  openSidePanelTask: task(function * (timer = 150) {
+    yield timeout(timer);
+    this.set('sidePanelIsOpen', true);
+  }).drop(),
+  /**
+   * Task to transition to /app after delay; drops
+   * @var {task; drops}
+   * @param {numer} timer
+   */
+  transitionToAppTask: task(function * (timer = TIMER_TRANSITION_FAST + 50) {
+    yield timeout(timer);
+    this.transitionToRoute('app');
+  }).drop(),
+  /**
+   * Sets searchQuery after debounce
+   * @var {task, restarts}
+   * @param {numer} timer
+   */
+  setSearchQueryTask: task(function * (timer = 1500) {
     let searchTerm = this.get('searchTerm');
 
     // clear out strings
@@ -77,7 +135,7 @@ export default Controller.extend({
     }
 
     if(searchTerm) {
-      yield timeout(1500);
+      yield timeout(timer);
     }
     
     // Set term
@@ -114,6 +172,19 @@ export default Controller.extend({
     }
     return match;
   },
+  /**
+   * Actions needed to open or close the side panel
+   */
+  toggleSidePanel() {
+    this.toggleProperty('sidePanelIsOpen');
+    // If side panels opens, go to lastSidePanelRoute
+    if(this.get('sidePanelIsOpen')) {
+      this.transitionToRoute(this.get('lastSidePanelRoute'));
+    } else {
+      this.get('transitionToAppTask').perform();
+    }
+    this.toggleNoScroll();
+  },
 
   actions: {
     /**
@@ -124,6 +195,18 @@ export default Controller.extend({
      */
     logEvent(category, action, label) {
       this.get('googleAnalytics').event(category, action, label);
+    },
+    /**
+     * Toggles Side Panel
+     */
+    toggleSidePanel(){
+      this.toggleSidePanel();
+    },
+    /**
+     * Action fired after side panel is inserted
+     */
+    sidePanelInserted() {
+      this.checkForSidePanel();
     },
     /**
      * @param {string} term

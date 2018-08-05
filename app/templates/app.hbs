@@ -1,9 +1,10 @@
 {{header-nav 
   searchTerm=(readonly searchTerm) 
   actionSearch=(action "updateSearchTerm")
+  actionButton=(action "toggleSidePanel")
 }}
 <div class="container">
-  {{#side-panel}}
+  {{#side-panel isOpen=sidePanelIsOpen}}
     {{outlet "side-panel"}}
   {{/side-panel}}
 

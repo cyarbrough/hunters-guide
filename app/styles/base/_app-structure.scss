@@ -7,6 +7,10 @@
   font-family: $font-default;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .header-nav {
   align-items: center;
   display: flex;
@@ -41,6 +45,56 @@
     .title {
       flex-grow: 0;
       width: 0;
+    }
+  }
+}
+
+.side-panel {
+  bottom: 0;
+  left: 0%;
+  position: fixed;
+  top: 40px;
+  transform: translateX(-100%);
+  transition: transform $transition-duration-fast $transition-ease $transition-duration-slow;
+  width: 100%;
+  z-index: 45;
+
+  &.is-open {
+    transform: translateX(0%);
+    transition: none;
+  }
+
+  .panel {
+    bottom: 0;
+    left: 0%;
+    max-width: 400px;
+    position: absolute;
+    top: 0;
+    transform: translateX(-100%);
+    transition: transform $transition-duration-fast $transition-ease;
+    width: 85%;
+    z-index: 45;
+  }
+
+  .backdrop {
+    background: #000;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity $transition-duration $transition-ease;
+    z-index: 44;
+  }
+
+  &.is-open {
+    .panel {
+      transform: translateX(0%);
+    }
+
+    .backdrop {
+      opacity: 0.6;
     }
   }
 }
