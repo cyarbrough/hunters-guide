@@ -23,5 +23,13 @@ export default Route.extend(HeadTagsMixin, {
    */
   model() {
     return fetch(config.webUrl + 'assets/data/large.monsters.json').then((monsterData) => { return this.handleMonsterSuccess(monsterData); });
+  },
+  
+  actions: {
+    didTransition() {
+      // Need to reset head tags on transition to app,
+      // not sure why title property isn't working in /app
+      this.setHeadTags();
+    }
   }
 });

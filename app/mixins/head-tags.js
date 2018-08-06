@@ -33,7 +33,9 @@ export default Mixin.create({
       title = `${titlePre} :: ${title}`;
     }
 
-    console.log(title);
+    if(typeof document !== 'undefined') {
+      document.title = title;
+    }
 
     tags = [
       // Icon Links
