@@ -1,0 +1,76 @@
+{
+  "data": [
+    {
+      "type": "news-items",
+      "id": "9",
+      "attributes": {
+        "date": "2018-08-02",
+        "title": "Added Behemoth data"
+      }
+    },
+    {
+      "type": "news-items",
+      "id": "8",
+      "attributes": {
+        "date": "2018-07-21",
+        "title": "Released monster breakpoint charts"
+      }
+    },
+    {
+      "type": "news-items",
+      "id": "7",
+      "attributes": {
+        "date": "2018-05-31",
+        "title": "Added Lunastra data"
+      }
+    },
+    {
+      "type": "news-items",
+      "id": "6",
+      "attributes": {
+        "date": "2018-05-10",
+        "title": "Added Strong & Weak Roar data"
+      }
+    },
+    {
+      "type": "news-items",
+      "id": "5",
+      "attributes": {
+        "date": "2018-05-10",
+        "title": "Fixed Kushala data"
+      }
+    },
+    {
+      "type": "news-items",
+      "id": "4",
+      "attributes": {
+        "date": "2018-04-19",
+        "title": "Added Kulve Taroth data"
+      }
+    },
+    {
+      "type": "news-items",
+      "id": "3",
+      "attributes": {
+        "date": "2018-04-08",
+        "title": "Added OR searching via space"
+      }
+    },
+    {
+      "type": "news-items",
+      "id": "2",
+      "attributes": {
+        "date": "2018-03-22",
+        "title": "Added Deviljho data"
+      }
+    },
+    {
+      "type": "news-items",
+      "id": "1",
+      "attributes": {
+        "date": "2018-02-24",
+        "title": "General Release"
+      }
+    }
+  ]
+}

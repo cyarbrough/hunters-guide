@@ -1,0 +1,23 @@
+/**
+  * Styles for news-item component
+  */
+.news-item {
+  .date {
+    border-bottom: 1px solid $color-font-sub;
+    font-style: italic;
+    padding-right: 5px;
+    text-align: right;
+    vertical-align: bottom;
+    width: 20%;
+  }
+
+  .note {
+    border-bottom: 1px dashed $color-font-sub;
+    padding: 10px 0 0 5px;
+  }
+}
+
+.news-table {
+  font-size: 0.9em;
+  width: 100%;
+}

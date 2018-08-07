@@ -19,16 +19,34 @@ export default Route.extend(HeadTagsMixin, {
     };
   },
   /**
+   * Pushes data into the payload, returns
+   * @param {*} itemData
+   */
+  handleNewsItemsSuccess(itemData) {
+    this.get('store').pushPayload(itemData);
+  },
+  /**
    * Main model data for App
    */
   model() {
+    this.preloadNewsItems();
     return fetch(config.webUrl + 'assets/data/large.monsters.json').then((monsterData) => { return this.handleMonsterSuccess(monsterData); });
+  },
+  /**
+   * Fetch news items
+   */
+  preloadNewsItems() {
+    fetch(config.webUrl + 'assets/data/news.json').then(
+      (newsData) => { this.handleNewsItemsSuccess(newsData); }
+    ).catch(
+      (error) => { console.log(error); }
+    );
   },
   
   actions: {
     didTransition() {
-      // Need to reset head tags on transition to app,
-      // not sure why title property isn't working in /app
+      // Need to reset head tags on transition to /app,
+      // not sure why title property isn't working
       this.setHeadTags();
     }
   }
