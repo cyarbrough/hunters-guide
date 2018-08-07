@@ -4,6 +4,6 @@ export default Component.extend({
   /**
    * Overrides
    */
-  classNames: ['news-item'],
+  classNames: ['update-item'],
   tagName: 'tr'
 });

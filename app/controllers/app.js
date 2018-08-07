@@ -17,7 +17,7 @@ export default Controller.extend({
    * Holds the last route the side panel has accessed (not currently setting)
    * @var {string}
    */
-  lastSidePanelRoute: 'app.news',
+  lastSidePanelRoute: 'app.updates',
   /**
    * Holds query term (generally not referenced, use searchTerm instead)
    * @var {string}
@@ -37,7 +37,7 @@ export default Controller.extend({
    * Array of strings, of valid routes for the side panel
    * @var {array}
    */
-  sidePanelRoutes: ['app.news'],
+  sidePanelRoutes: ['app.updates'],
   
   /**
    * Filtered List
@@ -99,7 +99,7 @@ export default Controller.extend({
     let currentRoute = Ember.getOwner(this).lookup('router:main').get('currentRouteName'),
       sidePanelRoutes = this.get('sidePanelRoutes');
 
-    if(sidePanelRoutes.contains(currentRoute)) {
+    if(sidePanelRoutes.includes(currentRoute)) {
       this.get('openSidePanelTask').perform();
     }
   },

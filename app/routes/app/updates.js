@@ -6,14 +6,14 @@ export default Route.extend(HeadTagsMixin, {
    * Lifecycle function
    */
   afterModel() {
-    this.setHeadTags('News');
+    this.setHeadTags('Updates');
   },
   /**
-   * Main model data for /news
+   * Main model data for /updates
    */
   model() {
     return {
-      news: this.get('store').peekAll('news-item')
+      updates: this.get('store').peekAll('update-item')
     };
   },
   /**

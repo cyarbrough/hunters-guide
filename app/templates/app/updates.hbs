@@ -1,0 +1,9 @@
+<h1 class="title">Updates</h1>
+
+{{outlet}}
+
+<table class="update-table">
+  {{#each updateItems as |item|}}
+    {{update-item item=item}}
+  {{/each}}
+</table>

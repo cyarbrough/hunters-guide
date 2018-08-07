@@ -22,22 +22,22 @@ export default Route.extend(HeadTagsMixin, {
    * Pushes data into the payload, returns
    * @param {*} itemData
    */
-  handleNewsItemsSuccess(itemData) {
+  handleUpdateItemsSuccess(itemData) {
     this.get('store').pushPayload(itemData);
   },
   /**
    * Main model data for App
    */
   model() {
-    this.preloadNewsItems();
+    this.preloadUpdateItems();
     return fetch(config.webUrl + 'assets/data/large.monsters.json').then((monsterData) => { return this.handleMonsterSuccess(monsterData); });
   },
   /**
-   * Fetch news items
+   * Fetch update items
    */
-  preloadNewsItems() {
-    fetch(config.webUrl + 'assets/data/news.json').then(
-      (newsData) => { this.handleNewsItemsSuccess(newsData); }
+  preloadUpdateItems() {
+    fetch(config.webUrl + 'assets/data/updates.json').then(
+      (updateData) => { this.handleUpdateItemsSuccess(updateData); }
     ).catch(
       (error) => { console.log(error); }
     );

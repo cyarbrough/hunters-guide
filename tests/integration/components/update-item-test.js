@@ -3,8 +3,8 @@ import { describe, it } from 'mocha';
 import { setupComponentTest } from 'ember-mocha';
 import hbs from 'htmlbars-inline-precompile';
 
-describe('Integration | Component | news item', function() {
-  setupComponentTest('news-item', {
+describe('Integration | Component | update item', function() {
+  setupComponentTest('update-item', {
     integration: true
   });
 
@@ -13,12 +13,12 @@ describe('Integration | Component | news item', function() {
     // Handle any actions with this.on('myAction', function(val) { ... });
     // Template block usage:
     // this.render(hbs`
-    //   {{#news-item}}
+    //   {{#update-item}}
     //     template content
-    //   {{/news-item}}
+    //   {{/update-item}}
     // `);
 
-    this.render(hbs`{{news-item}}`);
+    this.render(hbs`{{update-item}}`);
     expect(this.$()).to.have.length(1);
   });
 });
