@@ -18,6 +18,10 @@ export default Component.extend({
   /**
    * @var {boolean}
    */
+  sidePanelIsOpen: false,
+  /**
+   * @var {boolean}
+   */
   isFocused: false,
   /**
    * @var {boolean}
@@ -70,7 +74,9 @@ export default Component.extend({
       }
     },
     onFocusIn() {
-      this.get('setFocusInTask').perform();
+      if(!this.get('sidePanelIsOpen')){
+        this.get('setFocusInTask').perform();
+      }
     },
     onFocusOut() {
       this.get('setFocusOutTask').perform();

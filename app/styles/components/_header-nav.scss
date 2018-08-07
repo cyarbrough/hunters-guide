@@ -7,12 +7,22 @@
   box-shadow: $shadow-default;
 
   .menu {
-    background: transparent;
+    background-color: $color-bg-main;
     border: 0;
     color: $color-input-bg;
     font-size: 1.15em;
     opacity: 0.5;
-    padding: 0;
+    padding: 8px 10px;
+    transition: all $transition-duration;
+
+    &:focus {
+      outline: none;
+    }
+
+    &.is-open {
+      background-color: $color-bg-panel;
+      opacity: 1;
+    }
   }
 
   .title {
@@ -20,5 +30,13 @@
     font-weight: normal;
     margin: 0;
     padding: 0;
+    transition: opacity $transition-duration-fast;
+  }
+
+  &.side-panel-is-open {
+    .title,
+    .search-filter {
+      opacity: 0.5;
+    }
   }
 }

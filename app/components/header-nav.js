@@ -7,7 +7,7 @@ export default Component.extend({
    * Overrides
    */
   classNames: ['header-nav'],
-  classNameBindings: ['searchIsOpen'],
+  classNameBindings: ['searchIsOpen', 'sidePanelIsOpen'],
   
   actionButton: null,
   actionSearch: null,
@@ -27,6 +27,22 @@ export default Component.extend({
    * @var {string}
    */
   searchTerm: null,
+  /**
+   * @var {boolean}
+   */
+  sidePanelIsOpen: false,
+  /**
+   * Classes for menu button
+   * @var {string}
+   */
+  classNamesButton: computed('sidePanelIsOpen', function() {
+    let classes = 'menu';
+
+    if(this.get('sidePanelIsOpen')){
+      classes += ' is-open';
+    }
+    return classes;
+  }),
 
   actions: {
     inputFocused(value) {
