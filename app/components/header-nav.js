@@ -18,6 +18,10 @@ export default Component.extend({
   /**
    * @var {boolean}
    */
+  hasAlert: false,
+  /**
+   * @var {boolean}
+   */
   openSearch: false,
   /**
    * @var {boolean}
@@ -35,11 +39,14 @@ export default Component.extend({
    * Classes for menu button
    * @var {string}
    */
-  classNamesButton: computed('sidePanelIsOpen', function() {
+  classNamesButton: computed('sidePanelIsOpen', 'hasAlert', function() {
     let classes = 'menu';
 
     if(this.get('sidePanelIsOpen')){
       classes += ' is-open';
+    }
+    if(this.get('hasAlert')){
+      classes += ' has-alert';
     }
     return classes;
   }),

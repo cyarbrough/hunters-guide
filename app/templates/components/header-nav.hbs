@@ -1,5 +1,12 @@
 <button class="{{classNamesButton}}" aria-hidden="true" {{action actionButton}}>
-  <i class="fas fa-paw"></i>
+  <span class="fa-stack">
+    {{#if hasAlert}}
+      <i class="fas fa-circle fa-stack-1x outliner"></i>
+      <i class="fas fa-info-circle fa-inverse fa-stack-1x"></i>
+    {{else}}
+      <i class="fas fa-paw fa-stack-1x"></i>
+    {{/if}}
+  </span>
 </button>
 <h1 class="title">
   Hunter's Field Guide
@@ -7,5 +14,5 @@
 {{search-filter 
   sidePanelIsOpen=sidePanelIsOpen
   searchTerm=(readonly searchTerm) 
-  actionSearch=(action actionSearch)
-  }}
+  actionSearch=(action actionSearch)}}
+  

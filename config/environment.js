@@ -47,7 +47,7 @@ module.exports = function(environment) {
     ENV.emberTracker.analyticsSettings.LOG_EVENTS = true;
 
     ENV.webUrl = 'http://localhost:4200/';
-    // ENV.webUrl = 'http://192.168.1.14:4200/';
+    // ENV.webUrl = 'http://192.168.1.13:4200/';
     
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
