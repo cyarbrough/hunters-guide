@@ -5,7 +5,7 @@
   actionButton=(action "toggleSidePanel")
 }}
 <div class="container">
-  {{#side-panel isOpen=sidePanelIsOpen}}
+  {{#side-panel isOpen=sidePanelIsOpen actionClose=(action "toggleSidePanel")}}
     {{outlet "side-panel"}}
   {{/side-panel}}
 

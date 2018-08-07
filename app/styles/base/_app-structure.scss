@@ -77,14 +77,11 @@
   }
 
   .backdrop {
-    background: #000;
     bottom: 0;
     left: 0;
-    opacity: 0;
     position: absolute;
     right: 0;
     top: 0;
-    transition: opacity $transition-duration $transition-ease;
     z-index: 44;
   }
 
