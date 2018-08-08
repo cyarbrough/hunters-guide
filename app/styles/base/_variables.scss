@@ -25,22 +25,8 @@ $transition-duration: 0.5s;
 $transition-duration-fast: 0.3s;
 $transition-duration-slow: 0.8s;
 $transition-duration-very-slow: 1s;
-$transition-duration-pulse: 10s;
+$transition-duration-pulse: 9s;
 $transition-ease: cubic-bezier(0.42, 0, 0.58, 1);
 
 /******************************** Shadows */
 $shadow-default: 1px 1px 1px rgba(10, 10, 10, 0.5);
-
-@keyframes pulse {
-  35% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.25;
-  }
-
-  60% {
-    opacity: 1;
-  }
-}

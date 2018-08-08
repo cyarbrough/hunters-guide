@@ -26,20 +26,7 @@
     }
 
     &.has-alert {
-      color: $color-alert;
-      opacity: 1;
-    }
-
-    .fa-stack,
-    .outliner {
-      height: 1.25em;
-      vertical-align: middle;
-      width: 1.25em;
-    }
-
-    .fa-inverse {
-      animation: pulse $transition-duration-pulse infinite;
-      color: $color-bg-main;
+      animation: menu-pulse $transition-duration-pulse infinite;
     }
   }
 
@@ -56,5 +43,22 @@
     .search-filter {
       opacity: 0.5;
     }
+  }
+}
+
+@keyframes menu-pulse {
+  35% {
+    color: $color-input-bg;
+    opacity: 0.5;
+  }
+
+  50% {
+    color: $color-alert;
+    opacity: 1;
+  }
+
+  60% {
+    color: $color-input-bg;
+    opacity: 0.5;
   }
 }
