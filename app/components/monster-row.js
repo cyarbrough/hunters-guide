@@ -45,13 +45,15 @@ export default Component.extend(InViewportMixin, {
    * Sends logEvent action with Open/Close panel info
    */
   logToggle() {
-    let action = 'Close Panel',
+    let action = 'Close ',
       isAlt = this.get('showAlternate'),
+      name = this.get('monster.name'),
       slug = this.get('monster.slug');
 
     if(isAlt) {
-      action = 'Open Panel';
+      action = 'Open ';
     }
+    action += name;
     this.logEvent('Monster', action, slug);
   },
   /**

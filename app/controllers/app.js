@@ -155,7 +155,20 @@ export default Controller.extend({
     
     // Set term
     this.set('searchQuery', searchTerm);
+    this.logSearch(searchTerm);
   }).restartable(),
+
+  /**
+   * Checks status of searchTerm, and send appropriate log event
+   * @param {string} searchTerm
+   */
+  logSearch(searchTerm) {
+    if(searchTerm) {
+      this.send('logEvent', 'Search', searchTerm);
+    } else {
+      this.send('logEvent', 'Search Cleared', '');
+    }
+  },
 
   /**
    * Checks a monster object for search terms
@@ -194,8 +207,12 @@ export default Controller.extend({
     this.toggleProperty('sidePanelIsOpen');
     // If side panels opens, go to lastSidePanelRoute
     if(this.get('sidePanelIsOpen')) {
-      this.transitionToRoute(this.get('lastSidePanelRoute'));
+      let route = this.get('lastSidePanelRoute');
+
+      this.send('logEvent', 'Side Panel', 'Open Side Panel to ' + route);
+      this.transitionToRoute(route);
     } else {
+      this.send('logEvent', 'Side Panel', 'Close Side Panel');
       this.get('transitionToAppTask').perform();
     }
     this.toggleNoScroll();
