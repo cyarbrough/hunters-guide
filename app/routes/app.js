@@ -2,8 +2,10 @@ import Route from '@ember/routing/route';
 import fetch from 'ember-fetch/ajax';
 import config from 'hunters-guide/config/environment';
 import HeadTagsMixin from 'hunters-guide/mixins/head-tags';
+import { inject as service } from '@ember/service';
 
 export default Route.extend(HeadTagsMixin, {
+  alertCenter: service(),
   /**
    * Pushes data into the payload, returns
    * @param {*} monsterData
@@ -23,7 +25,12 @@ export default Route.extend(HeadTagsMixin, {
    * @param {*} itemData
    */
   handleUpdateItemsSuccess(itemData) {
-    this.get('store').pushPayload(itemData);
+    let data, store = this.get('store');
+
+    store.pushPayload(itemData);
+
+    data = store.peekAll('update-item');
+    this.get('alertCenter').checkForUpdateAlerts(data);
   },
   /**
    * Main model data for App

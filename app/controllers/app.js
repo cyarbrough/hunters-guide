@@ -1,11 +1,14 @@
 import Controller from '@ember/controller';
-import Ember from 'ember';
 import { task, timeout } from 'ember-concurrency';
-const { $, computed, observer } = Ember;
+import { inject as service } from '@ember/service';
+import { computed, observer } from '@ember/object';
+import Ember from 'ember';
+
+const { $ } = Ember;
 const TIMER_TRANSITION_FAST = 300;
 
 export default Controller.extend({
-  googleAnalytics: Ember.inject.service(),
+  googleAnalytics: service(),
   /**
    * Overrides
    */
@@ -108,7 +111,7 @@ export default Controller.extend({
    * @var {task; drops}
    * @param {numer} timer
    */
-  openSidePanelTask: task(function * (timer = 150) {
+  openSidePanelTask: task(function * (timer = 50) {
     yield timeout(timer);
     this.set('sidePanelIsOpen', true);
   }).drop(),

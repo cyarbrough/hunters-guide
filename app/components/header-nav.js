@@ -1,8 +1,9 @@
 import Component from '@ember/component';
-import Ember from 'ember';
-const { computed } = Ember;
+import { inject as service } from '@ember/service';
+import { computed } from '@ember/object';
 
 export default Component.extend({
+  alertCenter: service(),
   /**
    * Overrides
    */
@@ -18,7 +19,7 @@ export default Component.extend({
   /**
    * @var {boolean}
    */
-  hasAlert: false,
+  hasAlert: computed.alias('alertCenter.hasAlerts'),
   /**
    * @var {boolean}
    */
