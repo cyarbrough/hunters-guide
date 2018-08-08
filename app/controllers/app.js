@@ -2,12 +2,14 @@ import Controller from '@ember/controller';
 import { task, timeout } from 'ember-concurrency';
 import { inject as service } from '@ember/service';
 import { computed, observer } from '@ember/object';
+import { alias } from '@ember/object/computed';
 import Ember from 'ember';
 
 const { $ } = Ember;
 const TIMER_TRANSITION_FAST = 300;
 
 export default Controller.extend({
+  settings: service(),
   googleAnalytics: service(),
   /**
    * Overrides
@@ -41,6 +43,11 @@ export default Controller.extend({
    * @var {array}
    */
   sidePanelRoutes: ['app.updates'],
+  /**
+   * Indicates if sorting monsters by alpha
+   * @var {boolean}
+   */
+  sortAlpha: alias('settings.sortAlpha'),
   
   /**
    * Filtered List
@@ -68,7 +75,12 @@ export default Controller.extend({
    * @var {array}
    */
   monsterList: computed.sort('monstersFiltered', 'monsterSort'),
-  monsterSort: ['id:asc'],
+  monsterSort: computed('sortAlpha', function() {
+    if(this.get('sortAlpha')) {
+      return ['id:asc'];
+    }
+    return ['order:asc'];
+  }),
 
   /**
    * Sets searchTerm when searchQuery loads, if searchTerm is not set

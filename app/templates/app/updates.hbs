@@ -1,7 +1,35 @@
-<h1 class="title">Updates</h1>
-
 {{outlet}}
+<fieldset class="settings">
+  <legend>Settings</legend>
+  <div name="sortBy" class="sort-radios">
+    <div class="label">Sort Monsters by</div>
+    <div class="items">
+      {{#radio-button
+        value='guide'
+        groupValue=groupValue
+        name='sort'
+        changed='toggleSort'
+        classNames='radio-label'
+      }}
+          {{radio-icon radioOn=sortGuide}}
+          Guide
+      {{/radio-button}}
 
+      {{#radio-button
+        value='alpha'
+        groupValue=groupValue
+        name='sort'
+        changed='toggleSort'
+        classNames='radio-label'
+      }}
+          {{radio-icon radioOn=sortAlpha}}
+          Name
+      {{/radio-button}}
+    </div>
+  </div>
+</fieldset>
+
+<h2 class="title">Updates</h2>
 <table class="update-table">
   {{#each updateItems as |item|}}
     {{update-item item=item}}

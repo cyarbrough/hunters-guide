@@ -6,6 +6,7 @@
       "attributes": {
         "name": "Anjanath",
         "slug": "anjanath",
+        "order": 7,
         "physiology": {
           "fire": 0,
           "water": 3,
@@ -59,6 +60,7 @@
       "attributes": {
         "name": "Barroth (Mud)",
         "slug": "barroth",
+        "order": 4,
         "physiology": {
           "fire": 3,
           "fireAlt": 0,
@@ -118,6 +120,7 @@
       "attributes": {
         "name": "Bazelgeuse",
         "slug": "bazelgeuse",
+        "order": 21,
         "physiology": {
           "fire": 0,
           "water": 1,
@@ -178,6 +181,7 @@
       "attributes": {
         "name": "Behemoth",
         "slug": "behemoth",
+        "order": 34,
         "physiology": {
           "fire": 1,
           "water": 2,
@@ -228,6 +232,7 @@
       "attributes": {
         "name": "Deviljho",
         "slug": "deviljho",
+        "order": 22,
         "physiology": {
           "fire": 2,
           "water": 2,
@@ -281,6 +286,7 @@
       "attributes": {
         "name": "Diablos",
         "slug": "diablos",
+        "order": 16,
         "physiology": {
           "fire": 0,
           "water": 2,
@@ -348,6 +354,7 @@
       "attributes": {
         "name": "Black Diablos",
         "slug": "black-diablos",
+        "order": 26,
         "physiology": {
           "fire": 0,
           "water": 2,
@@ -415,6 +422,7 @@
       "attributes": {
         "name": "Dodogama",
         "slug": "dodogama",
+        "order": 19,
         "physiology": {
           "fire": 0,
           "water": 2,
@@ -468,6 +476,7 @@
       "attributes": {
         "name": "Great Girros",
         "slug": "great-girros",
+        "order": 11,
         "physiology": {
           "fire": 2,
           "water": 3,
@@ -522,6 +531,7 @@
       "attributes": {
         "name": "Great Jagras",
         "slug": "great-jagras",
+        "order": 1,
         "physiology": {
           "fire": 3,
           "water": 0,
@@ -571,6 +581,7 @@
       "attributes": {
         "name": "Jyuratodus (Mud)",
         "slug": "jyuratodus",
+        "order": 5,
         "physiology": {
           "fire": 1,
           "fireAlt": 0,
@@ -630,6 +641,7 @@
       "attributes": {
         "name": "Kirin",
         "slug": "kirin",
+        "order": 17,
         "physiology": {
           "fire": 3,
           "water": 2,
@@ -675,6 +687,7 @@
       "attributes": {
         "name": "Kulu-Ya-Ku",
         "slug": "kulu-ya-ku",
+        "order": 2,
         "physiology": {
           "fire": 2,
           "water": 3,
@@ -715,6 +728,7 @@
       "attributes": {
         "name": "Kulve Taroth (Golden)",
         "slug": "kulve-taroth",
+        "order": 32,
         "physiology": {
           "fire": 0,
           "fireAlt": 1,
@@ -787,6 +801,7 @@
       "attributes": {
         "name": "Kushala Daora",
         "slug": "kushala-daora",
+        "order": 30,
         "physiology": {
           "fire": 1,
           "water": 0,
@@ -846,6 +861,7 @@
       "attributes": {
         "name": "Lavasioth (Hard)",
         "slug": "lavasioth",
+        "order": 23,
         "physiology": {
           "fire": 0,
           "fireAlt": 1,
@@ -910,6 +926,7 @@
       "attributes": {
         "name": "Legiana",
         "slug": "legiana",
+        "order": 13,
         "physiology": {
           "fire": 2,
           "water": 1,
@@ -970,6 +987,7 @@
       "attributes": {
         "name": "Lunastra",
         "slug": "lunastra",
+        "order": 29,
         "physiology": {
           "fire": 0,
           "water": 1,
@@ -1025,6 +1043,7 @@
       "attributes": {
         "name": "Nergigante",
         "slug": "nergigante",
+        "order": 27,
         "physiology": {
           "fire": 1,
           "water": 1,
@@ -1081,6 +1100,7 @@
       "attributes": {
         "name": "Odogaron",
         "slug": "odogaron",
+        "order": 14,
         "physiology": {
           "fire": 1,
           "water": 1,
@@ -1141,6 +1161,7 @@
       "attributes": {
         "name": "Paolumu",
         "slug": "paolumu",
+        "order": 10,
         "physiology": {
           "fire": 3,
           "water": 0,
@@ -1201,6 +1222,7 @@
       "attributes": {
         "name": "Pukei-Pukei",
         "slug": "pukei-pukei",
+        "order": 3,
         "physiology": {
           "fire": 2,
           "water": 0,
@@ -1261,6 +1283,7 @@
       "attributes": {
         "name": "Radobaan",
         "slug": "radobaan",
+        "order": 12,
         "physiology": {
           "fire": 1,
           "water": 1,
@@ -1318,6 +1341,7 @@
       "attributes": {
         "name": "Rathalos",
         "slug": "rathalos",
+        "order": 15,
         "physiology": {
           "fire": 0,
           "water": 1,
@@ -1380,6 +1404,7 @@
       "attributes": {
         "name": "Azure Rathalos",
         "slug": "azure-rathalos",
+        "order": 25,
         "physiology": {
           "fire": 0,
           "water": 1,
@@ -1442,6 +1467,7 @@
       "attributes": {
         "name": "Rathian",
         "slug": "rathian",
+        "order": 8,
         "physiology": {
           "fire": 0,
           "water": 1,
@@ -1503,6 +1529,7 @@
       "attributes": {
         "name": "Pink Rathian",
         "slug": "pink-rathian",
+        "order": 20,
         "physiology": {
           "fire": 0,
           "water": 1,
@@ -1564,6 +1591,7 @@
       "attributes": {
         "name": "Teostra",
         "slug": "teostra",
+        "order": 28,
         "physiology": {
           "fire": 0,
           "water": 3,
@@ -1620,6 +1648,7 @@
       "attributes": {
         "name": "Tobi-Kadachi",
         "slug": "tobi-kadachi",
+        "order": 6,
         "physiology": {
           "fire": 2,
           "water": 3,
@@ -1677,6 +1706,7 @@
       "attributes": {
         "name": "Tzitzi-Ya-Ku",
         "slug": "tzitzi-ya-ku",
+        "order": 9,
         "physiology": {
           "fire": 2,
           "water": 2,
@@ -1717,6 +1747,7 @@
       "attributes": {
         "name": "Uragaan",
         "slug": "uragaan",
+        "order": 24,
         "physiology": {
           "fire": 0,
           "water": 3,
@@ -1775,6 +1806,7 @@
       "attributes": {
         "name": "Vaal Hazak",
         "slug": "vaal-hazak",
+        "order": 31,
         "physiology": {
           "fire": 3,
           "water": 0,
@@ -1835,6 +1867,7 @@
       "attributes": {
         "name": "Xeno'jiiva",
         "slug": "xeno-jiiva",
+        "order": 33,
         "physiology": {
           "fire": 2,
           "water": 2,
@@ -1895,6 +1928,7 @@
       "attributes": {
         "name": "Zorah Magdaros",
         "slug": "zorah-magdaros",
+        "order": 18,
         "physiology": {
           "fire": 0,
           "water": 3,

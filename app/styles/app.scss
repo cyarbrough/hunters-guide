@@ -1,7 +1,7 @@
 @import 'base/variables';
 @import 'base/app-structure';
-@import 'components/header-nav';
-@import 'components/side-panel';
+
+@import 'components/radio-icon';
 @import 'components/update-item';
 @import 'components/search-filter';
 @import 'components/monster-row';
@@ -10,7 +10,11 @@
 @import 'components/ailment-info';
 @import 'components/status-rating';
 @import 'components/monster-logo';
+
 @import 'components/footer-nav';
+@import 'components/header-nav';
+@import 'components/side-panel';
+@import 'app/settings';
 
 .ember-application {
   background: $color-bg-main;

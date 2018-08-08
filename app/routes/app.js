@@ -46,7 +46,7 @@ export default Route.extend(HeadTagsMixin, {
     fetch(config.webUrl + 'assets/data/updates.json').then(
       (updateData) => { this.handleUpdateItemsSuccess(updateData); }
     ).catch(
-      (error) => { console.log(error); }
+      (/*error*/) => { /* crap */ }
     );
   },
   

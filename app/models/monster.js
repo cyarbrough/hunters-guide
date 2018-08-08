@@ -3,7 +3,7 @@ const { attr, belongsTo, hasMany, Model } = DS;
 
 export default Model.extend({
   name: attr('string'),
-  moreLink: attr('string'),
+  order: attr('number'),
   physiology: attr(),
   weaknesses: attr(),
   breakpoints: attr(),

@@ -1,0 +1,23 @@
+/**
+  * Styles for radio-icon component
+  */
+
+.radio-label {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  
+  input {
+    left: -25px;
+    position: absolute;
+    top: 0;
+  }
+}
+
+.radio-icon {
+  color: $color-font-sub;
+
+  &.is-on {
+    color: $color-font-default;
+  }
+}
