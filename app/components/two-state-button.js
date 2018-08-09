@@ -6,7 +6,7 @@ export default Component.extend({
    * Overrides
    */
   classNames: ['two-state'],
-  tagName: ['button'],
+  tagName: 'button',
 
   /**
    * Passed-in actions
