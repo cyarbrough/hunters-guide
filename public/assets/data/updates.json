@@ -2,6 +2,22 @@
   "data": [
     {
       "type": "update-items",
+      "id": "11",
+      "attributes": {
+        "date": "2018-08-08",
+        "title": "Added monster sorting options"
+      }
+    },
+    {
+      "type": "update-items",
+      "id": "10",
+      "attributes": {
+        "date": "2018-08-07",
+        "title": "Added updates panel"
+      }
+    },
+    {
+      "type": "update-items",
       "id": "9",
       "attributes": {
         "date": "2018-08-02",

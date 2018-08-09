@@ -10,7 +10,7 @@ export default Route.extend(HeadTagsMixin, {
   /**
    * Lifecycle function
    */
-  afterModel() {
+  beforeModel() {
     this.get('settings').getSettings();
   },
   /**

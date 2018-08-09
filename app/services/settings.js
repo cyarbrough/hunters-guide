@@ -8,6 +8,12 @@ export default Service.extend({
   cookies: service(),
   googleAnalytics: service(),
   moment: service(),
+
+  /**
+   * Last time user checked updates
+   * @var {date}
+   */
+  lastCheck: null,
   /**
    * Indicates if user is remembered
    * @var {boolean}
@@ -47,6 +53,7 @@ export default Service.extend({
     if(settings){
       set(this, 'rememberUser', true);
       set(this, 'sortAlpha', settings.sortAlpha);
+      set(this, 'lastCheck', settings.lastCheck);
     }
   },
   /**
@@ -55,6 +62,7 @@ export default Service.extend({
   rememberUserSettings() {
     set(this, 'rememberUser', true);
     this.saveSettings();
+    get(this, 'googleAnalytics').event('Setting', 'Remember Me');
   },
   /**
    * Resets all settings
@@ -87,7 +95,7 @@ export default Service.extend({
     if(get(this, 'rememberUser')) {
       settings = Base64.encode(JSON.stringify({
         sortAlpha: get(this, 'sortAlpha'),
-        lastLogin: new Date().getTime()
+        lastCheck: new Date().getTime()
       }));
 
       cookieService.write(COOKIE_NAME, settings, { expires });
