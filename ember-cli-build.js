@@ -31,6 +31,11 @@ module.exports = function(defaults) {
 
   app.import('vendor/fa/fontawesome.min.js');
   app.import('vendor/fa/fa-solid.min.js');
+  app.import('node_modules/js-base64/base64.js', {
+    using: [
+      { transformation: 'amd', as: 'base64' }
+    ]
+  });
 
   return app.toTree();
 };

@@ -34,6 +34,12 @@ export default Controller.extend({
 
   actions: {
     /**
+     * Calls settings.rememberUserSettings
+     */
+    rememberUser() {
+      get(this, 'settings').rememberUserSettings();
+    },
+    /**
      * Calls settings.toggleSort, and scrolls to top
      */
     toggleSort() {

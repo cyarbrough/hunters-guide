@@ -6,6 +6,13 @@ import { inject as service } from '@ember/service';
 
 export default Route.extend(HeadTagsMixin, {
   alertCenter: service(),
+  settings: service(),
+  /**
+   * Lifecycle function
+   */
+  afterModel() {
+    this.get('settings').getSettings();
+  },
   /**
    * Pushes data into the payload, returns
    * @param {*} monsterData

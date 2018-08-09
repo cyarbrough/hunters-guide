@@ -28,6 +28,9 @@ module.exports = function(environment) {
       analyticsSettings: {
         trackingId: 'UA-########-#'
       }
+    },
+    fastboot: {
+      hostWhitelist: ['hunters-guide.herokuapp.com', /^localhost:\d+$/]
     }
   };
 
