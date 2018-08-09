@@ -27,7 +27,13 @@
       {{/radio-button}}
     </div>
   </div>
-  <button {{action 'rememberUser'}}>Remember Me</button>
+  {{two-state-button
+    on=rememberUser
+    labelOn="Forget Me"
+    labelOff="Remember Me"
+    actionOn=(action 'forgetUser')
+    actionOff=(action 'rememberUser')
+  }}
 </fieldset>
 
 <h2 class="title">Updates</h2>

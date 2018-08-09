@@ -7,6 +7,7 @@ const COOKIE_NAME = 'hg-settings';
 export default Service.extend({
   cookies: service(),
   googleAnalytics: service(),
+  moment: service(),
   /**
    * Indicates if user is remembered
    * @var {boolean}
@@ -18,6 +19,13 @@ export default Service.extend({
    */
   sortAlpha: false,
 
+  /**
+   * Deletes cookie, resets settings
+   */
+  forgetUserSettings() {
+    get(this, 'cookies').clear(COOKIE_NAME);
+    this.resetService();
+  },
   /**
    * Gets settings from settings cookie
    */
@@ -49,6 +57,13 @@ export default Service.extend({
     this.saveSettings();
   },
   /**
+   * Resets all settings
+   */
+  resetService() {
+    set(this, 'sortAlpha', false);
+    set(this, 'rememberUser', false);
+  },
+  /**
    * Toggles sort value, sends tracking event
    */
   toggleSort() {
@@ -66,6 +81,7 @@ export default Service.extend({
    */
   saveSettings() {
     let cookieService = get(this, 'cookies'),
+      expires = this.get('moment').moment().add(3, 'M').toDate(),
       settings = {};
 
     if(get(this, 'rememberUser')) {
@@ -74,7 +90,7 @@ export default Service.extend({
         lastLogin: new Date().getTime()
       }));
 
-      cookieService.write(COOKIE_NAME, settings);
+      cookieService.write(COOKIE_NAME, settings, { expires });
     }
   }
 });

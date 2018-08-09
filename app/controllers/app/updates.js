@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
 import { computed, get } from '@ember/object';
-import { alias, not } from '@ember/object/computed';
+import { not, oneWay } from '@ember/object/computed';
 import Ember from 'ember';
 
 const { $ } = Ember;
@@ -19,10 +19,15 @@ export default Controller.extend({
     return 'guide';
   }),
   /**
+   * Indicates if user is remembered; alias
+   * @var {boolean}
+   */
+  rememberUser: oneWay('settings.rememberUser'),
+  /**
    * Indicates if monsters are sorted by alpha; alias
    * @var {boolean}
    */
-  sortAlpha: alias('settings.sortAlpha'),
+  sortAlpha: oneWay('settings.sortAlpha'),
   sortGuide: not('sortAlpha'),
   /**
    * Collection of update items
@@ -33,6 +38,12 @@ export default Controller.extend({
   }),
 
   actions: {
+    /**
+     * Calls settings.forgetUserSettings
+     */
+    forgetUser() {
+      get(this, 'settings').forgetUserSettings();
+    },
     /**
      * Calls settings.rememberUserSettings
      */
