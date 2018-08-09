@@ -77,8 +77,10 @@ export default Controller.extend({
   monsterList: computed.sort('monstersFiltered', 'monsterSort'),
   monsterSort: computed('sortAlpha', function() {
     if(this.get('sortAlpha')) {
+      this.send('logEvent', 'Monster List', 'Sort by Alpha');
       return ['id:asc'];
     }
+    this.send('logEvent', 'Monster List', 'Sort by Guide');
     return ['order:asc'];
   }),
 
