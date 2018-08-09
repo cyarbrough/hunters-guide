@@ -1,0 +1,23 @@
+/**
+  * Styles for two state button component
+  */
+
+.two-state {
+  background-color: $color-button-bg;
+  border: 2px solid $color-input-bg-sub;
+  color: $color-input-bg-sub;
+  display: block;
+  font-size: 1em;
+  padding: 5px 25px;
+  transition: all $transition-duration $transition-ease;
+
+  &.is-on {
+    background-color: $color-input-bg-sub;
+    border: 2px solid $color-button-bg;
+    color: $color-button-bg;
+  }
+
+  &.remember-me {
+    margin: 20px auto 0;
+  }
+}

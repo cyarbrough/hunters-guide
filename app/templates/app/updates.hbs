@@ -28,7 +28,8 @@
     </div>
   </div>
   {{two-state-button
-    on=rememberUser
+    classNames='remember-me'
+    isOn=rememberUser
     labelOn="Forget Me"
     labelOff="Remember Me"
     actionOn=(action 'forgetUser')

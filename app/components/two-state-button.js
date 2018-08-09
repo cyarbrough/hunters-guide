@@ -6,6 +6,7 @@ export default Component.extend({
    * Overrides
    */
   classNames: ['two-state'],
+  classNameBindings: ['isOn'],
   tagName: 'button',
 
   /**
@@ -16,19 +17,19 @@ export default Component.extend({
   /**
    * @var {boolean}
    */
-  on: false,
+  isOn: false,
   labelOn: 'LABEL ON',
   labelOff: 'LABEL OFF',
 
-  label: computed('labelOn', 'labelOff', 'on', function() {
-    if(get(this, 'on')) {
+  label: computed('labelOn', 'labelOff', 'isOn', function() {
+    if(get(this, 'isOn')) {
       return get(this, 'labelOn');
     }
     return get(this, 'labelOff');
   }),
 
   click() {
-    if(get(this, 'on')) {
+    if(get(this, 'isOn')) {
       this.actionOn();
     } else {
       this.actionOff();
