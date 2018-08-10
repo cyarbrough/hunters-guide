@@ -37,6 +37,14 @@ $status-list: blast
   padding-left: $icon-size;
   white-space: nowrap;
 
+  &.is-label {
+    font-size: 0.9em;
+
+    .is-text {
+      padding: 2px 0 0 5px;
+    }
+  }
+
   &.is-rating-1 {
     opacity: 0.33;
   }

@@ -10,6 +10,7 @@ const Router = EmberRouter.extend(GoogleAnalyticsRoute, {
 Router.map(function() {
   this.route('app', { path: '/' }, function() {
     this.route('updates');
+    this.route('help');
   });
 });
 

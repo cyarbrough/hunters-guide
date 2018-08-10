@@ -13,6 +13,10 @@ export default Component.extend({
    */
   elementType: 'unknown',
   /**
+   * @var {boolean}
+   */
+  noRating: false,
+  /**
    * @var {integer}
    */
   ratingAmount: 0,
@@ -39,6 +43,9 @@ export default Component.extend({
   starClassName: computed('ratingAmount', function() {
     let rating = this.get('ratingAmount') || 0;
     
+    if(this.get('noRating')){
+      return 'is-label';
+    }
     return `is-rating-${rating}`;
   }),
   /**

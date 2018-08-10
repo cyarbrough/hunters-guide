@@ -1,0 +1,72 @@
+<div class="help">
+  {{outlet}}
+  <h2 class="title">Help!</h2>
+  <h3 class="subtitle">A Quick Guide to the Guide</h3>
+  <p>This field guide is designed to suppliment the Hunter's Guide in 
+    Monster Hunter World, and reflects how it is presented in-game.</p>
+  <p>It is of most use once familiar with the game and have regular access 
+    to status weapons.</p>
+
+  <fieldset class="status-legend">
+    <legend>Legend</legend>
+
+    <div class="status-grid">
+      <div class="element-grid">
+        {{status-rating elementType="fire" noRating=true}}
+        {{status-rating elementType="water" noRating=true}}
+        {{status-rating elementType="thunder" noRating=true}}
+        {{status-rating elementType="ice" noRating=true}}
+        {{status-rating elementType="dragon" noRating=true}}
+      </div>
+      <div class="ailment-grid">
+        {{status-rating elementType="poison" noRating=true}}
+        {{status-rating elementType="sleep" noRating=true}}
+        {{status-rating elementType="paralysis" noRating=true}}
+        {{status-rating elementType="blast" noRating=true}}
+        {{status-rating elementType="stun" noRating=true}}
+      </div>
+    </div>
+    <div class="weakness-grid">
+      {{status-rating elementType="cut" noRating=true}}
+      {{status-rating elementType="blunt" noRating=true}}
+      {{status-rating elementType="ammo" noRating=true}}
+    </div>
+  </fieldset>
+
+  <h3 class="subtitle">Using the Guide</h3>
+  <ul class="tip-list">
+    <li>When picking an element or status to hunt a monster, use an element with more stars:
+    <ul class="sub-list">
+      <li>{{status-rating elementType="fire" ratingAmount=3}}</li>
+      <li>{{status-rating elementType="water" ratingAmount=2}}</li>
+      <li>{{status-rating elementType="thunder" ratingAmount=1}}</li>
+    </ul>
+    </li>
+    <li>Avoid using elements marked with an X:
+      <ul class="sub-list">
+        <li>{{status-rating elementType="ice" ratingAmount=0}}</li>
+      </ul>
+    </li>
+    <li class="monster-weakness is-active">When attacking a monster, focus on areas in red or yellow, or areas marked as 'breakable' or 'severable.'
+      <div class="monster-logos">
+        <div class="monster-logo is-great-jagras is-alt"></div>
+        <div class="monster-logo is-barroth is-alt"></div>
+      </div>
+    </li>
+    <li>Weapon types can also do more damage against different areas.
+      <ul class="sub-list">
+        <li>{{status-rating elementType="cut" ratingAmount=3}}</li>
+        <li>{{status-rating elementType="blunt" ratingAmount=2}}</li>
+        <li>{{status-rating elementType="ammo" ratingAmount=1}}</li>
+      </ul>
+    </li>
+    <li class="blight-warning"> Block blight effects by raising the blight armor stat above 20.
+      <ul class="sub-list">
+        {{#each ailmentList as |ailment|}}
+          <li>{{ailment-info ailment=ailment}}</li>
+        {{/each}}
+      </ul>
+    </li>
+    <li class="stun-warning">{{status-rating elementType="stun" noRating=true}} All monsters can stun!</li>
+  </ul>
+</div>

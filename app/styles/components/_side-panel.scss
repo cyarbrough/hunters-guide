@@ -14,6 +14,13 @@
     padding: 0;
   }
 
+  .subtitle {
+    font-size: 1.1em;
+    font-style: italic;
+    margin: 0 0 10px 10px;
+    opacity: 0.9;
+  }
+
   .backdrop {
     background-color: $color-bg-panel-backdrop;
     opacity: 0;

@@ -42,7 +42,7 @@ export default Controller.extend({
    * Array of strings, of valid routes for the side panel
    * @var {array}
    */
-  sidePanelRoutes: ['app.updates'],
+  sidePanelRoutes: ['app.updates', 'app.help'],
   /**
    * Indicates if sorting monsters by alpha
    * @var {boolean}
