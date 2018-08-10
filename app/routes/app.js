@@ -62,6 +62,12 @@ export default Route.extend(HeadTagsMixin, {
       // Need to reset head tags on transition to /app,
       // not sure why title property isn't working
       this.setHeadTags();
+    },
+    /**
+     * Updates last visited route
+     */
+    updateLastSidePanelRoute(route) {
+      this.get('controller').set('lastSidePanelRoute', route);
     }
   }
 });

@@ -1,0 +1,26 @@
+/**
+  * Styles for side-panel-tabs component
+  */
+
+.side-panel-tabs {
+  padding: 0;
+
+  .is-tab {
+    color: $color-link;
+    display: block;
+    opacity: 1;
+    padding: 10px;
+    transition: all $transition-duration-fast;
+
+    &.active {
+      color: $color-link-active;
+      text-decoration: underline;
+      
+      &.is-updates {
+        opacity: 0;
+      }
+    }
+  }
+
+  
+}

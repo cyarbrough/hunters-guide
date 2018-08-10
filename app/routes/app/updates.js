@@ -31,6 +31,7 @@ export default Route.extend(HeadTagsMixin, {
   actions: {
     didTransition() {
       get(this, 'alertCenter').clearUpdateAlerts(2000);
+      this.send('updateLastSidePanelRoute', this.get('routeName'));
     },
     willTransition() {
       get(this, 'alertCenter').clearUpdateAlerts();

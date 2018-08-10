@@ -15,5 +15,10 @@ export default Route.extend(HeadTagsMixin, {
     this.render({
       outlet: 'side-panel'
     });
+  },
+  actions: {
+    didTransition() {
+      this.send('updateLastSidePanelRoute', this.get('routeName'));
+    }
   }
 });

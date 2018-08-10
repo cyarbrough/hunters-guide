@@ -19,9 +19,10 @@ export default Controller.extend({
   },
 
   /**
-   * Holds the last route the side panel has accessed (not currently setting)
+   * Holds the last route the side panel has accessed
    * @var {string}
    */
+  defaultsidePanelRoute: 'app.updates',
   lastSidePanelRoute: 'app.updates',
   /**
    * Holds query term (generally not referenced, use searchTerm instead)
@@ -209,7 +210,7 @@ export default Controller.extend({
     this.toggleProperty('sidePanelIsOpen');
     // If side panels opens, go to lastSidePanelRoute
     if(this.get('sidePanelIsOpen')) {
-      let route = this.get('lastSidePanelRoute');
+      let route = this.get('lastSidePanelRoute') || this.get('defaultsidePanelRoute');
 
       this.send('logEvent', 'Side Panel', 'Open Side Panel to ' + route);
       this.transitionToRoute(route);

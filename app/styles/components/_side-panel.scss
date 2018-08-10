@@ -5,16 +5,18 @@
 .side-panel {
   .panel {
     background: $color-bg-panel;
-    padding: 20px 10px;
+    padding: 40px 10px 20px;
   }
 
   .title {
+    color: $color-font-sup;
     font-size: 1.2em;
     margin: 0 0 10px 10px;
     padding: 0;
   }
 
   .subtitle {
+    color: $color-font-sup;
     font-size: 1.1em;
     font-style: italic;
     margin: 0 0 10px 10px;
@@ -24,6 +26,7 @@
   .backdrop {
     background-color: $color-bg-panel-backdrop;
     opacity: 0;
+    pointer-events: none;
     -webkit-tap-highlight-color: $transparent;
     transition: opacity $transition-duration $transition-ease;
   }
