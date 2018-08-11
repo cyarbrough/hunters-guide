@@ -9,6 +9,10 @@
 
 .no-scroll {
   overflow: hidden;
+
+  .container {
+    overflow: hidden;
+  }
 }
 
 .header-nav {
@@ -67,6 +71,7 @@
     bottom: 0;
     left: 0%;
     max-width: 400px;
+    -webkit-overflow-scrolling: touch;
     overflow-y: auto;
     position: fixed;
     top: 0;
@@ -110,7 +115,15 @@
 }
 
 .container {
-  margin: 50px 0;
+  bottom: 1px;
+  left: 0;
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  padding: 25px 8px 10px;
+  position: fixed;
+  right: 0;
+  top: 25px;
 
   .monster-list {
     display: flex;

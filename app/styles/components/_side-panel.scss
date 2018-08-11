@@ -26,7 +26,6 @@
   .backdrop {
     background-color: $color-bg-panel-backdrop;
     opacity: 0;
-    pointer-events: none;
     -webkit-tap-highlight-color: $transparent;
     transition: opacity $transition-duration $transition-ease;
   }

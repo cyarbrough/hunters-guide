@@ -4,16 +4,16 @@
   actionSearch=(action "updateSearchTerm")
   actionButton=(action "toggleSidePanel")
 }}
-<div class="container">
-  {{#side-panel isOpen=sidePanelIsOpen actionClose=(action "toggleSidePanel")}}
-    {{outlet "side-panel"}}
-  {{/side-panel}}
-
+<div id="container" class="container">
   {{outlet}}
-  <div class="monster-list">
+  <div id="monsterList" class="monster-list">
     {{#each monsterList as |monster|}}
       {{monster-row monster=monster logEvent=(action 'logEvent')}}
     {{/each}}
   </div>
+
+  {{footer-nav}}
 </div>
-{{footer-nav}}
+{{#side-panel isOpen=sidePanelIsOpen actionClose=(action "toggleSidePanel")}}
+  {{outlet "side-panel"}}
+{{/side-panel}}
