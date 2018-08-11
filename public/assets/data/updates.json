@@ -2,6 +2,14 @@
   "data": [
     {
       "type": "update-items",
+      "id": "12",
+      "attributes": {
+        "date": "2018-08-10",
+        "title": "Added help section"
+      }
+    },
+    {
+      "type": "update-items",
       "id": "11",
       "attributes": {
         "date": "2018-08-08",
