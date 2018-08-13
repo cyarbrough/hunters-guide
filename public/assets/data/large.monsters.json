@@ -219,7 +219,7 @@
       },
       "relationships": {
         "species": {
-          "data": { "type": "species", "id": "flyingWyvern"}
+          "data": { "type": "species", "id": "elderDragon"}
         },
         "ailments": {
           "data": []
@@ -275,7 +275,8 @@
         "ailments": {
           "data": [
             { "type": "ailment", "id": "strongRoar" },
-            { "type": "ailment", "id": "dragonBlight" }
+            { "type": "ailment", "id": "dragonBlight" },
+            { "type": "ailment", "id": "defenseDown" }
           ]
         }
       }
@@ -1392,8 +1393,9 @@
           "data": [
             { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "fireBlight" },
-            { "type": "ailment", "id": "poison" },
-            { "type": "ailment", "id": "stun" }
+            { "type": "ailment", "id": "poison" }
+
+
           ]
         }
       }
@@ -1455,8 +1457,7 @@
           "data": [
             { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "fireBlight" },
-            { "type": "ailment", "id": "poison" },
-            { "type": "ailment", "id": "stun" }
+            { "type": "ailment", "id": "poison" }
           ]
         }
       }
@@ -1917,7 +1918,8 @@
         "ailments": {
           "data": [
             { "type": "ailment", "id": "strongRoar" },
-            { "type": "ailment", "id": "dragonBlight" }
+            { "type": "ailment", "id": "dragonBlight" },
+            { "type": "ailment", "id": "fireBlight" }
           ]
         }
       }
@@ -2123,6 +2125,14 @@
       "attributes": {
         "name": "Waterblight",
         "slug": "water"
+      }
+    },
+    {
+      "type": "ailments",
+      "id": "defenseDown",
+      "attributes": {
+        "name": "Defense Down",
+        "slug": "defense-down"
       }
     },
     {
