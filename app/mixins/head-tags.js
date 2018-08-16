@@ -131,6 +131,14 @@ export default Mixin.create({
           content: 'yes'
         }
       },
+      {
+        type: 'meta',
+        tagId: 'apple-mobile-web-app-status-bar-style',
+        attrs: {
+          name: 'apple-mobile-web-app-status-bar-style',
+          content: 'black-translucent'
+        }
+      },
       // MS Meta
       {
         type: 'meta',
