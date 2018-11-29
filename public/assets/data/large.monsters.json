@@ -222,7 +222,12 @@
           "data": { "type": "species", "id": "elderDragon"}
         },
         "ailments": {
-          "data": []
+          "data": [
+            { "type": "ailment", "id": "strongRoar" },
+            { "type": "ailment", "id": "thunderBlight" },
+            { "type": "ailment", "id": "fireBlight" },
+            { "type": "ailment", "id": "bleeding" }
+          ]
         }
       }
     },
