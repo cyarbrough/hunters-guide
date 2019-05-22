@@ -863,7 +863,7 @@
     },
     {
       "type": "monsters",
-      "id": "Lavasioth",
+      "id": "lavasioth",
       "attributes": {
         "name": "Lavasioth (Hard)",
         "slug": "lavasioth",
@@ -922,6 +922,64 @@
         "ailments": {
           "data": [
             { "type": "ailment", "id": "fireBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "leshen",
+      "attributes": {
+        "name": "Leshen (Ancient)",
+        "slug": "leshen",
+        "order": 35,
+        "physiology": {
+          "fire": 3,
+          "water": 0,
+          "thunder": 2,
+          "ice": 1,
+          "dragon": 2,
+          "blast": 2,
+          "blastAlt": 1,
+          "stun": 1,
+          "poison": 3,
+          "poisonAlt": 2,
+          "sleep": 0,
+          "paralysis": 2,
+          "paralysisAlt": 1
+        },
+        "weaknesses": [
+          {
+            "area": "Antlers",
+            "type": "Weakpoint",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Head",
+            "type": "BreakableX2"
+          },
+          {
+            "area": "Body",
+            "type": "Breakable"
+          },
+          {
+            "area": "Legs",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "relict"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "strongRoar" },
+            { "type": "ailment", "id": "bleeding" }
           ]
         }
       }
@@ -2027,6 +2085,13 @@
       "id": "piscineWyvern",
       "attributes": {
         "name": "Piscine Wyvern"
+      }
+    },
+    {
+      "type": "species",
+      "id": "relict",
+      "attributes": {
+        "name": "Relict"
       }
     },
     {

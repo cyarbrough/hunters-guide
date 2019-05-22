@@ -76,6 +76,7 @@
   "dependencies": {
     "fastboot-cli": "git+https://github.com/musaffa/fastboot-cli.git",
     "js-base64": "^2.4.8",
+    "node-sass": "^4.12.0",
     "stylelint": "^9.1.1"
   }
 }
