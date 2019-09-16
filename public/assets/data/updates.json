@@ -2,6 +2,14 @@
   "data": [
     {
       "type": "update-items",
+      "id": "14",
+      "attributes": {
+        "date": "2019-09-15",
+        "title": "Added Iceborne monster data"
+      }
+    },
+    {
+      "type": "update-items",
       "id": "13",
       "attributes": {
         "date": "2019-05-22",

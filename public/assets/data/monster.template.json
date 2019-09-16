@@ -1,0 +1,66 @@
+    {
+      "type": "monsters",
+      "id": "silverRathalos",
+      "attributes": {
+        "name": "Silver Rathalos",
+        "slug": "silver-rathalos",
+        "order": 62,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 0,
+          "water": 3,
+          "thunder": 2,
+          "ice": 1,
+          "dragon": 0,
+          "poison": 1,
+          "sleep": 2,
+          "paralysis": 2,
+          "blast": 1,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Wings",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 2
+          },
+          {
+            "area": "Legs",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 2
+          },
+          {
+            "area": "Tail",
+            "type": "Severable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 2
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Head",
+            "type": "Breakable"
+          },
+          {
+            "area": "Torso",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "flyingWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "fireBlight" },
+            { "type": "ailment", "id": "poison" }
+          ]
+        }
+      }
+    }

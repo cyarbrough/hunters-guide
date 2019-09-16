@@ -2,16 +2,29 @@
   * Styles for monster-logo component
   */
 
-$monster-list: anjanath 
+$monster-list: // acidic-glavenus
+  anjanath
+  azure-rathalos
+  // banbaro
+  // barioth
   barroth
   bazelgeuse 
-  diablos 
-  black-diablos 
   behemoth
+  // beotodus
+  black-diablos
+  // blackveil-vaal-hazak
+  // brachydios
+  // brute-tigrex
+  // coral-pukei-pukei
+  diablos 
   deviljho
-  dodogama 
+  dodogama
+  // ebony-odogaron
+  // fulgur-anjanath
+  // glavenus
   great-girros 
   great-jagras
+  // gold-rathian
   jyuratodus
   kirin
   kulu-ya-ku
@@ -21,21 +34,35 @@ $monster-list: anjanath
   legiana
   leshen
   lunastra
+  // namielle
+  // nargacuga
   nergigante
+  // nightshade-paolumu
   odogaron
   paolumu
+  pink-rathian
   pukei-pukei
   radobaan
   rathalos
-  azure-rathalos
   rathian
-  pink-rathian
+  // ruiner-nergigante
+  // savage-deviljho
+  // scarred-yian-garuga
+  // seething-bazelgeuse
+  // shara-ishvalda
+  // shrieking-legiana
+  // silver-rathalos
   teostra
+  // tigrex
   tobi-kadachi
   tzitzi-ya-ku
   uragaan
   vaal-hazak
+  // velkhana
+  // viper-tobi-kadachi
   xeno-jiiva
+  // yian-garuga
+  // zinogre
   zorah-magdaros;
 
 @mixin monster-imgs {

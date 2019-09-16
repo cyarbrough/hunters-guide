@@ -2,11 +2,130 @@
   "data": [
     {
       "type": "monsters",
+      "id": "acidicGlavenus",
+      "attributes": {
+        "name": "Acidic Glavenus",
+        "slug": "acidic-glavenus",
+        "order": 48,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 3,
+          "water": 1,
+          "thunder": 2,
+          "ice": 1,
+          "dragon": 2,
+          "dragonAlt": 1,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 2,
+          "blast": 2,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Back",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Tail",
+            "type": "Severable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Forearms",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "bruteWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "defenseDown" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "ancientLeshen",
+      "attributes": {
+        "name": "Ancient Leshen",
+        "slug": "ancient-leshen",
+        "order": 65,
+        "expansion": "MHW",
+        "physiology": {
+          "fire": 3,
+          "water": 0,
+          "thunder": 2,
+          "ice": 1,
+          "dragon": 2,
+          "blast": 1,
+          "stun": 1,
+          "poison": 2,
+          "sleep": 0,
+          "paralysis": 1
+        },
+        "weaknesses": [
+          {
+            "area": "Antlers",
+            "type": "Weakpoint",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Head",
+            "type": "BreakableX2"
+          },
+          {
+            "area": "Body",
+            "type": "Breakable"
+          },
+          {
+            "area": "Legs",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "relict"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "strongRoar" },
+            { "type": "ailment", "id": "bleeding" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
       "id": "anjanath",
       "attributes": {
         "name": "Anjanath",
         "slug": "anjanath",
         "order": 7,
+        "expansion": "MHW",
         "physiology": {
           "fire": 0,
           "water": 3,
@@ -56,11 +175,122 @@
     },
     {
       "type": "monsters",
+      "id": "banbaro",
+      "attributes": {
+        "name": "Banbaro",
+        "slug": "banbaro",
+        "order": 37,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 2,
+          "water": 0,
+          "thunder": 1,
+          "ice": 0,
+          "dragon": 3,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 2,
+          "blast": 3,
+          "stun": 3
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 1,
+            "blunt": 2,
+            "ammo": 1
+          },
+          {
+            "area": "Hindlegs",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 2
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Tail",
+            "type": "Severable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "bruteWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "iceBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "barioth",
+      "attributes": {
+        "name": "Barioth",
+        "slug": "barioth",
+        "order": 41,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 3,
+          "water": 0,
+          "thunder": 2,
+          "ice": 0,
+          "dragon": 1,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 2,
+          "blast": 2,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Forelegs",
+            "type": "Breakable",
+            "cut": 1,
+            "blunt": 2,
+            "ammo": 1
+          },
+          {
+            "area": "Tail",
+            "type": "Severable",
+            "cut": 2,
+            "blunt": 1,
+            "ammo": 2
+          }
+        ],
+        "breakpoints": []
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "flyingWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "iceBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
       "id": "barroth",
       "attributes": {
         "name": "Barroth (Mud)",
         "slug": "barroth",
         "order": 4,
+        "expansion": "MHW",
         "physiology": {
           "fire": 3,
           "fireAlt": 0,
@@ -121,6 +351,7 @@
         "name": "Bazelgeuse",
         "slug": "bazelgeuse",
         "order": 21,
+        "expansion": "MHW",
         "physiology": {
           "fire": 0,
           "water": 1,
@@ -181,7 +412,8 @@
       "attributes": {
         "name": "Behemoth",
         "slug": "behemoth",
-        "order": 34,
+        "order": 63,
+        "expansion": "MHW",
         "physiology": {
           "fire": 1,
           "water": 2,
@@ -233,11 +465,130 @@
     },
     {
       "type": "monsters",
+      "id": "Brute Tigrex",
+      "attributes": {
+        "name": "Brute Tigrex",
+        "slug": "brute-tigrex",
+        "order": 60,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 0,
+          "water": 3,
+          "thunder": 2,
+          "ice": 1,
+          "dragon": 1,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 2,
+          "blast": 2,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Forearms",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 2,
+            "ammo": 2
+          },
+          {
+            "area": "Tail",
+            "type": "Severable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 2
+          }
+        ],
+        "breakpoints": []
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "flyingWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "fireBlight" },
+            { "type": "ailment", "id": "waterBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "coralPukeiPukei",
+      "attributes": {
+        "name": "Coral Pukei-Pukei",
+        "slug": "coral-pukei-pukei",
+        "order": 40,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 1,
+          "water": 0,
+          "thunder": 2,
+          "ice": 3,
+          "dragon": 1,
+          "poison": 3,
+          "sleep": 2,
+          "paralysis": 2,
+          "blast": 2,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Wings",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 3
+          },
+          {
+            "area": "Tail",
+            "type": "Severable",
+            "cut": 3,
+            "blunt": 2,
+            "ammo": 2
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Back",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "birdWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "waterBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
       "id": "deviljho",
       "attributes": {
         "name": "Deviljho",
         "slug": "deviljho",
         "order": 22,
+        "expansion": "MHW",
         "physiology": {
           "fire": 2,
           "water": 2,
@@ -288,11 +639,188 @@
     },
     {
       "type": "monsters",
+      "id": "beotodus",
+      "attributes": {
+        "name": "Beotodus",
+        "slug": "beotodus",
+        "order": 36,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 3,
+          "water": 1,
+          "thunder": 2,
+          "ice": 0,
+          "dragon": 0,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 2,
+          "blast": 3,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 3,
+            "ammo": 2
+          },
+          {
+            "area": "Hindfins",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Tail",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 2
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Back",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "piscineWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "iceBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "blackveilVaalHazak",
+      "attributes": {
+        "name": "Blackveil Vaal Hazak",
+        "slug": "blackveil-vaal-hazak",
+        "order": 52,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 2,
+          "water": 0,
+          "thunder": 1,
+          "ice": 1,
+          "dragon": 2,
+          "poison": 1,
+          "sleep": 1,
+          "paralysis": 1,
+          "blast": 2,
+          "stun": 1
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Forelegs",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 2,
+            "ammo": 2
+          },
+          {
+            "area": "Tail",
+            "type": "Severable",
+            "cut": 2,
+            "blunt": 1,
+            "ammo": 1
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Chest",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "elderDragon"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "effluvialBuildup" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "brachydios",
+      "attributes": {
+        "name": "Brachydios",
+        "slug": "brachydios",
+        "order": 45,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 0,
+          "water": 2,
+          "thunder": 1,
+          "ice": 3,
+          "dragon": 1,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 2,
+          "blast": 1,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Forelegs",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 2
+          },
+          {
+            "area": "Tail",
+            "type": "Severable",
+            "cut": 3,
+            "blunt": 2,
+            "ammo": 3
+          }
+        ],
+        "breakpoints": []
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "bruteWyvern"}
+        },
+        "ailments": {
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "monsters",
       "id": "diablos",
       "attributes": {
         "name": "Diablos",
         "slug": "diablos",
         "order": 16,
+        "expansion": "MHW",
         "physiology": {
           "fire": 0,
           "water": 2,
@@ -361,6 +889,7 @@
         "name": "Black Diablos",
         "slug": "black-diablos",
         "order": 26,
+        "expansion": "MHW",
         "physiology": {
           "fire": 0,
           "water": 2,
@@ -429,6 +958,7 @@
         "name": "Dodogama",
         "slug": "dodogama",
         "order": 19,
+        "expansion": "MHW",
         "physiology": {
           "fire": 0,
           "water": 2,
@@ -478,11 +1008,191 @@
     },
     {
       "type": "monsters",
+      "id": "ebonyOdogaron",
+      "attributes": {
+        "name": "Ebony Odogaron",
+        "slug": "ebony-odogaron",
+        "order": 49,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 2,
+          "water": 3,
+          "thunder": 2,
+          "ice": 2,
+          "dragon": 1,
+          "poison": 3,
+          "sleep": 2,
+          "paralysis": 3,
+          "blast": 2,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Forearms",
+            "type": "Breakable",
+            "cut": 1,
+            "blunt": 2,
+            "ammo": 1
+          },
+          {
+            "area": "Tail",
+            "type": "Severable",
+            "cut": 2,
+            "blunt": 1,
+            "ammo": 2
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Hindlegs",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "fangedWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "bleeding" },
+            { "type": "ailment", "id": "dragonBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "fulgurAnjanath",
+      "attributes": {
+        "name": "Fulgur Anjanath",
+        "slug": "fulgur-anjanath",
+        "order": 47,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 2,
+          "water": 2,
+          "waterAlt": 3,
+          "thunder": 0,
+          "ice": 3,
+          "iceAlt": 2,
+          "dragon": 1,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 2,
+          "blast": 1,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 2
+          },
+          {
+            "area": "Tail",
+            "type": "Severable",
+            "cut": 2,
+            "blunt": 3,
+            "ammo": 3
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Hindfeet",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "bruteWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "thunderBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "glavenus",
+      "attributes": {
+        "name": "Glavenus",
+        "slug": "glavenus",
+        "order": 43,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 0,
+          "water": 3,
+          "thunder": 1,
+          "ice": 2,
+          "dragon": 2,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 2,
+          "blast": 2,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 2
+          },
+          {
+            "area": "Back",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Tail",
+            "type": "Severable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 2
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Foreclaws",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "bruteWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "fireBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
       "id": "girrosGreat",
       "attributes": {
         "name": "Great Girros",
         "slug": "great-girros",
         "order": 11,
+        "expansion": "MHW",
         "physiology": {
           "fire": 2,
           "water": 3,
@@ -538,6 +1248,7 @@
         "name": "Great Jagras",
         "slug": "great-jagras",
         "order": 1,
+        "expansion": "MHW",
         "physiology": {
           "fire": 3,
           "water": 0,
@@ -583,11 +1294,78 @@
     },
     {
       "type": "monsters",
+      "id": "goldRathian",
+      "attributes": {
+        "name": "Gold Rathian",
+        "slug": "gold-rathian",
+        "order": 61,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 0,
+          "water": 2,
+          "thunder": 3,
+          "ice": 1,
+          "dragon": 0,
+          "poison": 1,
+          "sleep": 2,
+          "paralysis": 2,
+          "blast": 1,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Wings",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Legs",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 2
+          },
+          {
+            "area": "Tail",
+            "type": "Severable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 2
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Head",
+            "type": "Breakable"
+          },
+          {
+            "area": "Torso",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "flyingWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "fireBlight" },
+            { "type": "ailment", "id": "poison" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
       "id": "jyuratodus",
       "attributes": {
         "name": "Jyuratodus (Mud)",
         "slug": "jyuratodus",
         "order": 5,
+        "expansion": "MHW",
         "physiology": {
           "fire": 1,
           "fireAlt": 0,
@@ -648,6 +1426,7 @@
         "name": "Kirin",
         "slug": "kirin",
         "order": 17,
+        "expansion": "MHW",
         "physiology": {
           "fire": 3,
           "water": 2,
@@ -689,11 +1468,12 @@
     },
     {
       "type": "monsters",
-      "id": "kulu-ya-ku",
+      "id": "kuluYaKu",
       "attributes": {
         "name": "Kulu-Ya-Ku",
         "slug": "kulu-ya-ku",
         "order": 2,
+        "expansion": "MHW",
         "physiology": {
           "fire": 2,
           "water": 3,
@@ -735,6 +1515,7 @@
         "name": "Kulve Taroth (Golden)",
         "slug": "kulve-taroth",
         "order": 32,
+        "expansion": "MHW",
         "physiology": {
           "fire": 0,
           "fireAlt": 1,
@@ -808,6 +1589,7 @@
         "name": "Kushala Daora",
         "slug": "kushala-daora",
         "order": 30,
+        "expansion": "MHW",
         "physiology": {
           "fire": 1,
           "water": 0,
@@ -868,6 +1650,7 @@
         "name": "Lavasioth (Hard)",
         "slug": "lavasioth",
         "order": 23,
+        "expansion": "MHW",
         "physiology": {
           "fire": 0,
           "fireAlt": 1,
@@ -930,9 +1713,10 @@
       "type": "monsters",
       "id": "leshen",
       "attributes": {
-        "name": "Leshen (Ancient)",
+        "name": "Leshen",
         "slug": "leshen",
-        "order": 35,
+        "order": 64,
+        "expansion": "MHW",
         "physiology": {
           "fire": 3,
           "water": 0,
@@ -940,13 +1724,10 @@
           "ice": 1,
           "dragon": 2,
           "blast": 2,
-          "blastAlt": 1,
           "stun": 1,
           "poison": 3,
-          "poisonAlt": 2,
           "sleep": 0,
-          "paralysis": 2,
-          "paralysisAlt": 1
+          "paralysis": 2
         },
         "weaknesses": [
           {
@@ -991,6 +1772,7 @@
         "name": "Legiana",
         "slug": "legiana",
         "order": 13,
+        "expansion": "MHW",
         "physiology": {
           "fire": 2,
           "water": 1,
@@ -1052,6 +1834,7 @@
         "name": "Lunastra",
         "slug": "lunastra",
         "order": 29,
+        "expansion": "MHW",
         "physiology": {
           "fire": 0,
           "water": 1,
@@ -1103,11 +1886,139 @@
     },
     {
       "type": "monsters",
+      "id": "namielle",
+      "attributes": {
+        "name": "Namielle",
+        "slug": "namielle",
+        "order": 53,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 3,
+          "water": 0,
+          "thunder": 0,
+          "ice": 1,
+          "dragon": 2,
+          "poison": 3,
+          "sleep": 1,
+          "paralysis": 1,
+          "blast": 3,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Forelegs",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 2
+          },
+          {
+            "area": "Chest",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 3,
+            "ammo": 3
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Wings",
+            "type": "Breakable"
+          },
+          {
+            "area": "Tail",
+            "type": "Severable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "elderDragon"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "thunderBlight" },
+            { "type": "ailment", "id": "waterBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "nargacuga",
+      "attributes": {
+        "name": "Nargacuga",
+        "slug": "nargacuga",
+        "order": 42,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 2,
+          "water": 0,
+          "thunder": 3,
+          "ice": 1,
+          "dragon": 1,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 2,
+          "blast": 2,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 2
+          },
+          {
+            "area": "Hind",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 2,
+            "ammo": 3
+          },
+          {
+            "area": "Tail",
+            "type": "Severable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 2
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Foreclaws",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "flyingWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "bleeding" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
       "id": "nergigante",
       "attributes": {
         "name": "Nergigante",
         "slug": "nergigante",
         "order": 27,
+        "expansion": "MHW",
         "physiology": {
           "fire": 1,
           "water": 1,
@@ -1160,11 +2071,81 @@
     },
     {
       "type": "monsters",
+      "id": "nightshadePaolumu",
+      "attributes": {
+        "name": "Nightshade Paolumu",
+        "slug": "nightshade-paolumu",
+        "order": 39,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 2,
+          "water": 3,
+          "thunder": 1,
+          "ice": 1,
+          "dragon": 0,
+          "poison": 2,
+          "sleep": 1,
+          "paralysis": 2,
+          "blast": 2,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 2
+          },
+          {
+            "area": "Air Sac",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Stomach",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 2
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Wings",
+            "type": "Breakable"
+          },
+          {
+            "area": "Back",
+            "type": "Breakable"
+          },
+          {
+            "area": "Tail",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "flyingWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "sleep" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
       "id": "odogaron",
       "attributes": {
         "name": "Odogaron",
         "slug": "odogaron",
         "order": 14,
+        "expansion": "MHW",
         "physiology": {
           "fire": 1,
           "water": 1,
@@ -1226,6 +2207,7 @@
         "name": "Paolumu",
         "slug": "paolumu",
         "order": 10,
+        "expansion": "MHW",
         "physiology": {
           "fire": 3,
           "water": 0,
@@ -1282,11 +2264,12 @@
     },
     {
       "type": "monsters",
-      "id": "pukei-pukei",
+      "id": "pukeiPukei",
       "attributes": {
         "name": "Pukei-Pukei",
         "slug": "pukei-pukei",
         "order": 3,
+        "expansion": "MHW",
         "physiology": {
           "fire": 2,
           "water": 0,
@@ -1348,6 +2331,7 @@
         "name": "Radobaan",
         "slug": "radobaan",
         "order": 12,
+        "expansion": "MHW",
         "physiology": {
           "fire": 1,
           "water": 1,
@@ -1401,11 +2385,12 @@
     },
     {
       "type": "monsters",
-      "id": "Rathalos",
+      "id": "rathalos",
       "attributes": {
         "name": "Rathalos",
         "slug": "rathalos",
         "order": 15,
+        "expansion": "MHW",
         "physiology": {
           "fire": 0,
           "water": 1,
@@ -1470,6 +2455,7 @@
         "name": "Azure Rathalos",
         "slug": "azure-rathalos",
         "order": 25,
+        "expansion": "MHW",
         "physiology": {
           "fire": 0,
           "water": 1,
@@ -1532,6 +2518,7 @@
         "name": "Rathian",
         "slug": "rathian",
         "order": 8,
+        "expansion": "MHW",
         "physiology": {
           "fire": 0,
           "water": 1,
@@ -1594,6 +2581,7 @@
         "name": "Pink Rathian",
         "slug": "pink-rathian",
         "order": 20,
+        "expansion": "MHW",
         "physiology": {
           "fire": 0,
           "water": 1,
@@ -1651,11 +2639,450 @@
     },
     {
       "type": "monsters",
+      "id": "ruinerNergigante",
+      "attributes": {
+        "name": "Ruiner Nergigante",
+        "slug": "ruiner-nergigante",
+        "order": 55,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 1,
+          "water": 1,
+          "thunder": 2,
+          "ice": 1,
+          "dragon": 3,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 2,
+          "blast": 3,
+          "stun": 1
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Forearms",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 2,
+            "ammo": 2
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Horns",
+            "type": "BreakableX2"
+          },
+          {
+            "area": "Wings",
+            "type": "Breakable"
+          },
+          {
+            "area": "Tail",
+            "type": "Severable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "elderDragon"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "unknown" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "savageDeviljho",
+      "attributes": {
+        "name": "Savage Deviljho",
+        "slug": "savage-deviljho",
+        "order": 54,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 2,
+          "water": 2,
+          "thunder": 3,
+          "ice": 1,
+          "dragon": 3,
+          "poison": 3,
+          "sleep": 3,
+          "paralysis": 3,
+          "blast": 2,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 2
+          },
+          {
+            "area": "Chest",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 2
+          },
+          {
+            "area": "Tail",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 1
+          }
+        ],
+        "breakpoints": []
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "bruteWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "defenseDown" },
+            { "type": "ailment", "id": "dragonBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "scarredYianGaruga",
+      "attributes": {
+        "name": "Scarred Yian Garuga",
+        "slug": "scarred-yian-garuga",
+        "order": 59,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 0,
+          "water": 3,
+          "thunder": 0,
+          "ice": 1,
+          "dragon": 2,
+          "poison": 1,
+          "sleep": 1,
+          "paralysis": 2,
+          "blast": 3,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Wings",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 2
+          },
+          {
+            "area": "Tail",
+            "type": "Severable",
+            "cut": 3,
+            "blunt": 2,
+            "ammo": 2
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Ears",
+            "type": "Breakable"
+          },
+          {
+            "area": "Chest",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "birdWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "fireBlight" },
+            { "type": "ailment", "id": "poison" },
+            { "type": "ailment", "id": "stun" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "seethingBazelgeuse",
+      "attributes": {
+        "name": "Seething Bazelgeuse",
+        "slug": "seething-bazelgeuse",
+        "order": 51,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 0,
+          "water": 1,
+          "thunder": 2,
+          "ice": 3,
+          "dragon": 1,
+          "poison": 2,
+          "sleep": 3,
+          "paralysis": 2,
+          "blast": 1,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 2
+          },
+          {
+            "area": "Chest",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 2
+          },
+          {
+            "area": "Tail",
+            "type": "Severable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Wings",
+            "type": "Breakable"
+          },
+          {
+            "area": "Back",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "flyingWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "fireBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "sharaIshvalda",
+      "attributes": {
+        "name": "Shara Ishvalda",
+        "slug": "shara-ishvalda",
+        "order": 56,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 1,
+          "water": 2,
+          "thunder": 0,
+          "ice": 3,
+          "dragon": 1,
+          "poison": 2,
+          "sleep": 0,
+          "paralysis": 1,
+          "blast": 3,
+          "stun": 1
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 3
+          },
+          {
+            "area": "Forelegs",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 2
+          },
+          {
+            "area": "Wings",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 2,
+            "ammo": 2
+          }
+        ],
+        "breakpoints": []
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "elderDragon"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "unknown" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "shriekingLegiana",
+      "attributes": {
+        "name": "Shrieking Legiana",
+        "slug": "shrieking-legiana",
+        "order": 46,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 3,
+          "water": 1,
+          "thunder": 2,
+          "ice": 0,
+          "dragon": 1,
+          "poison": 3,
+          "sleep": 2,
+          "paralysis": 2,
+          "blast": 2,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Wings",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 2,
+            "ammo": 1
+          },
+          {
+            "area": "Chest",
+            "type": "Breakable",
+            "cut": 1,
+            "blunt": 1,
+            "ammo": 3
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Back",
+            "type": "Breakable"
+          },
+          {
+            "area": "Tail",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "flyingWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "iceBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "silverRathalos",
+      "attributes": {
+        "name": "Silver Rathalos",
+        "slug": "silver-rathalos",
+        "order": 62,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 0,
+          "water": 3,
+          "thunder": 2,
+          "ice": 1,
+          "dragon": 0,
+          "poison": 1,
+          "sleep": 2,
+          "paralysis": 2,
+          "blast": 1,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Wings",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 2
+          },
+          {
+            "area": "Legs",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 2
+          },
+          {
+            "area": "Tail",
+            "type": "Severable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 2
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Head",
+            "type": "Breakable"
+          },
+          {
+            "area": "Torso",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "flyingWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "fireBlight" },
+            { "type": "ailment", "id": "poison" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
       "id": "teostra",
       "attributes": {
         "name": "Teostra",
         "slug": "teostra",
         "order": 28,
+        "expansion": "MHW",
         "physiology": {
           "fire": 0,
           "water": 3,
@@ -1708,11 +3135,69 @@
     },
     {
       "type": "monsters",
-      "id": "tobi-kadachi",
+      "id": "tigrex",
+      "attributes": {
+        "name": "Tigrex",
+        "slug": "tigrex",
+        "order": 44,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 0,
+          "water": 1,
+          "thunder": 3,
+          "ice": 1,
+          "dragon": 2,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 2,
+          "blast": 2,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Forearms",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 2
+          },
+          {
+            "area": "Tail",
+            "type": "Severable",
+            "cut": 3,
+            "blunt": 2,
+            "ammo": 2
+          }
+        ],
+        "breakpoints": []
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "flyingWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "iceBlight" },
+            { "type": "ailment", "id": "waterBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "tobiKadachi",
       "attributes": {
         "name": "Tobi-Kadachi",
         "slug": "tobi-kadachi",
         "order": 6,
+        "expansion": "MHW",
         "physiology": {
           "fire": 2,
           "water": 3,
@@ -1766,11 +3251,12 @@
     },
     {
       "type": "monsters",
-      "id": "tzitzi-ya-ku",
+      "id": "tzitziYaKu",
       "attributes": {
         "name": "Tzitzi-Ya-Ku",
         "slug": "tzitzi-ya-ku",
         "order": 9,
+        "expansion": "MHW",
         "physiology": {
           "fire": 2,
           "water": 2,
@@ -1812,6 +3298,7 @@
         "name": "Uragaan",
         "slug": "uragaan",
         "order": 24,
+        "expansion": "MHW",
         "physiology": {
           "fire": 0,
           "water": 3,
@@ -1871,6 +3358,7 @@
         "name": "Vaal Hazak",
         "slug": "vaal-hazak",
         "order": 31,
+        "expansion": "MHW",
         "physiology": {
           "fire": 3,
           "water": 0,
@@ -1928,11 +3416,131 @@
     },
     {
       "type": "monsters",
+      "id": "velkhana",
+      "attributes": {
+        "name": "Velkhana",
+        "slug": "velkhana",
+        "order": 50,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 3,
+          "water": 1,
+          "thunder": 2,
+          "ice": 0,
+          "dragon": 2,
+          "poison": 2,
+          "sleep": 1,
+          "paralysis": 1,
+          "blast": 3,
+          "stun": 1
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Wings",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 1
+          },
+          {
+            "area": "Tail",
+            "type": "Severable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 2
+          }
+        ],
+        "breakpoints": []
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "elderDragon"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "iceBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "viperTobiKadachi",
+      "attributes": {
+        "name": "Viper Tobi-Kadachi",
+        "slug": "viper-tobi-kadachi",
+        "order": 38,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 1,
+          "water": 0,
+          "thunder": 3,
+          "ice": 2,
+          "dragon": 1,
+          "poison": 1,
+          "sleep": 2,
+          "paralysis": 1,
+          "blast": 2,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Back",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 2
+          },
+          {
+            "area": "Forelegs",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 2
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Tail",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "bruteWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "poison" },
+            { "type": "ailment", "id": "noxiousPoison" },
+            { "type": "ailment", "id": "paralysis" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
       "id": "xenoJiiva",
       "attributes": {
         "name": "Xeno'jiiva",
         "slug": "xeno-jiiva",
         "order": 33,
+        "expansion": "MHW",
         "physiology": {
           "fire": 2,
           "water": 2,
@@ -1990,11 +3598,139 @@
     },
     {
       "type": "monsters",
+      "id": "yianGaruga",
+      "attributes": {
+        "name": "Yian Garuga",
+        "slug": "yian-garuga",
+        "order": 58,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 0,
+          "water": 3,
+          "thunder": 0,
+          "ice": 1,
+          "dragon": 2,
+          "poison": 1,
+          "sleep": 1,
+          "paralysis": 2,
+          "blast": 3,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Wings",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 2
+          },
+          {
+            "area": "Tail",
+            "type": "Severable",
+            "cut": 3,
+            "blunt": 2,
+            "ammo": 2
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Ears",
+            "type": "Breakable"
+          },
+          {
+            "area": "Chest",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "birdWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "fireBlight" },
+            { "type": "ailment", "id": "poison" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "zinogre",
+      "attributes": {
+        "name": "Zinogre",
+        "slug": "zinogre",
+        "order": 57,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 1,
+          "water": 2,
+          "thunder": 0,
+          "ice": 3,
+          "dragon": 1,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 1,
+          "blast": 2,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Forelegs",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 2
+          },
+          {
+            "area": "Tail",
+            "type": "Severable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 2
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Back",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "fangedWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "thunderBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
       "id": "zorahMagdaros",
       "attributes": {
         "name": "Zorah Magdaros",
         "slug": "zorah-magdaros",
         "order": 18,
+        "expansion": "MHW",
         "physiology": {
           "fire": 0,
           "water": 3,
@@ -2140,6 +3876,14 @@
       "attributes": {
         "name": "Iceblight",
         "slug": "ice"
+      }
+    },
+    {
+      "type": "ailments",
+      "id": "noxiousPoison",
+      "attributes": {
+        "name": "Noxious Poison",
+        "slug": "noxious-poison"
       }
     },
     {
