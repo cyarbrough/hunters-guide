@@ -6,7 +6,7 @@
       "attributes": {
         "name": "Acidic Glavenus",
         "slug": "acidic-glavenus",
-        "order": 48,
+        "order": 46,
         "expansion": "MHWI",
         "physiology": {
           "fire": 3,
@@ -68,7 +68,7 @@
       "attributes": {
         "name": "Ancient Leshen",
         "slug": "ancient-leshen",
-        "order": 65,
+        "order": 63,
         "expansion": "MHW",
         "physiology": {
           "fire": 3,
@@ -179,7 +179,7 @@
       "attributes": {
         "name": "Banbaro",
         "slug": "banbaro",
-        "order": 37,
+        "order": 35,
         "expansion": "MHWI",
         "physiology": {
           "fire": 2,
@@ -222,7 +222,9 @@
         },
         "ailments": {
           "data": [
-            { "type": "ailment", "id": "iceBlight" }
+            { "type": "ailment", "id": "fireBlight" },
+            { "type": "ailment", "id": "iceBlight" },
+            { "type": "ailment", "id": "waterBlight" }
           ]
         }
       }
@@ -233,7 +235,7 @@
       "attributes": {
         "name": "Barioth",
         "slug": "barioth",
-        "order": 41,
+        "order": 39,
         "expansion": "MHWI",
         "physiology": {
           "fire": 3,
@@ -412,7 +414,7 @@
       "attributes": {
         "name": "Behemoth",
         "slug": "behemoth",
-        "order": 63,
+        "order": 61,
         "expansion": "MHW",
         "physiology": {
           "fire": 1,
@@ -469,7 +471,7 @@
       "attributes": {
         "name": "Brute Tigrex",
         "slug": "brute-tigrex",
-        "order": 60,
+        "order": 58,
         "expansion": "MHWI",
         "physiology": {
           "fire": 0,
@@ -526,7 +528,7 @@
       "attributes": {
         "name": "Coral Pukei-Pukei",
         "slug": "coral-pukei-pukei",
-        "order": 40,
+        "order": 38,
         "expansion": "MHWI",
         "physiology": {
           "fire": 1,
@@ -643,7 +645,7 @@
       "attributes": {
         "name": "Beotodus",
         "slug": "beotodus",
-        "order": 36,
+        "order": 34,
         "expansion": "MHWI",
         "physiology": {
           "fire": 3,
@@ -704,7 +706,7 @@
       "attributes": {
         "name": "Blackveil Vaal Hazak",
         "slug": "blackveil-vaal-hazak",
-        "order": 52,
+        "order": 50,
         "expansion": "MHWI",
         "physiology": {
           "fire": 2,
@@ -765,7 +767,7 @@
       "attributes": {
         "name": "Brachydios",
         "slug": "brachydios",
-        "order": 45,
+        "order": 43,
         "expansion": "MHWI",
         "physiology": {
           "fire": 0,
@@ -1012,7 +1014,7 @@
       "attributes": {
         "name": "Ebony Odogaron",
         "slug": "ebony-odogaron",
-        "order": 49,
+        "order": 47,
         "expansion": "MHWI",
         "physiology": {
           "fire": 2,
@@ -1074,7 +1076,7 @@
       "attributes": {
         "name": "Fulgur Anjanath",
         "slug": "fulgur-anjanath",
-        "order": 47,
+        "order": 45,
         "expansion": "MHWI",
         "physiology": {
           "fire": 2,
@@ -1130,7 +1132,7 @@
       "attributes": {
         "name": "Glavenus",
         "slug": "glavenus",
-        "order": 43,
+        "order": 41,
         "expansion": "MHWI",
         "physiology": {
           "fire": 0,
@@ -1298,7 +1300,7 @@
       "attributes": {
         "name": "Gold Rathian",
         "slug": "gold-rathian",
-        "order": 61,
+        "order": 59,
         "expansion": "MHWI",
         "physiology": {
           "fire": 0,
@@ -1715,7 +1717,7 @@
       "attributes": {
         "name": "Leshen",
         "slug": "leshen",
-        "order": 64,
+        "order": 62,
         "expansion": "MHW",
         "physiology": {
           "fire": 3,
@@ -1890,7 +1892,7 @@
       "attributes": {
         "name": "Namielle",
         "slug": "namielle",
-        "order": 53,
+        "order": 51,
         "expansion": "MHWI",
         "physiology": {
           "fire": 3,
@@ -1956,7 +1958,7 @@
       "attributes": {
         "name": "Nargacuga",
         "slug": "nargacuga",
-        "order": 42,
+        "order": 40,
         "expansion": "MHWI",
         "physiology": {
           "fire": 2,
@@ -2075,7 +2077,7 @@
       "attributes": {
         "name": "Nightshade Paolumu",
         "slug": "nightshade-paolumu",
-        "order": 39,
+        "order": 37,
         "expansion": "MHWI",
         "physiology": {
           "fire": 2,
@@ -2643,7 +2645,7 @@
       "attributes": {
         "name": "Ruiner Nergigante",
         "slug": "ruiner-nergigante",
-        "order": 55,
+        "order": 53,
         "expansion": "MHWI",
         "physiology": {
           "fire": 1,
@@ -2705,7 +2707,7 @@
       "attributes": {
         "name": "Savage Deviljho",
         "slug": "savage-deviljho",
-        "order": 54,
+        "order": 52,
         "expansion": "MHWI",
         "physiology": {
           "fire": 2,
@@ -2762,7 +2764,7 @@
       "attributes": {
         "name": "Scarred Yian Garuga",
         "slug": "scarred-yian-garuga",
-        "order": 59,
+        "order": 57,
         "expansion": "MHWI",
         "physiology": {
           "fire": 0,
@@ -2829,7 +2831,7 @@
       "attributes": {
         "name": "Seething Bazelgeuse",
         "slug": "seething-bazelgeuse",
-        "order": 51,
+        "order": 49,
         "expansion": "MHWI",
         "physiology": {
           "fire": 0,
@@ -2894,7 +2896,7 @@
       "attributes": {
         "name": "Shara Ishvalda",
         "slug": "shara-ishvalda",
-        "order": 56,
+        "order": 54,
         "expansion": "MHWI",
         "physiology": {
           "fire": 1,
@@ -2950,7 +2952,7 @@
       "attributes": {
         "name": "Shrieking Legiana",
         "slug": "shrieking-legiana",
-        "order": 46,
+        "order": 44,
         "expansion": "MHWI",
         "physiology": {
           "fire": 3,
@@ -3015,7 +3017,7 @@
       "attributes": {
         "name": "Silver Rathalos",
         "slug": "silver-rathalos",
-        "order": 62,
+        "order": 60,
         "expansion": "MHWI",
         "physiology": {
           "fire": 0,
@@ -3139,7 +3141,7 @@
       "attributes": {
         "name": "Tigrex",
         "slug": "tigrex",
-        "order": 44,
+        "order": 42,
         "expansion": "MHWI",
         "physiology": {
           "fire": 0,
@@ -3420,7 +3422,7 @@
       "attributes": {
         "name": "Velkhana",
         "slug": "velkhana",
-        "order": 50,
+        "order": 48,
         "expansion": "MHWI",
         "physiology": {
           "fire": 3,
@@ -3476,7 +3478,7 @@
       "attributes": {
         "name": "Viper Tobi-Kadachi",
         "slug": "viper-tobi-kadachi",
-        "order": 38,
+        "order": 36,
         "expansion": "MHWI",
         "physiology": {
           "fire": 1,
@@ -3602,7 +3604,7 @@
       "attributes": {
         "name": "Yian Garuga",
         "slug": "yian-garuga",
-        "order": 58,
+        "order": 56,
         "expansion": "MHWI",
         "physiology": {
           "fire": 0,
@@ -3668,7 +3670,7 @@
       "attributes": {
         "name": "Zinogre",
         "slug": "zinogre",
-        "order": 57,
+        "order": 55,
         "expansion": "MHWI",
         "physiology": {
           "fire": 1,
