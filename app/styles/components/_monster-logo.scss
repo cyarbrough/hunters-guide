@@ -2,29 +2,30 @@
   * Styles for monster-logo component
   */
 
-$monster-list: // acidic-glavenus
+$monster-list: acidic-glavenus
+  ancient-leshen
   anjanath
   azure-rathalos
-  // banbaro
-  // barioth
+  banbaro
+  barioth
   barroth
   bazelgeuse 
   behemoth
-  // beotodus
+  beotodus
   black-diablos
-  // blackveil-vaal-hazak
-  // brachydios
-  // brute-tigrex
-  // coral-pukei-pukei
+  blackveil-vaal-hazak
+  brachydios
+  brute-tigrex
+  coral-pukei-pukei
   diablos 
   deviljho
   dodogama
-  // ebony-odogaron
-  // fulgur-anjanath
-  // glavenus
+  ebony-odogaron
+  fulgur-anjanath
+  glavenus
   great-girros 
   great-jagras
-  // gold-rathian
+  gold-rathian
   jyuratodus
   kirin
   kulu-ya-ku
@@ -34,10 +35,10 @@ $monster-list: // acidic-glavenus
   legiana
   leshen
   lunastra
-  // namielle
-  // nargacuga
+  namielle
+  nargacuga
   nergigante
-  // nightshade-paolumu
+  nightshade-paolumu
   odogaron
   paolumu
   pink-rathian
@@ -45,24 +46,24 @@ $monster-list: // acidic-glavenus
   radobaan
   rathalos
   rathian
-  // ruiner-nergigante
-  // savage-deviljho
-  // scarred-yian-garuga
-  // seething-bazelgeuse
-  // shara-ishvalda
-  // shrieking-legiana
-  // silver-rathalos
+  ruiner-nergigante
+  savage-deviljho
+  scarred-yian-garuga
+  seething-bazelgeuse
+  shara-ishvalda
+  shrieking-legiana
+  silver-rathalos
   teostra
-  // tigrex
+  tigrex
   tobi-kadachi
   tzitzi-ya-ku
   uragaan
   vaal-hazak
-  // velkhana
-  // viper-tobi-kadachi
+  velkhana
+  viper-tobi-kadachi
   xeno-jiiva
-  // yian-garuga
-  // zinogre
+  yian-garuga
+  zinogre
   zorah-magdaros;
 
 @mixin monster-imgs {
