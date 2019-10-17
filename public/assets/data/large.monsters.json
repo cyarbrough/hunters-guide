@@ -68,7 +68,7 @@
       "attributes": {
         "name": "Ancient Leshen",
         "slug": "ancient-leshen",
-        "order": 63,
+        "order": 83,
         "expansion": "MHW",
         "physiology": {
           "fire": 3,
@@ -414,7 +414,7 @@
       "attributes": {
         "name": "Behemoth",
         "slug": "behemoth",
-        "order": 61,
+        "order": 81,
         "expansion": "MHW",
         "physiology": {
           "fire": 1,
@@ -886,7 +886,7 @@
     },
     {
       "type": "monsters",
-      "id": "diablosBlack",
+      "id": "blackDiablos",
       "attributes": {
         "name": "Black Diablos",
         "slug": "black-diablos",
@@ -1717,7 +1717,7 @@
       "attributes": {
         "name": "Leshen",
         "slug": "leshen",
-        "order": 62,
+        "order": 82,
         "expansion": "MHW",
         "physiology": {
           "fire": 3,
@@ -2387,6 +2387,61 @@
     },
     {
       "type": "monsters",
+      "id": "rajang",
+      "attributes": {
+        "name": "Rajang",
+        "slug": "rajang",
+        "order": 61,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 0,
+          "water": 1,
+          "thunder": 0,
+          "ice": 3,
+          "dragon": 0,
+          "poison": 1,
+          "sleep": 1,
+          "paralysis": 1,
+          "blast": 2,
+          "stun": 1
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Tail",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 2
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Hands",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "fangedWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "strongRoar" },
+            { "type": "ailment", "id": "thunderBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
       "id": "rathalos",
       "attributes": {
         "name": "Rathalos",
@@ -2452,7 +2507,7 @@
     },
     {
       "type": "monsters",
-      "id": "rathalosAzure",
+      "id": "azureRathalos",
       "attributes": {
         "name": "Azure Rathalos",
         "slug": "azure-rathalos",
@@ -2578,7 +2633,7 @@
     },
     {
       "type": "monsters",
-      "id": "rathianPink",
+      "id": "pinkRathian",
       "attributes": {
         "name": "Pink Rathian",
         "slug": "pink-rathian",
