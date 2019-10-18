@@ -2,6 +2,22 @@
   "data": [
     {
       "type": "update-items",
+      "id": "16",
+      "attributes": {
+        "date": "2019-10-17",
+        "title": "Added Rajang data"
+      }
+    },
+    {
+      "type": "update-items",
+      "id": "15",
+      "attributes": {
+        "date": "2019-10-17",
+        "title": "Added Iceborne monster roar data"
+      }
+    },
+    {
+      "type": "update-items",
       "id": "14",
       "attributes": {
         "date": "2019-09-15",

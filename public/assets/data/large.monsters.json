@@ -57,6 +57,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "defenseDown" }
           ]
         }
@@ -112,7 +113,7 @@
         },
         "ailments": {
           "data": [
-            { "type": "ailment", "id": "strongRoar" },
+            { "type": "ailment", "id": "weakRoar" },
             { "type": "ailment", "id": "bleeding" }
           ]
         }
@@ -222,6 +223,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "weakRoar" },
             { "type": "ailment", "id": "fireBlight" },
             { "type": "ailment", "id": "iceBlight" },
             { "type": "ailment", "id": "waterBlight" }
@@ -280,6 +282,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "iceBlight" }
           ]
         }
@@ -467,7 +470,7 @@
     },
     {
       "type": "monsters",
-      "id": "Brute Tigrex",
+      "id": "bruteTigrex",
       "attributes": {
         "name": "Brute Tigrex",
         "slug": "brute-tigrex",
@@ -516,6 +519,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "fireBlight" },
             { "type": "ailment", "id": "waterBlight" }
           ]
@@ -578,6 +582,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "weakRoar" },
             { "type": "ailment", "id": "waterBlight" }
           ]
         }
@@ -695,6 +700,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "weakRoar" },
             { "type": "ailment", "id": "iceBlight" }
           ]
         }
@@ -756,6 +762,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "effluvialBuildup" }
           ]
         }
@@ -811,7 +818,9 @@
           "data": { "type": "species", "id": "bruteWyvern"}
         },
         "ailments": {
-          "data": []
+          "data": [
+            { "type": "ailment", "id": "strongRoar" }
+          ]
         }
       }
     },
@@ -1064,6 +1073,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "weakRoar" },
             { "type": "ailment", "id": "bleeding" },
             { "type": "ailment", "id": "dragonBlight" }
           ]
@@ -1121,6 +1131,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "weakRoar" },
             { "type": "ailment", "id": "thunderBlight" }
           ]
         }
@@ -1182,6 +1193,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "fireBlight" }
           ]
         }
@@ -1354,6 +1366,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "fireBlight" },
             { "type": "ailment", "id": "poison" }
           ]
@@ -1761,7 +1774,7 @@
         },
         "ailments": {
           "data": [
-            { "type": "ailment", "id": "strongRoar" },
+            { "type": "ailment", "id": "weakRoar" },
             { "type": "ailment", "id": "bleeding" }
           ]
         }
@@ -1946,6 +1959,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "thunderBlight" },
             { "type": "ailment", "id": "waterBlight" }
           ]
@@ -2008,6 +2022,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "bleeding" }
           ]
         }
@@ -2135,6 +2150,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "weakRoar" },
             { "type": "ailment", "id": "sleep" }
           ]
         }
@@ -2751,7 +2767,7 @@
         },
         "ailments": {
           "data": [
-            { "type": "ailment", "id": "unknown" }
+            { "type": "ailment", "id": "strongRoar" }
           ]
         }
       }
@@ -2807,6 +2823,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "defenseDown" },
             { "type": "ailment", "id": "dragonBlight" }
           ]
@@ -2873,6 +2890,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "fireBlight" },
             { "type": "ailment", "id": "poison" },
             { "type": "ailment", "id": "stun" }
@@ -2940,6 +2958,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "fireBlight" }
           ]
         }
@@ -2996,7 +3015,7 @@
         },
         "ailments": {
           "data": [
-            { "type": "ailment", "id": "unknown" }
+            { "type": "ailment", "id": "strongRoar" }
           ]
         }
       }
@@ -3061,6 +3080,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "iceBlight" }
           ]
         }
@@ -3126,6 +3146,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "fireBlight" },
             { "type": "ailment", "id": "poison" }
           ]
@@ -3241,6 +3262,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "iceBlight" },
             { "type": "ailment", "id": "waterBlight" }
           ]
@@ -3522,6 +3544,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "iceBlight" }
           ]
         }
@@ -3583,6 +3606,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "weakRoar" },
             { "type": "ailment", "id": "poison" },
             { "type": "ailment", "id": "noxiousPoison" },
             { "type": "ailment", "id": "paralysis" }
@@ -3713,6 +3737,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "fireBlight" },
             { "type": "ailment", "id": "poison" }
           ]
@@ -3775,6 +3800,7 @@
         },
         "ailments": {
           "data": [
+            { "type": "ailment", "id": "weakRoar" },
             { "type": "ailment", "id": "thunderBlight" }
           ]
         }
