@@ -2,6 +2,14 @@
   "data": [
     {
       "type": "update-items",
+      "id": "17",
+      "attributes": {
+        "date": "2020-06-10",
+        "title": "Added Stygian Zinogre, Furious Rajang, Raging Brachydios, & Safi'Jiiva"
+      }
+    },
+    {
+      "type": "update-items",
       "id": "16",
       "attributes": {
         "date": "2019-10-17",

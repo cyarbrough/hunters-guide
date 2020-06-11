@@ -1139,6 +1139,54 @@
     },
     {
       "type": "monsters",
+      "id": "furiousRajang",
+      "attributes": {
+        "name": "Furious Rajang",
+        "slug": "furious-rajang",
+        "order": 63,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 0,
+          "water": 1,
+          "thunder": 0,
+          "ice": 3,
+          "dragon": 0,
+          "poison": 1,
+          "sleep": 1,
+          "paralysis": 1,
+          "blast": 2,
+          "stun": 1
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "BreakableX2",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Hands",
+            "type": "Breakable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "fangedBeast"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "strongRoar" },
+            { "type": "ailment", "id": "thunderBlight" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
       "id": "glavenus",
       "attributes": {
         "name": "Glavenus",
@@ -2403,6 +2451,63 @@
     },
     {
       "type": "monsters",
+      "id": "ragingBrachydios",
+      "attributes": {
+        "name": "Raging Brachydios",
+        "slug": "raging-brachydios",
+        "order": 64,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 0,
+          "water": 2,
+          "thunder": 1,
+          "ice": 3,
+          "dragon": 1,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 2,
+          "blast": 1,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Forelegs",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 2,
+            "ammo": 2
+          },
+          {
+            "area": "Tail",
+            "type": "Severable",
+            "cut": 2,
+            "blunt": 2,
+            "ammo": 3
+          }
+        ],
+        "breakpoints": []
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "bruteWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "strongRoar" },
+            { "type": "ailment", "id": "blastscourge" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
       "id": "rajang",
       "attributes": {
         "name": "Rajang",
@@ -2446,7 +2551,7 @@
       },
       "relationships": {
         "species": {
-          "data": { "type": "species", "id": "fangedWyvern"}
+          "data": { "type": "species", "id": "fangedBeast"}
         },
         "ailments": {
           "data": [
@@ -2768,6 +2873,69 @@
         "ailments": {
           "data": [
             { "type": "ailment", "id": "strongRoar" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "safiJiiva",
+      "attributes": {
+        "name": "Safi'jiiva",
+        "slug": "safi-jiiva",
+        "order": 65,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 2,
+          "water": 2,
+          "thunder": 2,
+          "ice": 2,
+          "dragon": 2,
+          "dragonAlt": 3,
+          "poison": 3,
+          "sleep": 1,
+          "paralysis": 2,
+          "blast": 3,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 2,
+            "blunt": 3,
+            "ammo": 1
+          },
+          {
+            "area": "Foreclaws",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 1,
+            "ammo": 1
+          },
+          {
+            "area": "Wings",
+            "type": "Breakable",
+            "cut": 1,
+            "blunt": 2,
+            "ammo": 3
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Tail",
+            "type": "Severable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "elderDragon"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "strongRoar" },
+            { "type": "ailment", "id": "fireBlight" }
           ]
         }
       }
@@ -3149,6 +3317,72 @@
             { "type": "ailment", "id": "strongRoar" },
             { "type": "ailment", "id": "fireBlight" },
             { "type": "ailment", "id": "poison" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "monsters",
+      "id": "stygianZinogre",
+      "attributes": {
+        "name": "Stygian Zinogre",
+        "slug": "stygian-zinogre",
+        "order": 62,
+        "expansion": "MHWI",
+        "physiology": {
+          "fire": 0,
+          "fireAlt": 1,
+          "water": 0,
+          "waterAlt": 2,
+          "thunder": 1,
+          "thunderAlt": 3,
+          "ice": 0,
+          "iceAlt": 1,
+          "dragon": 0,
+          "poison": 2,
+          "sleep": 2,
+          "paralysis": 2,
+          "blast": 3,
+          "stun": 2
+        },
+        "weaknesses": [
+          {
+            "area": "Head",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          },
+          {
+            "area": "Back",
+            "type": "Breakable",
+            "cut": 1,
+            "blunt": 1,
+            "ammo": 1
+          },
+          {
+            "area": "Forelegs",
+            "type": "Breakable",
+            "cut": 3,
+            "blunt": 3,
+            "ammo": 3
+          }
+        ],
+        "breakpoints": [
+          {
+            "area": "Tail",
+            "type": "Severable"
+          }
+        ]
+      },
+      "relationships": {
+        "species": {
+          "data": { "type": "species", "id": "fangedWyvern"}
+        },
+        "ailments": {
+          "data": [
+            { "type": "ailment", "id": "weakRoar" },
+            { "type": "ailment", "id": "thunderBlight" }
           ]
         }
       }
@@ -3901,6 +4135,13 @@
     },
     {
       "type": "species",
+      "id": "fangedBeast",
+      "attributes": {
+        "name": "Fanged Beast"
+      }
+    },
+    {
+      "type": "species",
       "id": "piscineWyvern",
       "attributes": {
         "name": "Piscine Wyvern"
@@ -3927,6 +4168,14 @@
       "attributes": {
         "name": "Blastblight",
         "slug": "blast"
+      }
+    },
+    {
+      "type": "ailments",
+      "id": "blastscourge",
+      "attributes": {
+        "name": "Blastscourge",
+        "slug": "blastscourge"
       }
     },
     {
