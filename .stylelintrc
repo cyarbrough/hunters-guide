@@ -1,12 +1,10 @@
 {
   "extends": "stylelint-config-sass-guidelines",
   "plugins": [
-    "stylelint-declaration-use-variable",
     "stylelint-scss"
   ],
 
   "rules": {
-    "max-nesting-depth": 4,
-    "sh-waqar/declaration-use-variable": [["background-color", "box-shadow", "color"]]
+    "max-nesting-depth": 4
   }
 }
