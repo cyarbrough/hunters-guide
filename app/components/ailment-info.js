@@ -1,6 +1,5 @@
+import { computed } from '@ember/object';
 import Component from '@ember/component';
-import Ember from 'ember';
-const { computed } = Ember;
 
 export default Component.extend({
   /**

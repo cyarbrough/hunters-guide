@@ -1,6 +1,5 @@
+import { computed } from '@ember/object';
 import Component from '@ember/component';
-import Ember from 'ember';
-const { $, computed } = Ember;
 
 export default Component.extend({
   /**
@@ -25,7 +24,7 @@ export default Component.extend({
    * @var {string}
    */
   logoClassName: computed('slug', function() {
-    let slug = this.get('slug') || 'unknown';
+    let slug = this.slug || 'unknown';
 
     return `is-${slug}`;
   }),
@@ -33,7 +32,7 @@ export default Component.extend({
    * @var {string}
    */
   logoAltClassName: computed('alternate', function() {
-    if(this.get('alternate')) {
+    if(this.alternate) {
       return 'is-alt';
     }
     return null;
@@ -42,7 +41,7 @@ export default Component.extend({
    * Handles the click action
    */
   mouseUp() {
-    if($.isFunction(this.toggle)) {
+    if(typeof this.toggle === 'function') {
       this.toggle();
     }
   }

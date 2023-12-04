@@ -1,17 +1,18 @@
 import Route from '@ember/routing/route';
-import fetch from 'ember-fetch/ajax';
+import fetch from 'fetch';
 import config from 'hunters-guide/config/environment';
-import HeadTagsMixin from 'hunters-guide/mixins/head-tags';
+// import HeadTagsMixin from 'hunters-guide/mixins/head-tags';
 import { inject as service } from '@ember/service';
 
-export default Route.extend(HeadTagsMixin, {
+export default Route.extend({
   alertCenter: service(),
   settings: service(),
+  store: service(),
   /**
    * Lifecycle function
    */
   beforeModel() {
-    this.get('settings').getSettings();
+    this.settings.getSettings();
   },
   /**
    * Pushes data into the payload, returns
@@ -19,7 +20,7 @@ export default Route.extend(HeadTagsMixin, {
    * @return {*} model data
    */
   handleMonsterSuccess(monsterData) {
-    let store = this.get('store');
+    const { store } = this;
 
     store.pushPayload(monsterData);
 
@@ -32,28 +33,39 @@ export default Route.extend(HeadTagsMixin, {
    * @param {*} itemData
    */
   handleUpdateItemsSuccess(itemData) {
-    let data, store = this.get('store');
+    let data; 
+    const { store } = this;
 
     store.pushPayload(itemData);
 
     data = store.peekAll('update-item');
-    this.get('alertCenter').checkForUpdateAlerts(data);
+    this.alertCenter.checkForUpdateAlerts(data);
   },
   /**
    * Main model data for App
    */
-  model() {
-    this.preloadUpdateItems();
-    return fetch(config.webUrl + 'assets/data/large.monsters.json').then((monsterData) => { return this.handleMonsterSuccess(monsterData); });
+  async model() {
+    // this.preloadUpdateItems();
+    const response = await fetch(`${config.webUrl}assets/data/large.monsters.json`);
+    let monsterData;
+
+    if(response.ok) {
+      monsterData = await response.json();
+      return this.handleMonsterSuccess(monsterData);
+    }
+
+    return {
+      monsters: []
+    }
   },
   /**
    * Fetch update items
    */
   preloadUpdateItems() {
-    fetch(config.webUrl + 'assets/data/updates.json').then(
-      (updateData) => { this.handleUpdateItemsSuccess(updateData); }
+    fetch(`${config.webUrl}assets/data/updates.json`).then(
+      (updateData) => { this.handleUpdateItemsSuccess(updateData.json()); }
     ).catch(
-      (/*error*/) => { /* crap */ }
+      (/* error */) => { /* crap */ }
     );
   },
   

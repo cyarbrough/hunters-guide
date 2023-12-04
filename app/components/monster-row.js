@@ -1,18 +1,19 @@
+import { setProperties } from '@ember/object';
+import { on } from '@ember/object/evented';
 import Component from '@ember/component';
-import Ember from 'ember';
-import InViewportMixin from 'ember-in-viewport';
-const { $ } = Ember;
+import { inject as service } from '@ember/service';
 
-export default Component.extend(InViewportMixin, {
+export default Component.extend({
+  inViewport: service(),
   /**
    * Overrides
    */
   classNames: ['monster-row'],
-  classNameBindings: ['viewportEntered:is-active', 'showAlternate:is-open'],
+  classNameBindings: ['inView:is-active', 'showAlternate:is-open'],
   /**
    * @var {boolean}
    */
-  inViewport: false,
+  inView: false,
   /**
    * @var {object}
    */
@@ -22,31 +23,30 @@ export default Component.extend(InViewportMixin, {
    */
   showAlternate: false,
   /**
-   * Viewport Options
+   * Overrides
    */
-  viewportOptionsOverride: Ember.on('didInsertElement', function() {
-    Ember.setProperties(this, {
-      viewportEnabled: true,
-      viewportUseRAF: true,
-      viewportSpy: false,
-      viewportScrollSensitivity: 1,
-      viewportRefreshRate: 150,
-      intersectionThreshold: 0,
-      scrollableArea: null,
-      viewportTolerance: {
-        top: 250,
-        bottom: 250,
-        left: 20,
-        right: 20
-      }
-    });
-  }),
+  didRender() {
+    this.setupInViewport();
+  },
+  willDestroy() {
+    const element = document.getElementById(this.elementId);
+    this.inViewport.stopWatching(element);
+    this._super(...arguments);
+  },
+  /**
+   * Sets inView on inViewport.didEnterViewport
+   */
+  didEnterViewport() {
+    if(!this.inView) {
+      this.set('inView', true);
+    }
+  },
   /**
    * Sends logEvent action with Open/Close panel info
    */
   logToggle() {
     let action = 'Close ',
-      isAlt = this.get('showAlternate'),
+      isAlt = this.showAlternate,
       name = this.get('monster.name'),
       slug = this.get('monster.slug');
 
@@ -67,17 +67,16 @@ export default Component.extend(InViewportMixin, {
    */
   toggleWeaknessGrid() {
     this.toggleProperty('showAlternate');
-    this.toggleWeaknessSlide();
     this.logToggle();
   },
   /**
-   * Activates slideToggle on weakness grid
+   * Sets up InViewport to watch monster-row component
    */
-  toggleWeaknessSlide() {
-    let elementId = this.get('elementId'),
-      elementObj = $(`#${elementId} .weakness-grid`);
-
-    elementObj.slideToggle(300);
+  setupInViewport() {
+    const element = document.getElementById(this.elementId);
+    const viewportTolerance = { top: 250, bottom: 250 };
+    const { onEnter } = this.inViewport.watchElement(element, { viewportTolerance });
+    onEnter(this.didEnterViewport.bind(this));
   },
 
   actions: {

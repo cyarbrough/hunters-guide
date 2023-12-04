@@ -1,14 +1,27 @@
-<h2 class="title">{{monster.name}}</h2>
-<h3 class="subtitle">{{monster.species.name}}</h3>
+<h2 class="title">{{@monster.name}}</h2>
+<h3 class="subtitle">{{@monster.species.name}}</h3>
 <div class="monster-grid">
-  {{monster-logo slug=monster.slug alternate=showAlternate toggle=(action 'toggleGrid')}}
-  {{status-grid physiology=monster.physiology}}
+  <MonsterLogo
+    @slug={{@monster.slug}}
+    @alternate={{this.showAlternate}}
+    @toggle={{action "toggleGrid"}}
+  />
+  <StatusGrid
+   @physiology={{@monster.physiology}}
+  />
 </div>
-{{monster-logo slug=monster.slug alternate=true isHidden=true}}
-{{weakness-grid weaknesses=monster.weaknesses breakpoints=monster.breakpoints}}
+<MonsterLogo
+  @slug={{@monster.slug}}
+  @alternate={{true}}
+  @isHidden={{true}}
+/>
+<WeaknessGrid
+  @weaknesses={{@monster.weaknesses}}
+  @breakpoints={{@monster.breakpoints}}
+/>
 <div class="ailment-row">
-  {{#each monster.ailments as |ailment|}}
-    {{ailment-info ailment=ailment}}
+  {{#each @monster.ailments as |ailment|}}
+    <AilmentInfo @ailment={{ailment}} />
   {{/each}}
 </div>
 

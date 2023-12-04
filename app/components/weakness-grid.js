@@ -1,5 +1,6 @@
+import { htmlSafe } from '@ember/template';
+import { computed } from '@ember/object';
 import Component from '@ember/component';
-import Ember from 'ember';
 
 export default Component.extend({
   /**
@@ -7,8 +8,4 @@ export default Component.extend({
    */
   attributeBindings: ['style'],
   classNames: ['weakness-grid'],
-  classNameBindings: ['showGrid:is-visible'],
-  style: Ember.computed('color', function() {
-    return Ember.String.htmlSafe('display: none');
-  })
 });

@@ -3,15 +3,10 @@
   */
 
 .weakness-grid {
-  background-color: $color-bg-main-alt;
   border-radius: 0 $border-radius $border-radius $border-radius;
   display: flex;
   margin: 0 0 10px;
   min-width: 200px;
-  padding: 5px 10px;
-  position: relative;
-  transition: line-height $transition-duration $transition-ease;
-  z-index: 5;
   
   .grid-item {
     display: inline-block;

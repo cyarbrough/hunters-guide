@@ -134,6 +134,22 @@
 
   .monster-row {
     width: 375px;
+
+    .weakness-grid {
+      background-color: $color-bg-main;
+      height: 0;
+      overflow: hidden;
+      padding: 0 10px;
+      transition: all $transition-duration $transition-ease;
+    }
+
+    &.is-open {
+      .weakness-grid {
+        background-color: $color-bg-main-alt;
+        height: 145px;
+        padding: 5px 10px;
+      }
+    }
   }
 
   .monster-grid,

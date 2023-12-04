@@ -5,6 +5,8 @@
 .monster-row {
   font-size: 1em;
   margin: 10px 0;
+  position: relative;
+  overflow: hidden;
 
   .break {
     border: 0;

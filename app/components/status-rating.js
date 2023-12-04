@@ -1,6 +1,6 @@
+import { computed } from '@ember/object';
+import { isNone } from '@ember/utils';
 import Component from '@ember/component';
-import Ember from 'ember';
-const { computed, isNone } = Ember;
 
 export default Component.extend({
   /**
@@ -26,7 +26,7 @@ export default Component.extend({
    * @var {string}
    */
   elementClassName: computed('elementType', function() {
-    let elementName = this.get('elementType') || 'unknown';
+    let elementName = this.elementType || 'unknown';
     
     return `is-status-${elementName}`;
   }),
@@ -35,15 +35,15 @@ export default Component.extend({
    */
   showRatingAlt: computed('ratingAlt', function() {
     
-    return !isNone(this.get('ratingAlt'));
+    return !isNone(this.ratingAlt);
   }),
   /**
    * @var {string}
    */
   starClassName: computed('ratingAmount', function() {
-    let rating = this.get('ratingAmount') || 0;
+    let rating = this.ratingAmount || 0;
     
-    if(this.get('noRating')){
+    if(this.noRating){
       return 'is-label';
     }
     return `is-rating-${rating}`;
@@ -52,9 +52,9 @@ export default Component.extend({
    * @var {string}
    */
   starClassNameAlt: computed('ratingAlt', 'showRatingAlt', function() {
-    let rating = this.get('ratingAlt') || 0;
+    let rating = this.ratingAlt || 0;
 
-    if(this.get('showRatingAlt')) {
+    if(this.showRatingAlt) {
       return `is-rating-${rating}`;
     }
     return null;
@@ -64,7 +64,7 @@ export default Component.extend({
    * @var {array|null}
    */
   starList: computed('ratingAmount', function() {
-    let ratingAmount = this.get('ratingAmount');
+    let ratingAmount = this.ratingAmount;
 
     if(ratingAmount) {
       let i, stars = [];
@@ -81,7 +81,7 @@ export default Component.extend({
    * @var {array|null}
    */
   starListAlt: computed('ratingAlt', function() {
-    let ratingAlt = this.get('ratingAlt');
+    let ratingAlt = this.ratingAlt;
 
     if(ratingAlt) {
       let i, stars = [];

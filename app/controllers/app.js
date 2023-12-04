@@ -1,16 +1,16 @@
+import { getOwner } from '@ember/application';
+// import $ from 'jquery';
 import Controller from '@ember/controller';
 import { task, timeout } from 'ember-concurrency';
 import { inject as service } from '@ember/service';
 import { computed, observer } from '@ember/object';
-import { alias } from '@ember/object/computed';
-import Ember from 'ember';
+import { alias, sort } from '@ember/object/computed';
 
-const { $ } = Ember;
 const TIMER_TRANSITION_FAST = 300;
 
 export default Controller.extend({
   settings: service(),
-  googleAnalytics: service(),
+  // googleAnalytics: service(),
   /**
    * Overrides
    */
@@ -55,17 +55,15 @@ export default Controller.extend({
    * @var {array}
    */
   monstersFiltered: computed('model.monsters', 'searchTerm', function() {
-    let monsters = this.get('model.monsters'),
-      search = this.get('searchTerm'),
-      searchRay;
+    const monsters = this.get('model.monsters');
+    let search = this.searchTerm;
+    let searchRay;
 
-    if(search) {
+    if (search) {
       search = search.toLowerCase().trim();
       searchRay = search.split(' ');
 
-      return monsters.filter((monster) => {
-        return this.checkMonsterForSearchTerms(monster, searchRay);
-      });
+      return monsters.filter((monster) => this.checkMonsterForSearchTerms(monster, searchRay));
     }
 
     return monsters;
@@ -75,9 +73,9 @@ export default Controller.extend({
    * Sorted List
    * @var {array}
    */
-  monsterList: computed.sort('monstersFiltered', 'monsterSort'),
+  monsterList: sort('monstersFiltered', 'monsterSort'),
   monsterSort: computed('sortAlpha', function() {
-    if(this.get('sortAlpha')) {
+    if (this.sortAlpha) {
       this.send('logEvent', 'Monster List', 'Sort by Alpha');
       return ['id:asc'];
     }
@@ -229,12 +227,12 @@ export default Controller.extend({
      * @param {string} label
      */
     logEvent(category, action, label) {
-      this.get('googleAnalytics').event(category, action, label);
+      // this.googleAnalytics.event(category, action, label);
     },
     /**
      * Toggles Side Panel
      */
-    toggleSidePanel(){
+    toggleSidePanel() {
       this.toggleSidePanel();
     },
     /**
