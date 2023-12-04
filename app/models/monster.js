@@ -8,6 +8,6 @@ export default Model.extend({
   breakpoints: attr(),
   slug: attr('string'),
 
-  ailments: hasMany('ailment'),
-  species: belongsTo('species')
+  ailments: hasMany('ailment', { async: false, inverse: null }),
+  species: belongsTo('species', { async: false, inverse: null })
 });
