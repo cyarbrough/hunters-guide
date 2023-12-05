@@ -45,7 +45,7 @@ export default Route.extend({
    * Main model data for App
    */
   async model() {
-    // this.preloadUpdateItems();
+    this.preloadUpdateItems();
     const response = await fetch(`${config.webUrl}assets/data/large.monsters.json`);
     let monsterData;
 
@@ -61,25 +61,27 @@ export default Route.extend({
   /**
    * Fetch update items
    */
-  preloadUpdateItems() {
-    fetch(`${config.webUrl}assets/data/updates.json`).then(
-      (updateData) => { this.handleUpdateItemsSuccess(updateData.json()); }
-    ).catch(
-      (/* error */) => { /* crap */ }
-    );
+  async preloadUpdateItems() {
+    const response = await fetch(`${config.webUrl}assets/data/updates.json`);
+    let updateData;
+
+    if(response.ok) {
+      updateData = await response.json();
+      return this.handleUpdateItemsSuccess(updateData);
+    }
   },
   
   actions: {
     didTransition() {
       // Need to reset head tags on transition to /app,
       // not sure why title property isn't working
-      this.setHeadTags();
+      // this.setHeadTags();
     },
     /**
      * Updates last visited route
      */
     updateLastSidePanelRoute(route) {
-      this.get('controller').set('lastSidePanelRoute', route);
+      this.controller.set('lastSidePanelRoute', route);
     }
   }
 });

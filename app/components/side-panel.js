@@ -12,13 +12,11 @@ export default Component.extend({
    */
   isOpen: false,
   /**
-   * Action to bubble to app
-   */
-  showPanelAction: 'sidePanelInserted',
-  /**
    * Sends action when inserted
    */
   didInsertElement() {
-    this.sendAction('showPanelAction');
+    if(typeof this.actionInserted === 'function') {
+      this.actionInserted();
+    }
   }
 });

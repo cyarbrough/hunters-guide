@@ -5,7 +5,6 @@
   @actionButton={{action "toggleSidePanel"}}
 />
 <div id="container" class="container">
-  {{outlet}}
   <div id="monsterList" class="monster-list">
     {{#each this.monsterList as |monster|}}
       <MonsterRow @monster={{monster}} @logEvent={{action "logEvent"}} />
@@ -14,6 +13,10 @@
 
   <FooterNav />
 </div>
-{{#side-panel isOpen=sidePanelIsOpen actionClose=(action "toggleSidePanel")}}
-  {{outlet "side-panel"}}
-{{/side-panel}}
+<SidePanel 
+  @isOpen={{this.sidePanelIsOpen}}
+  @actionClose={{action "toggleSidePanel"}}
+  @actionInserted={{action "sidePanelInserted"}}
+>
+  {{outlet}}
+</SidePanel>

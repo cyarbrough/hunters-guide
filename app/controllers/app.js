@@ -9,6 +9,7 @@ import { alias, sort } from '@ember/object/computed';
 const TIMER_TRANSITION_FAST = 300;
 
 export default Controller.extend({
+  router: service(),
   settings: service(),
   // googleAnalytics: service(),
   /**
@@ -112,11 +113,11 @@ export default Controller.extend({
    * Checks route and auto opens side panel
    */
   checkForSidePanel() {
-    let currentRoute = Ember.getOwner(this).lookup('router:main').get('currentRouteName'),
-      sidePanelRoutes = this.get('sidePanelRoutes');
+    const currentRoute = getOwner(this).lookup('router:main').get('currentRouteName');
+    const { sidePanelRoutes } = this;
 
-    if(sidePanelRoutes.includes(currentRoute)) {
-      this.get('openSidePanelTask').perform();
+    if (sidePanelRoutes.includes(currentRoute)) {
+      this.openSidePanelTask.perform();
     }
   },
   /**
@@ -135,7 +136,7 @@ export default Controller.extend({
    */
   transitionToAppTask: task(function * (timer = TIMER_TRANSITION_FAST + 50) {
     yield timeout(timer);
-    this.transitionToRoute('app');
+    this.router.transitionTo('app');
   }).drop(),
   /**
    * Sets searchQuery after debounce
@@ -207,14 +208,14 @@ export default Controller.extend({
   toggleSidePanel() {
     this.toggleProperty('sidePanelIsOpen');
     // If side panels opens, go to lastSidePanelRoute
-    if(this.get('sidePanelIsOpen')) {
-      let route = this.get('lastSidePanelRoute') || this.get('defaultsidePanelRoute');
+    if (this.sidePanelIsOpen) {
+      const route = this.lastSidePanelRoute || this.defaultsidePanelRoute;
 
-      this.send('logEvent', 'Side Panel', 'Open Side Panel to ' + route);
-      this.transitionToRoute(route);
+      this.send('logEvent', 'Side Panel', `Open Side Panel to ${route}`);
+      this.router.transitionTo(route);
     } else {
       this.send('logEvent', 'Side Panel', 'Close Side Panel');
-      this.get('transitionToAppTask').perform();
+      this.transitionToAppTask.perform();
     }
     this.toggleNoScroll();
   },

@@ -44,10 +44,10 @@ export default Component.extend({
   classNamesButton: computed('sidePanelIsOpen', 'hasAlert', function() {
     let classes = 'menu';
 
-    if(this.get('sidePanelIsOpen')){
+    if(this.sidePanelIsOpen){
       classes += ' is-open';
     }
-    if(this.get('hasAlert')){
+    if(this.hasAlert){
       classes += ' has-alert';
     }
     return classes;

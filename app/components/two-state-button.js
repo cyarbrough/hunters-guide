@@ -22,16 +22,16 @@ export default Component.extend({
   labelOff: 'LABEL OFF',
 
   label: computed('labelOn', 'labelOff', 'isOn', function() {
-    if(get(this, 'isOn')) {
-      return get(this, 'labelOn');
+    if(this.isOn) {
+      return this.labelOn;
     }
-    return get(this, 'labelOff');
+    return this.labelOff;
   }),
 
   click() {
-    if(get(this, 'isOn')) {
+    if(this.isOn && typeof this.actionOn === 'function') {
       this.actionOn();
-    } else {
+    } else if (typeof this.actionOff === 'function') {
       this.actionOff();
     }
   }

@@ -27,19 +27,19 @@
       {{/radio-button}}
     </div>
   </div>
-  {{two-state-button
-    classNames='remember-me'
-    isOn=rememberUser
-    labelOn="Forget Me"
-    labelOff="Remember Me"
-    actionOn=(action 'forgetUser')
-    actionOff=(action 'rememberUser')
-  }}
+  <TwoStateButton
+    @classNames="remember-me"
+    @isOn={{this.rememberUser}}
+    @labelOn="Forget Me"
+    @labelOff="Remember Me"
+    @actionOn={{action "forgetUser"}}
+    @actionOff={{action "rememberUser"}}
+  />
 </fieldset>
 
 <h2 class="title">Updates</h2>
 <table class="update-table">
-  {{#each updateItems as |item|}}
-    {{update-item item=item}}
+  {{#each this.updateItems as |item|}}
+    <UpdateItem @item={{item}} />
   {{/each}}
 </table>

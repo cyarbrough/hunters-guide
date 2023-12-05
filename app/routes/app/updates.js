@@ -1,10 +1,10 @@
 import Route from '@ember/routing/route';
 import HeadTagsMixin from 'hunters-guide/mixins/head-tags';
 import { inject as service } from '@ember/service';
-import { get } from '@ember/object';
 
 export default Route.extend(HeadTagsMixin, {
   alertCenter: service(),
+  store: service(),
   /**
    * Lifecycle function
    */
@@ -16,16 +16,8 @@ export default Route.extend(HeadTagsMixin, {
    */
   model() {
     return {
-      updates: this.get('store').peekAll('update-item')
+      updates: this.store.peekAll('update-item')
     };
-  },
-  /**
-   * Renders route into side-panel
-   */
-  renderTemplate() {
-    this.render({
-      outlet: 'side-panel'
-    });
   },
 
   actions: {

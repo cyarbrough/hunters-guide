@@ -42,13 +42,13 @@ export default Controller.extend({
      * Calls settings.forgetUserSettings
      */
     forgetUser() {
-      get(this, 'settings').forgetUserSettings();
+      this.settings.forgetUserSettings();
     },
     /**
      * Calls settings.rememberUserSettings
      */
     rememberUser() {
-      get(this, 'settings').rememberUserSettings();
+      this.settings.rememberUserSettings();
     },
     /**
      * Calls settings.toggleSort, and scrolls to top
