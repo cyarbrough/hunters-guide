@@ -11,24 +11,24 @@
 
     <div class="status-grid">
       <div class="element-grid">
-        {{status-rating elementType="fire" noRating=true}}
-        {{status-rating elementType="water" noRating=true}}
-        {{status-rating elementType="thunder" noRating=true}}
-        {{status-rating elementType="ice" noRating=true}}
-        {{status-rating elementType="dragon" noRating=true}}
+        <StatusRating @elementType="fire" @noRating={{true}} />
+        <StatusRating @elementType="water" @noRating={{true}} />
+        <StatusRating @elementType="thunder" @noRating={{true}} />
+        <StatusRating @elementType="ice" @noRating={{true}} />
+        <StatusRating @elementType="dragon" @noRating={{true}} />
       </div>
       <div class="ailment-grid">
-        {{status-rating elementType="poison" noRating=true}}
-        {{status-rating elementType="sleep" noRating=true}}
-        {{status-rating elementType="paralysis" noRating=true}}
-        {{status-rating elementType="blast" noRating=true}}
-        {{status-rating elementType="stun" noRating=true}}
+        <StatusRating @elementType="poison" @noRating={{true}} />
+        <StatusRating @elementType="sleep" @noRating={{true}} />
+        <StatusRating @elementType="paralysis" @noRating={{true}} />
+        <StatusRating @elementType="blast" @noRating={{true}} />
+        <StatusRating @elementType="stun" @noRating={{true}} />
       </div>
     </div>
     <div class="weakness-grid">
-      {{status-rating elementType="cut" noRating=true}}
-      {{status-rating elementType="blunt" noRating=true}}
-      {{status-rating elementType="ammo" noRating=true}}
+      <StatusRating @elementType="cut" @noRating={{true}} />
+      <StatusRating @elementType="blunt" @noRating={{true}} />
+      <StatusRating @elementType="ammo" @noRating={{true}} />
     </div>
   </fieldset>
 
@@ -36,14 +36,14 @@
   <ul class="tip-list">
     <li>When picking an element or status to hunt a monster, use an element with more stars:
     <ul class="sub-list">
-      <li>{{status-rating elementType="fire" ratingAmount=3}}</li>
-      <li>{{status-rating elementType="water" ratingAmount=2}}</li>
-      <li>{{status-rating elementType="thunder" ratingAmount=1}}</li>
+      <li><StatusRating @elementType="fire" @ratingAmount={{3}} /></li>
+      <li><StatusRating @elementType="water" @ratingAmount={{2}} /></li>
+      <li><StatusRating @elementType="thunder" @ratingAmount={{1}} /></li>
     </ul>
     </li>
     <li>Avoid using elements marked with an X:
       <ul class="sub-list">
-        <li>{{status-rating elementType="ice" ratingAmount=0}}</li>
+        <li><StatusRating @elementType="ice" @ratingAmount={{0}} /></li>
       </ul>
     </li>
     <li class="monster-weakness is-active">When attacking a monster, focus on areas in red or yellow, or areas marked as 'breakable' or 'severable.'
@@ -54,18 +54,18 @@
     </li>
     <li>Weapon types can also do more damage against different areas.
       <ul class="sub-list">
-        <li>{{status-rating elementType="cut" ratingAmount=3}}</li>
-        <li>{{status-rating elementType="blunt" ratingAmount=2}}</li>
-        <li>{{status-rating elementType="ammo" ratingAmount=1}}</li>
+        <li><StatusRating @elementType="cut" @ratingAmount={{3}} /></li>
+        <li><StatusRating @elementType="blunt" @ratingAmount={{2}} /></li>
+        <li><StatusRating @elementType="ammo" @ratingAmount={{1}} /></li>
       </ul>
     </li>
     <li class="blight-warning"> Block blight effects by raising the blight armor stat above 20.
       <ul class="sub-list">
-        {{#each ailmentList as |ailment|}}
-          <li>{{ailment-info ailment=ailment}}</li>
+        {{#each this.ailmentList as |ailment|}}
+          <li><AilmentInfo @ailment={{ailment}} /></li>
         {{/each}}
       </ul>
     </li>
-    <li class="stun-warning">{{status-rating elementType="stun" noRating=true}} All monsters can stun!</li>
+    <li class="stun-warning"><StatusRating @elementType="stun" @noRating={{true}} /> All monsters can stun!</li>
   </ul>
 </div>

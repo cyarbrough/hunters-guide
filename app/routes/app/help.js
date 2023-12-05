@@ -8,17 +8,9 @@ export default Route.extend(HeadTagsMixin, {
   afterModel() {
     this.setHeadTags('Help');
   },
-  /**
-   * Renders route into side-panel
-   */
-  renderTemplate() {
-    this.render({
-      outlet: 'side-panel'
-    });
-  },
   actions: {
     didTransition() {
-      this.send('updateLastSidePanelRoute', this.get('routeName'));
+      this.send('updateLastSidePanelRoute', this.routeName);
     }
   }
 });
