@@ -1,9 +1,9 @@
-{{header-nav 
-  sidePanelIsOpen=sidePanelIsOpen
-  searchTerm=(readonly searchTerm) 
-  actionSearch=(action "updateSearchTerm")
-  actionButton=(action "toggleSidePanel")
-}}
+<HeaderNav
+  @sidePanelIsOpen={{this.sidePanelIsOpen}}
+  @searchTerm={{this.searchTerm}}
+  @actionSearch={{action "updateSearchTerm"}}
+  @actionButton={{action "toggleSidePanel"}}
+/>
 <div id="container" class="container">
   {{outlet}}
   <div id="monsterList" class="monster-list">
@@ -12,7 +12,7 @@
     {{/each}}
   </div>
 
-  {{footer-nav}}
+  <FooterNav />
 </div>
 {{#side-panel isOpen=sidePanelIsOpen actionClose=(action "toggleSidePanel")}}
   {{outlet "side-panel"}}

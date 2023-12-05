@@ -1,3 +1,4 @@
+import { bool, alias, or } from '@ember/object/computed';
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
 import { computed } from '@ember/object';
@@ -15,11 +16,11 @@ export default Component.extend({
   /**
    * @var {boolean}
    */
-  hasContent: computed.bool('searchTerm'),
+  hasContent: bool('searchTerm'),
   /**
    * @var {boolean}
    */
-  hasAlert: computed.alias('alertCenter.hasAlerts'),
+  hasAlert: alias('alertCenter.hasAlerts'),
   /**
    * @var {boolean}
    */
@@ -27,7 +28,7 @@ export default Component.extend({
   /**
    * @var {boolean}
    */
-  searchIsOpen: computed.or('hasContent', 'openSearch'),
+  searchIsOpen: or('hasContent', 'openSearch'),
   /**
    * @var {string}
    */

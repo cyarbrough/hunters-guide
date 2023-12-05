@@ -87,15 +87,15 @@ export default Controller.extend({
    * Sets searchTerm when searchQuery loads, if searchTerm is not set
    */
   setSearchTerm: observer('searchQuery', function() {
-    if(!this.get('searchTerm')) {
-      this.set('searchTerm', this.get('searchQuery'));
+    if (!this.searchTerm) {
+      this.set('searchTerm', this.searchQuery);
     }
   }),
   /**
    * Calls setSearchQueryTask when searchTerm is changed
    */
   setSearchQuery: observer('searchTerm', function() {
-    this.get('setSearchQueryTask').perform();
+    this.setSearchQueryTask.perform();
   }),
   /**
    * Toggles no-scroll css when side panel opens or closes
@@ -143,14 +143,14 @@ export default Controller.extend({
    * @param {numer} timer
    */
   setSearchQueryTask: task(function * (timer = 1500) {
-    let searchTerm = this.get('searchTerm');
+    let { searchTerm } = this;
 
     // clear out strings
-    if(!searchTerm){
+    if (!searchTerm) {
       searchTerm = null;
     }
 
-    if(searchTerm) {
+    if (searchTerm) {
       yield timeout(timer);
     }
     
@@ -164,7 +164,7 @@ export default Controller.extend({
    * @param {string} searchTerm
    */
   logSearch(searchTerm) {
-    if(searchTerm) {
+    if (searchTerm) {
       this.send('logEvent', 'Search', searchTerm);
     } else {
       this.send('logEvent', 'Search Cleared', '');
@@ -177,8 +177,8 @@ export default Controller.extend({
    * @param {array} searchRay
    */
   checkMonsterForMatch(monster, searchTerm) {
-    let nameMatch = monster.get('name').toLowerCase().indexOf(searchTerm),
-      speciesMatch = monster.get('species.name').toLowerCase().indexOf(searchTerm);
+    const nameMatch = monster.get('name').toLowerCase().indexOf(searchTerm);
+    const speciesMatch = monster.get('species.name').toLowerCase().indexOf(searchTerm);
 
     return nameMatch >= 0 || speciesMatch >= 0;
   },
@@ -190,12 +190,12 @@ export default Controller.extend({
   checkMonsterForSearchTerms(monster, searchRay) {
     let match = false;
 
-    for(let i = 0; i <= searchRay.length; ++i) {
-      let searchTerm = searchRay[i];
+    for (let i = 0; i <= searchRay.length; ++i) {
+      const searchTerm = searchRay[i];
       
       match = this.checkMonsterForMatch(monster, searchTerm);
 
-      if(match) {
+      if (match) {
         break;
       }
     }
