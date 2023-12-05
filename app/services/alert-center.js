@@ -1,13 +1,11 @@
-import Service from '@ember/service';
-import { get, set } from '@ember/object';
+import Service, { inject as service } from '@ember/service';
+import { set } from '@ember/object';
 import { or, oneWay } from '@ember/object/computed';
-import { inject as service } from '@ember/service';
 import { task, timeout } from 'ember-concurrency';
 
 const TIME_LAST_UPDATE = 7 * 24 * 60 * 60 * 1000; // 7 days in ms
 
 export default Service.extend({
-  moment: service(),
   settings: service(),
   /**
    * Alerts specific to updates
@@ -26,10 +24,10 @@ export default Service.extend({
   /**
    * Private task, clears alertsUpdates
    */
-  _clearUpdatesTask: task(function * (timer = 0){
+  _clearUpdatesTask: task(function * (timer = 0) {
     yield timeout(timer);
     set(this, 'alertsUpdates', 0);
-    get(this, 'settings').saveSettings();
+    this.settings.saveSettings();
   }).drop(),
   
   /**
@@ -37,10 +35,10 @@ export default Service.extend({
    * @param {*} updates
    */
   checkForUpdateAlerts(updates) {
-    let lastCheck = get(this, 'lastCheck'),
-      lastUpdate = updates.get('firstObject');
+    const { lastCheck } = this;
+    const lastUpdate = updates[0];
 
-    if(lastCheck) {
+    if (lastCheck) {
       this.checkLastCheck(lastCheck, lastUpdate);
     } else {
       this.checkLastUpdate(lastUpdate);
@@ -52,10 +50,10 @@ export default Service.extend({
    * @param {*} lastUpdate
    */
   checkLastCheck(lastCheck, lastUpdate) {
-    let m = this.get('moment');
-    let lastCheckM = m.moment(lastCheck);
+    const check = new Date(lastCheck);
+    const update = new Date(lastUpdate.date);
 
-    if(lastCheckM.isBefore(get(lastUpdate, 'date'))) {
+    if (check < update) {
       set(this, 'alertsUpdates', 1);
     }
   },
@@ -63,12 +61,10 @@ export default Service.extend({
    * Checks time verses last update
    * @param {*} lastUpdate
    */
-  checkLastUpdate(lastUpdate){
-    let diff,
-      m = this.get('moment'),
-      now = m.moment();
-
-    diff = m.moment().diff(get(lastUpdate, 'date'), now);
+  checkLastUpdate(lastUpdate) {
+    const check = new Date();
+    const update = new Date(lastUpdate.date);
+    const diff = Date.parse(update) - Date.parse(check);
 
     if(diff <= TIME_LAST_UPDATE) {
       set(this, 'alertsUpdates', 1);
@@ -78,6 +74,6 @@ export default Service.extend({
    * Clears alertsUpdates
    */
   clearUpdateAlerts(timer = 0) {
-    get(this, '_clearUpdatesTask').perform(timer);
+    this._clearUpdatesTask.perform(timer);
   }
 });
