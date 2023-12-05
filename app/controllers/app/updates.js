@@ -2,9 +2,6 @@ import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
 import { computed, get } from '@ember/object';
 import { not, oneWay } from '@ember/object/computed';
-import Ember from 'ember';
-
-const { $ } = Ember;
 
 export default Controller.extend({
   settings: service(),
@@ -13,7 +10,7 @@ export default Controller.extend({
    * @var {string}
    */
   groupValue: computed('sortAlpha', function() {
-    if (get(this, 'sortAlpha')) {
+    if (this.sortAlpha) {
       return 'alpha';
     }
     return 'guide';
@@ -54,8 +51,8 @@ export default Controller.extend({
      * Calls settings.toggleSort, and scrolls to top
      */
     toggleSort() {
-      get(this, 'settings').toggleSort();
-      $('html, body').animate({ scrollTop: '0px' });
+      this.settings.toggleSort();
+      document.getElementById('container').scrollTo(0, 0);
     }
   }
 });

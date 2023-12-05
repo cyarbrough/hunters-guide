@@ -4,27 +4,27 @@
   <div name="sortBy" class="sort-radios">
     <div class="label">Sort Monsters by</div>
     <div class="items">
-      {{#radio-button
-        value='guide'
-        groupValue=groupValue
-        name='sort'
-        changed='toggleSort'
-        classNames='radio-label'
-      }}
-          {{radio-icon radioOn=sortGuide}}
+      <RadioButton
+        @value="guide"
+        @groupValue={{this.groupValue}}
+        @name="sort"
+        @changed={{action "toggleSort"}}
+        @classNames="radio-label"
+      >
+          <RadioIcon @radioOn={{this.sortGuide}} />
           Guide
-      {{/radio-button}}
+      </RadioButton>
 
-      {{#radio-button
-        value='alpha'
-        groupValue=groupValue
-        name='sort'
-        changed='toggleSort'
-        classNames='radio-label'
-      }}
-          {{radio-icon radioOn=sortAlpha}}
+      <RadioButton
+        @value="alpha"
+        @groupValue={{this.groupValue}}
+        @name="sort"
+        @changed={{action "toggleSort"}}
+        @classNames="radio-label"
+      >
+          <RadioIcon @radioOn={{this.sortAlpha}} />
           Name
-      {{/radio-button}}
+      </RadioButton>
     </div>
   </div>
   <TwoStateButton

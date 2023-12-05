@@ -4,6 +4,7 @@
   @actionSearch={{action "updateSearchTerm"}}
   @actionButton={{action "toggleSidePanel"}}
 />
+
 <div id="container" class="container">
   <div id="monsterList" class="monster-list">
     {{#each this.monsterList as |monster|}}
@@ -13,6 +14,7 @@
 
   <FooterNav />
 </div>
+
 <SidePanel 
   @isOpen={{this.sidePanelIsOpen}}
   @actionClose={{action "toggleSidePanel"}}

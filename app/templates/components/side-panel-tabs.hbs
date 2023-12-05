@@ -1,5 +1,16 @@
-<li>{{#link-to "app.updates" classNames="is-tab is-updates"}}
-  <i class="fas fa-arrow-alt-circle-left"></i>
-  {{/link-to}}
+<li>
+  <LinkTo
+    class="is-tab is-updates"
+    @route="app.updates" 
+  >
+    <i class="fas fa-arrow-alt-circle-left"></i>
+  </LinkTo>
 </li>
-<li>{{#link-to "app.help" classNames="is-tab"}}Help!{{/link-to}}</li>
+<li>
+  <LinkTo
+    class="is-tab"
+    @route="app.help"
+  >
+    Help!
+  </LinkTo>
+</li>
