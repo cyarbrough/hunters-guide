@@ -15,7 +15,7 @@ function addMonths(date, months) {
 
 export default Service.extend({
   cookies: service(),
-  googleAnalytics: service(),
+  // googleAnalytics: service(),
 
   /**
    * Last time user checked updates
@@ -70,7 +70,7 @@ export default Service.extend({
   rememberUserSettings() {
     set(this, 'rememberUser', true);
     this.saveSettings();
-    get(this, 'googleAnalytics').event('Setting', 'Remember Me');
+    // this.googleAnalytics.event('Setting', 'Remember Me');
   },
   /**
    * Resets all settings
@@ -89,7 +89,7 @@ export default Service.extend({
     if (this.sortAlpha) {
       action = 'Sort by Alpha';
     }
-    get(this, 'googleAnalytics').event('Setting', action);
+    // this.googleAnalytics.event('Setting', action);
     this.saveSettings();
   },
   /**
