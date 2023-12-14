@@ -1,34 +1,31 @@
+import { run } from '@ember/runloop';
 import { expect } from 'chai';
 import { describe, it } from 'mocha';
 import { setupTest } from 'ember-mocha';
-import Ember from 'ember';
-const { run } = Ember;
 
-describe('Unit | Route | app', function() {
-  setupTest('route:app', {
-    // Specify the other units that are required for this test.
-    needs: ['model:monster', 'service:ajax', 'service:google-analytics']
-  });
+describe('Unit | Route | app', function (hooks) {
+  setupTest(hooks);
+  // needs: ['model:monster', 'service:ajax', 'service:google-analytics']
 
-  it('exists', function() {
+  it('exists', function () {
     let route = this.subject();
 
     expect(route).to.be.ok;
   });
-  it('returns monsters from handleMonsterSuccess', function() {
+  it('returns monsters from handleMonsterSuccess', function () {
     let data = {
-        'data': [
+        data: [
           {
-            'type': 'monsters',
-            'id': '1',
-            'attributes': {}
+            type: 'monsters',
+            id: '1',
+            attributes: {},
           },
           {
-            'type': 'monsters',
-            'id': '2',
-            'attributes': {}
-          }
-        ]
+            type: 'monsters',
+            id: '2',
+            attributes: {},
+          },
+        ],
       },
       result,
       route = this.subject();
@@ -39,7 +36,7 @@ describe('Unit | Route | app', function() {
 
     expect(result.monsters.get('length')).to.be.equal(2);
   });
-  it('returns models from model', async function() {
+  it('returns models from model', async function () {
     let result,
       route = this.subject({
         ajax: {
@@ -47,13 +44,13 @@ describe('Unit | Route | app', function() {
             return {
               then(functionData) {
                 return functionData();
-              }
+              },
             };
-          }
+          },
         },
         handleMonsterSuccess() {
           return 'models';
-        }
+        },
       });
 
     result = await route.model();

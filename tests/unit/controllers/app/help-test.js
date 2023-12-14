@@ -2,14 +2,11 @@ import { expect } from 'chai';
 import { describe, it } from 'mocha';
 import { setupTest } from 'ember-mocha';
 
-describe('Unit | Controller | app/help', function() {
-  setupTest('controller:app/help', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
+describe('Unit | Controller | app/help', function (hooks) {
+  setupTest(hooks);
 
   // Replace this with your real tests.
-  it('exists', function() {
+  it('exists', function () {
     let controller = this.subject();
 
     expect(controller).to.be.ok;

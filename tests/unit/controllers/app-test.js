@@ -2,14 +2,12 @@ import { expect } from 'chai';
 import { describe, it } from 'mocha';
 import { setupTest } from 'ember-mocha';
 
-describe('Unit | Controller | app', function() {
-  setupTest('controller:app', {
-    // Specify the other units that are required for this test.
-    needs: ['service:google-analytics']
-  });
+describe('Unit | Controller | app', function (hooks) {
+  setupTest(hooks);
+  // needs: ['service:google-analytics']
 
   // Replace this with your real tests.
-  it('exists', function() {
+  it('exists', function () {
     let controller = this.subject();
 
     expect(controller).to.be.ok;

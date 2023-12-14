@@ -2,13 +2,10 @@ import { expect } from 'chai';
 import { describe, it } from 'mocha';
 import { setupTest } from 'ember-mocha';
 
-describe('Unit | Route | app/help', function() {
-  setupTest('route:app/help', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
+describe('Unit | Route | app/help', function (hooks) {
+  setupTest(hooks);
 
-  it('exists', function() {
+  it('exists', function () {
     let route = this.subject();
 
     expect(route).to.be.ok;

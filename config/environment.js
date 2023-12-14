@@ -2,7 +2,7 @@
 'use strict';
 
 /* eslint-disable complexity */
-module.exports = function(environment) {
+module.exports = function (environment) {
   const ENV = {
     modulePrefix: 'hunters-guide',
     environment,
@@ -22,24 +22,25 @@ module.exports = function(environment) {
     },
     emberTracker: {
       analyticsSettings: {
-        trackingId: 'UA-########-#'
-      }
+        trackingId: 'UA-########-#',
+      },
     },
     fastboot: {
-      hostWhitelist: ['hunters-guide.herokuapp.com', /^localhost:\d+$/]
-    }
+      hostWhitelist: ['hunters-guide.herokuapp.com', /^localhost:\d+$/],
+    },
   };
 
   if (environment === 'development') {
     ENV.contentSecurityPolicy = {
-      'default-src': '\'none\'',
-      'script-src': '\'self\' \'unsafe-eval\' https://www.google-analytics.com/',
-      'font-src': '\'self\' https://fonts.gstatic.com/',
-      'connect-src': '\'self\' http://hunters-guide.herokuapp.com/',
-      'img-src': '\'self\' https://www.google-analytics.com/',
-      'style-src': '\'self\' \'unsafe-inline\' \'unsafe-eval\' https://fonts.gstatic.com/ https://fonts.googleapis.com',
-      'media-src': '\'self\'',
-      'manifest-src': '\'self\''
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-eval' https://www.google-analytics.com/",
+      'font-src': "'self' https://fonts.gstatic.com/",
+      'connect-src': "'self' http://hunters-guide.herokuapp.com/",
+      'img-src': "'self' https://www.google-analytics.com/",
+      'style-src':
+        "'self' 'unsafe-inline' 'unsafe-eval' https://fonts.gstatic.com/ https://fonts.googleapis.com",
+      'media-src': "'self'",
+      'manifest-src': "'self'",
     };
 
     ENV.emberTracker.analyticsSettings.LOG_PAGEVIEW = true;
@@ -47,7 +48,7 @@ module.exports = function(environment) {
 
     ENV.webUrl = 'http://localhost:4200/';
     // ENV.webUrl = 'http://192.168.1.13:4200/';
-    
+
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;

@@ -3,17 +3,17 @@
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-module.exports = function(defaults) {
+module.exports = function (defaults) {
   const app = new EmberApp(defaults, {
     'asset-cache': {
       include: [
         'assets/**/*',
-        'https://fonts.googleapis.com/css?family=Cabin+Condensed'
-      ]
+        'https://fonts.googleapis.com/css?family=Cabin+Condensed',
+      ],
     },
     fingerprint: {
-      exclude: ['images/icons/app/']
-    }
+      exclude: ['images/icons/app/'],
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -32,9 +32,7 @@ module.exports = function(defaults) {
   app.import('vendor/fa/fontawesome.min.js');
   app.import('vendor/fa/fa-solid.min.js');
   app.import('node_modules/js-base64/base64.js', {
-    using: [
-      { transformation: 'amd', as: 'base64' }
-    ]
+    using: [{ transformation: 'amd', as: 'base64' }],
   });
 
   return app.toTree();

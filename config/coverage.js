@@ -6,7 +6,7 @@ module.exports = {
     '*/mirage/**/*',
     '*/templates/**/*',
     '*/router.js',
-    '*/transitions.js'
+    '*/transitions.js',
   ],
-  useBabelInstrumenter: true
+  useBabelInstrumenter: true,
 };
