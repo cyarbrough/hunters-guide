@@ -11,23 +11,15 @@ export default Mixin.create({
   title: TITLE,
 
   afterModel() {
-    this.setHeadTags();
+    // this.setHeadTags();
+    this.setTitle();
   },
 
   /**
    * Sets various head meta tags
-   * @param {string} titlePre string to prepend to base title
    */
-  setHeadTags(titlePre = '') {
-    let bgColor = '#DDDDDD',
-      description = 'Mobile Field Guide for Monster Hunter: World',
-      routeUrl = this.get('router.url').replace('/', ''),
-      siteName = 'Hunter\'s Field Guide',
-      tags,
-      title = TITLE,
-      url = `${config.webUrl}${routeUrl}`,
-      urlFav = url + 'assets/images/icons/app/favicon.png',
-      urlImg = url + 'assets/images/icons/palico.png';
+  setTitle(titlePre = '') {
+    let title = TITLE;
 
     if(titlePre) {
       title = `${titlePre} :: ${title}`;
@@ -36,8 +28,22 @@ export default Mixin.create({
     if(typeof document !== 'undefined') {
       document.title = title;
     }
+  },
 
-    tags = [
+  /**
+   * Sets various head meta tags
+   * @param {string} titlePre string to prepend to base title
+   */
+  headTags(titlePre = '') {
+    let bgColor = '#DDDDDD',
+      description = 'Mobile Field Guide for Monster Hunter: World',
+      tags,
+      title = TITLE,
+      url = `${config.webUrl}`,
+      urlFav = url + 'assets/images/icons/app/favicon.png',
+      urlImg = url + 'assets/images/icons/palico.png';
+
+    return [
       // Icon Links
       {
         type: 'link',
@@ -170,7 +176,7 @@ export default Mixin.create({
         tagId: 'facebook-site-name',
         attrs: {
           name: 'og:site_name',
-          content: siteName
+          content: TITLE
         }
       },
       {
@@ -240,7 +246,6 @@ export default Mixin.create({
       }
     ];
 
-    this.set('headTags', tags);
-    this.set('title', title);
+    // this.set('headTags', tags);
   }
 });

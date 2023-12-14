@@ -1,10 +1,10 @@
 import Route from '@ember/routing/route';
 import fetch from 'fetch';
 import config from 'hunters-guide/config/environment';
-// import HeadTagsMixin from 'hunters-guide/mixins/head-tags';
+import HeadTagsMixin from 'hunters-guide/mixins/head-tags';
 import { inject as service } from '@ember/service';
 
-export default Route.extend({
+export default Route.extend(HeadTagsMixin, {
   alertCenter: service(),
   settings: service(),
   store: service(),
@@ -72,11 +72,6 @@ export default Route.extend({
   },
   
   actions: {
-    didTransition() {
-      // Need to reset head tags on transition to /app,
-      // not sure why title property isn't working
-      // this.setHeadTags();
-    },
     /**
      * Updates last visited route
      */

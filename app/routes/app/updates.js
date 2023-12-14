@@ -9,7 +9,7 @@ export default Route.extend(HeadTagsMixin, {
    * Lifecycle function
    */
   afterModel() {
-    this.setHeadTags('Updates');
+    this.setTitle('Updates');
   },
   /**
    * Main model data for /updates

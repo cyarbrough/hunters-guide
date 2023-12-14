@@ -98,16 +98,6 @@ export default Controller.extend({
   setSearchQuery: observer('searchTerm', function() {
     this.setSearchQueryTask.perform();
   }),
-  /**
-   * Toggles no-scroll css when side panel opens or closes
-   */
-  toggleNoScroll: observer('sidePanelIsOpen', function() {
-    if(this.get('sidePanelIsOpen')) {
-      $('body').addClass('no-scroll');
-    } else {
-      $('body').removeClass('no-scroll');
-    }
-  }),
 
   /**
    * Checks route and auto opens side panel
@@ -217,7 +207,6 @@ export default Controller.extend({
       this.send('logEvent', 'Side Panel', 'Close Side Panel');
       this.transitionToAppTask.perform();
     }
-    this.toggleNoScroll();
   },
 
   actions: {

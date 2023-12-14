@@ -6,7 +6,7 @@ export default Route.extend(HeadTagsMixin, {
    * Lifecycle function
    */
   afterModel() {
-    this.setHeadTags('Help');
+    this.setTitle('Help');
   },
   actions: {
     didTransition() {
