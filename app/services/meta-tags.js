@@ -1,43 +1,30 @@
-import Mixin from '@ember/object/mixin';
+import Service from '@ember/service';
+
+const TITLE = "Hunter's Field Guide";
 import config from 'hunters-guide/config/environment';
 
-const TITLE = 'Hunter\'s Field Guide';
-
-export default Mixin.create({
+export default class MetaTagsService extends Service {
   /**
-   * Base Variables
-   */
-  headTags: null,
-  title: TITLE,
-
-  afterModel() {
-    // this.setHeadTags();
-    this.setTitle();
-  },
-
-  /**
-   * Sets various head meta tags
+   * Sets document title
    */
   setTitle(titlePre = '') {
     let title = TITLE;
 
-    if(titlePre) {
+    if (titlePre) {
       title = `${titlePre} :: ${title}`;
     }
 
-    if(typeof document !== 'undefined') {
+    if (typeof document !== 'undefined') {
       document.title = title;
     }
-  },
+  }
 
   /**
-   * Sets various head meta tags
-   * @param {string} titlePre string to prepend to base title
+   * Sets various head meta tags; Needs Update, not used
    */
-  headTags(titlePre = '') {
+  headTags() {
     let bgColor = '#DDDDDD',
       description = 'Mobile Field Guide for Monster Hunter: World',
-      tags,
       title = TITLE,
       url = `${config.webUrl}`,
       urlFav = url + 'assets/images/icons/app/favicon.png',
@@ -51,8 +38,8 @@ export default Mixin.create({
         attrs: {
           rel: 'apple-touch-icon',
           href: url + 'assets/images/icons/app/apple-touch-icon.png',
-          sizes: '180x180'
-        }
+          sizes: '180x180',
+        },
       },
       {
         type: 'link',
@@ -61,8 +48,8 @@ export default Mixin.create({
           rel: 'icon',
           href: urlFav,
           sizes: '32x32',
-          type: 'image/png'
-        }
+          type: 'image/png',
+        },
       },
       {
         type: 'link',
@@ -71,54 +58,54 @@ export default Mixin.create({
           rel: 'icon',
           href: urlFav,
           sizes: '16x16',
-          type: 'image/png'
-        }
+          type: 'image/png',
+        },
       },
       {
         type: 'link',
         tagId: 'mask-icon',
         attrs: {
           rel: 'mask-icon',
-          href: url + 'assets/images/icons/app/safari-pinned-tab.svg'
-        }
+          href: url + 'assets/images/icons/app/safari-pinned-tab.svg',
+        },
       },
       {
         type: 'link',
         tagId: 'manifest',
         attrs: {
           rel: 'manifest',
-          href: url + 'manifest.webmanifest'
-        }
+          href: url + 'manifest.webmanifest',
+        },
       },
       // Basic Meta
       {
         type: 'title',
         tagId: 'title',
-        content: title
+        content: title,
       },
       {
         type: 'meta',
         tagId: 'meta-title',
         attrs: {
           name: 'title',
-          content: title
-        }
+          content: title,
+        },
       },
       {
         type: 'meta',
         tagId: 'meta-description',
         attrs: {
           name: 'description',
-          content: description
-        }
+          content: description,
+        },
       },
       {
         type: 'meta',
         tagId: 'theme-color',
         attrs: {
           name: 'theme-color',
-          content: bgColor
-        }
+          content: bgColor,
+        },
       },
       // Apple Meta
       {
@@ -126,24 +113,24 @@ export default Mixin.create({
         tagId: 'apple-mobile-web-app-title',
         attrs: {
           name: 'apple-mobile-web-app-title',
-          content: title
-        }
+          content: title,
+        },
       },
       {
         type: 'meta',
         tagId: 'apple-mobile-web-app-capable',
         attrs: {
           name: 'apple-mobile-web-app-capable',
-          content: 'yes'
-        }
+          content: 'yes',
+        },
       },
       {
         type: 'meta',
         tagId: 'apple-mobile-web-app-status-bar-style',
         attrs: {
           name: 'apple-mobile-web-app-status-bar-style',
-          content: 'black-translucent'
-        }
+          content: 'black-translucent',
+        },
       },
       // MS Meta
       {
@@ -151,16 +138,16 @@ export default Mixin.create({
         tagId: 'application-name',
         attrs: {
           name: 'application-name',
-          content: title
-        }
+          content: title,
+        },
       },
       {
         type: 'meta',
         tagId: 'msapplication-TileColor',
         attrs: {
           name: 'msapplication-TileColor',
-          content: bgColor
-        }
+          content: bgColor,
+        },
       },
       // Facebook Meta
       {
@@ -168,40 +155,40 @@ export default Mixin.create({
         tagId: 'facebook-title',
         attrs: {
           name: 'og:title',
-          content: title
-        }
+          content: title,
+        },
       },
       {
         type: 'meta',
         tagId: 'facebook-site-name',
         attrs: {
           name: 'og:site_name',
-          content: TITLE
-        }
+          content: TITLE,
+        },
       },
       {
         type: 'meta',
         tagId: 'facebook-url',
         attrs: {
           name: 'og:url',
-          content: url
-        }
+          content: url,
+        },
       },
       {
         type: 'meta',
         tagId: 'facebook-image',
         attrs: {
           name: 'og:image',
-          content: urlImg
-        }
+          content: urlImg,
+        },
       },
       {
         type: 'meta',
         tagId: 'facebook-description',
         attrs: {
           name: 'og:description',
-          content: description
-        }
+          content: description,
+        },
       },
       // Twitter Meta
       {
@@ -209,43 +196,43 @@ export default Mixin.create({
         tagId: 'twitter-card',
         attrs: {
           name: 'twitter:card',
-          content: 'summary'
-        }
+          content: 'summary',
+        },
       },
       {
         type: 'meta',
         tagId: 'twitter-site',
         attrs: {
           name: 'twitter:site',
-          content: url
-        }
+          content: url,
+        },
       },
       {
         type: 'meta',
         tagId: 'twitter-title',
         attrs: {
           name: 'twitter:title',
-          content: title
-        }
+          content: title,
+        },
       },
       {
         type: 'meta',
         tagId: 'twitter-description',
         attrs: {
           name: 'twitter:description',
-          content: description
-        }
+          content: description,
+        },
       },
       {
         type: 'meta',
         tagId: 'twitter-image',
         attrs: {
           name: 'twitter:image',
-          content: urlImg
-        }
-      }
+          content: urlImg,
+        },
+      },
     ];
 
     // this.set('headTags', tags);
   }
-});
+}

@@ -1,16 +1,17 @@
 import Route from '@ember/routing/route';
-import HeadTagsMixin from 'hunters-guide/mixins/head-tags';
+import { inject as service } from '@ember/service';
 
-export default Route.extend(HeadTagsMixin, {
+export default Route.extend({
+  metaTags: service(),
   /**
    * Lifecycle function
    */
   afterModel() {
-    this.setTitle('Help');
+    this.metaTags.setTitle('Help');
   },
   actions: {
     didTransition() {
       this.send('updateLastSidePanelRoute', this.routeName);
-    }
-  }
+    },
+  },
 });

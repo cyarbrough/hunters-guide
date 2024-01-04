@@ -51,7 +51,6 @@
     "ember-cli-dependency-checker": "^3.3.2",
     "ember-cli-htmlbars": "^6.2.0",
     "ember-cli-inject-live-reload": "^1.4.1",
-    "ember-cli-meta-tags": "^7.0.0",
     "ember-cli-sass": "^11.0.1",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-stylelint": "^4.0.0",

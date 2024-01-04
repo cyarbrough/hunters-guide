@@ -1,11 +1,11 @@
 import Route from '@ember/routing/route';
 import fetch from 'fetch';
 import config from 'hunters-guide/config/environment';
-import HeadTagsMixin from 'hunters-guide/mixins/head-tags';
 import { inject as service } from '@ember/service';
 
-export default Route.extend(HeadTagsMixin, {
+export default Route.extend({
   alertCenter: service(),
+  metaTags: service(),
   settings: service(),
   store: service(),
   /**
@@ -13,6 +13,9 @@ export default Route.extend(HeadTagsMixin, {
    */
   beforeModel() {
     this.settings.getSettings();
+  },
+  afterModel() {
+    this.metaTags.setTitle();
   },
   /**
    * Pushes data into the payload, returns
@@ -72,6 +75,9 @@ export default Route.extend(HeadTagsMixin, {
   },
   
   actions: {
+    didTransition() {
+      this.metaTags.setTitle();
+    },
     /**
      * Updates last visited route
      */
