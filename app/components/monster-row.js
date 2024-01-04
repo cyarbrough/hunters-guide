@@ -1,5 +1,3 @@
-import { setProperties } from '@ember/object';
-import { on } from '@ember/object/evented';
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
 
@@ -26,6 +24,7 @@ export default Component.extend({
    * Overrides
    */
   didRender() {
+    this._super(...arguments);
     this.setupInViewport();
   },
   willDestroy() {
@@ -37,7 +36,7 @@ export default Component.extend({
    * Sets inView on inViewport.didEnterViewport
    */
   didEnterViewport() {
-    if(!this.inView) {
+    if (!this.inView) {
       this.set('inView', true);
     }
   },
@@ -47,10 +46,10 @@ export default Component.extend({
   logToggle() {
     let action = 'Close ',
       isAlt = this.showAlternate,
-      name = this.get('monster.name'),
-      slug = this.get('monster.slug');
+      name = this.monster.name,
+      slug = this.monster.slug;
 
-    if(isAlt) {
+    if (isAlt) {
       action = 'Open ';
     }
     action += name;
@@ -75,7 +74,9 @@ export default Component.extend({
   setupInViewport() {
     const element = document.getElementById(this.elementId);
     const viewportTolerance = { top: 250, bottom: 250 };
-    const { onEnter } = this.inViewport.watchElement(element, { viewportTolerance });
+    const { onEnter } = this.inViewport.watchElement(element, {
+      viewportTolerance,
+    });
     onEnter(this.didEnterViewport.bind(this));
   },
 
@@ -85,6 +86,6 @@ export default Component.extend({
     },
     toggleLogo() {
       this.toggleAlternateLogo();
-    }
-  }
+    },
+  },
 });

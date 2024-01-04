@@ -14,9 +14,9 @@ export default Component.extend({
   /**
    * @var {string}
    */
-  ailmentClassName: computed('ailment.slug', function() {
-    let ailmentName = this.get('ailment.slug') || 'unknown';
+  ailmentClassName: computed('ailment.slug', function () {
+    let ailmentName = this.ailment.slug || 'unknown';
 
     return `is-ailment-${ailmentName}`;
-  })
+  }),
 });

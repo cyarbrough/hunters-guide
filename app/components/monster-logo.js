@@ -23,7 +23,7 @@ export default Component.extend({
   /**
    * @var {string}
    */
-  logoClassName: computed('slug', function() {
+  logoClassName: computed('slug', function () {
     let slug = this.slug || 'unknown';
 
     return `is-${slug}`;
@@ -31,8 +31,8 @@ export default Component.extend({
   /**
    * @var {string}
    */
-  logoAltClassName: computed('alternate', function() {
-    if(this.alternate) {
+  logoAltClassName: computed('alternate', function () {
+    if (this.alternate) {
       return 'is-alt';
     }
     return null;
@@ -41,8 +41,8 @@ export default Component.extend({
    * Handles the click action
    */
   mouseUp() {
-    if(typeof this.toggle === 'function') {
+    if (typeof this.toggle === 'function') {
       this.toggle();
     }
-  }
+  },
 });

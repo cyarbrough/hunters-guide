@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
-import { computed, get } from '@ember/object';
-import { not, oneWay } from '@ember/object/computed';
+import { computed } from '@ember/object';
+import { not, oneWay, reads } from '@ember/object/computed';
 
 export default Controller.extend({
   settings: service(),
@@ -9,7 +9,7 @@ export default Controller.extend({
    * Group value to match for radio buttons
    * @var {string}
    */
-  groupValue: computed('sortAlpha', function() {
+  groupValue: computed('sortAlpha', function () {
     if (this.sortAlpha) {
       return 'alpha';
     }
@@ -30,9 +30,7 @@ export default Controller.extend({
    * Collection of update items
    * @var {array}
    */
-  updateItems: computed('model.updates.[]', function() {
-    return this.get('model.updates');
-  }),
+  updateItems: reads('model.updates'),
 
   actions: {
     /**
@@ -58,6 +56,6 @@ export default Controller.extend({
         this.send('logEvent', 'Monster List', 'Sort by Guide');
       }
       document.getElementById('container').scrollTo(0, 0);
-    }
-  }
+    },
+  },
 });

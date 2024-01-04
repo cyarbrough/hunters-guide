@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import { computed, get } from '@ember/object';
+import { computed } from '@ember/object';
 
 export default Component.extend({
   /**
@@ -21,18 +21,18 @@ export default Component.extend({
   labelOn: 'LABEL ON',
   labelOff: 'LABEL OFF',
 
-  label: computed('labelOn', 'labelOff', 'isOn', function() {
-    if(this.isOn) {
+  label: computed('labelOn', 'labelOff', 'isOn', function () {
+    if (this.isOn) {
       return this.labelOn;
     }
     return this.labelOff;
   }),
 
   click() {
-    if(this.isOn && typeof this.actionOn === 'function') {
+    if (this.isOn && typeof this.actionOn === 'function') {
       this.actionOn();
     } else if (typeof this.actionOff === 'function') {
       this.actionOff();
     }
-  }
+  },
 });

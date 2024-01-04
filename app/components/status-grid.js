@@ -4,5 +4,5 @@ export default Component.extend({
   /**
    * Overrides
    */
-  classNames: ['status-grid']
+  classNames: ['status-grid'],
 });

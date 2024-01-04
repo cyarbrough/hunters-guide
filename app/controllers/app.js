@@ -48,13 +48,13 @@ export default Controller.extend({
    * @var {boolean}
    */
   sortAlpha: alias('settings.sortAlpha'),
-  
+
   /**
    * Filtered List
    * @var {array}
    */
-  monstersFiltered: computed('model.monsters', 'searchTerm', function() {
-    const monsters = this.get('model.monsters');
+  monstersFiltered: computed('model.monsters', 'searchTerm', function () {
+    const monsters = this.model.monsters;
     let search = this.searchTerm;
     let searchRay;
 
@@ -62,7 +62,9 @@ export default Controller.extend({
       search = search.toLowerCase().trim();
       searchRay = search.split(' ');
 
-      return monsters.filter((monster) => this.checkMonsterForSearchTerms(monster, searchRay));
+      return monsters.filter((monster) =>
+        this.checkMonsterForSearchTerms(monster, searchRay),
+      );
     }
 
     return monsters;
@@ -73,7 +75,7 @@ export default Controller.extend({
    * @var {array}
    */
   monsterList: sort('monstersFiltered', 'monsterSort'),
-  monsterSort: computed('sortAlpha', function() {
+  monsterSort: computed('sortAlpha', function () {
     if (this.sortAlpha) {
       return ['id:asc'];
     }
@@ -84,7 +86,7 @@ export default Controller.extend({
    * Checks route and auto opens side panel
    */
   checkForSidePanel() {
-    const currentRoute = getOwner(this).lookup('router:main').get('currentRouteName');
+    const currentRoute = this.router.currentRouteName;
     const { sidePanelRoutes } = this;
 
     if (sidePanelRoutes.includes(currentRoute)) {
@@ -96,7 +98,7 @@ export default Controller.extend({
    * @var {task; drops}
    * @param {numer} timer
    */
-  openSidePanelTask: task(function * (timer = 50) {
+  openSidePanelTask: task(function* (timer = 50) {
     yield timeout(timer);
     this.set('sidePanelIsOpen', true);
   }).drop(),
@@ -105,7 +107,7 @@ export default Controller.extend({
    * @var {task; drops}
    * @param {numer} timer
    */
-  transitionToAppTask: task(function * (timer = TIMER_TRANSITION_FAST + 50) {
+  transitionToAppTask: task(function* (timer = TIMER_TRANSITION_FAST + 50) {
     yield timeout(timer);
     this.router.transitionTo('app');
   }).drop(),
@@ -114,7 +116,7 @@ export default Controller.extend({
    * @var {task, restarts}
    * @param {numer} timer
    */
-  setSearchQueryTask: task(function * (timer = 1500) {
+  setSearchQueryTask: task(function* (timer = 1500) {
     let { searchTerm } = this;
 
     // clear out strings
@@ -125,7 +127,7 @@ export default Controller.extend({
     if (searchTerm) {
       yield timeout(timer);
     }
-    
+
     // Set term
     this.set('searchQuery', searchTerm);
     this.logSearch(searchTerm);
@@ -150,7 +152,10 @@ export default Controller.extend({
    */
   checkMonsterForMatch(monster, searchTerm) {
     const nameMatch = monster.get('name').toLowerCase().indexOf(searchTerm);
-    const speciesMatch = monster.get('species.name').toLowerCase().indexOf(searchTerm);
+    const speciesMatch = monster
+      .get('species.name')
+      .toLowerCase()
+      .indexOf(searchTerm);
 
     return nameMatch >= 0 || speciesMatch >= 0;
   },
@@ -164,7 +169,7 @@ export default Controller.extend({
 
     for (let i = 0; i <= searchRay.length; ++i) {
       const searchTerm = searchRay[i];
-      
+
       match = this.checkMonsterForMatch(monster, searchTerm);
 
       if (match) {

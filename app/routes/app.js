@@ -35,7 +35,7 @@ export default Route.extend({
     store.pushPayload(monsterData);
 
     return {
-      monsters: store.peekAll('monster')
+      monsters: store.peekAll('monster'),
     };
   },
   /**
@@ -43,7 +43,7 @@ export default Route.extend({
    * @param {*} itemData
    */
   handleUpdateItemsSuccess(itemData) {
-    let data; 
+    let data;
     const { store } = this;
 
     store.pushPayload(itemData);
@@ -56,17 +56,19 @@ export default Route.extend({
    */
   async model() {
     this.preloadUpdateItems();
-    const response = await fetch(`${config.webUrl}assets/data/large.monsters.json`);
+    const response = await fetch(
+      `${config.webUrl}assets/data/large.monsters.json`,
+    );
     let monsterData;
 
-    if(response.ok) {
+    if (response.ok) {
       monsterData = await response.json();
       return this.handleMonsterSuccess(monsterData);
     }
 
     return {
-      monsters: []
-    }
+      monsters: [],
+    };
   },
   /**
    * Fetch update items
@@ -75,12 +77,12 @@ export default Route.extend({
     const response = await fetch(`${config.webUrl}assets/data/updates.json`);
     let updateData;
 
-    if(response.ok) {
+    if (response.ok) {
       updateData = await response.json();
       return this.handleUpdateItemsSuccess(updateData);
     }
   },
-  
+
   actions: {
     didTransition() {
       this.metaTags.setTitle();

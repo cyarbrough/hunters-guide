@@ -25,25 +25,24 @@ export default Component.extend({
   /**
    * @var {string}
    */
-  elementClassName: computed('elementType', function() {
+  elementClassName: computed('elementType', function () {
     let elementName = this.elementType || 'unknown';
-    
+
     return `is-status-${elementName}`;
   }),
   /**
    * @var {boolean}
    */
-  showRatingAlt: computed('ratingAlt', function() {
-    
+  showRatingAlt: computed('ratingAlt', function () {
     return !isNone(this.ratingAlt);
   }),
   /**
    * @var {string}
    */
-  starClassName: computed('ratingAmount', function() {
+  starClassName: computed('noRating', 'ratingAmount', function () {
     let rating = this.ratingAmount || 0;
-    
-    if(this.noRating){
+
+    if (this.noRating) {
       return 'is-label';
     }
     return `is-rating-${rating}`;
@@ -51,10 +50,10 @@ export default Component.extend({
   /**
    * @var {string}
    */
-  starClassNameAlt: computed('ratingAlt', 'showRatingAlt', function() {
+  starClassNameAlt: computed('ratingAlt', 'showRatingAlt', function () {
     let rating = this.ratingAlt || 0;
 
-    if(this.showRatingAlt) {
+    if (this.showRatingAlt) {
       return `is-rating-${rating}`;
     }
     return null;
@@ -63,13 +62,14 @@ export default Component.extend({
    * Array of items, based on ratingAmount
    * @var {array|null}
    */
-  starList: computed('ratingAmount', function() {
+  starList: computed('ratingAmount', function () {
     let ratingAmount = this.ratingAmount;
 
-    if(ratingAmount) {
-      let i, stars = [];
+    if (ratingAmount) {
+      let i,
+        stars = [];
 
-      for(i = 1; i <= ratingAmount; i++) {
+      for (i = 1; i <= ratingAmount; i++) {
         stars.push({ count: i });
       }
       return stars;
@@ -80,17 +80,18 @@ export default Component.extend({
    * Array of items, based on ratingAlt
    * @var {array|null}
    */
-  starListAlt: computed('ratingAlt', function() {
+  starListAlt: computed('ratingAlt', function () {
     let ratingAlt = this.ratingAlt;
 
-    if(ratingAlt) {
-      let i, stars = [];
+    if (ratingAlt) {
+      let i,
+        stars = [];
 
-      for(i = 1; i <= ratingAlt; i++) {
+      for (i = 1; i <= ratingAlt; i++) {
         stars.push({ count: i });
       }
       return stars;
     }
     return null;
-  })
+  }),
 });

@@ -27,6 +27,6 @@ export default Route.extend({
     },
     willTransition() {
       this.alertCenter.clearUpdateAlerts();
-    }
-  }
+    },
+  },
 });

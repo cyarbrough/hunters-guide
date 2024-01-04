@@ -1,6 +1,7 @@
+import { readOnly } from '@ember/object/computed';
 import Service, { inject as service } from '@ember/service';
 import { set } from '@ember/object';
-import { or, oneWay } from '@ember/object/computed';
+import { oneWay } from '@ember/object/computed';
 import { task, timeout } from 'ember-concurrency';
 
 const TIME_LAST_UPDATE = 7 * 24 * 60 * 60 * 1000; // 7 days in ms
@@ -15,7 +16,7 @@ export default Service.extend({
   /**
    * @var {boolean}
    */
-  hasAlerts: or('alertsUpdates'),
+  hasAlerts: readOnly('alertsUpdates'),
   /**
    *
    */
@@ -24,12 +25,12 @@ export default Service.extend({
   /**
    * Private task, clears alertsUpdates
    */
-  _clearUpdatesTask: task(function * (timer = 0) {
+  _clearUpdatesTask: task(function* (timer = 0) {
     yield timeout(timer);
     set(this, 'alertsUpdates', 0);
     this.settings.saveSettings();
   }).drop(),
-  
+
   /**
    * Checks given updates against TIME_LAST_UPDATE
    * @param {*} updates
@@ -66,7 +67,7 @@ export default Service.extend({
     const update = new Date(lastUpdate.date);
     const diff = Date.parse(update) - Date.parse(check);
 
-    if(diff <= TIME_LAST_UPDATE) {
+    if (diff <= TIME_LAST_UPDATE) {
       set(this, 'alertsUpdates', 1);
     }
   },
@@ -75,5 +76,5 @@ export default Service.extend({
    */
   clearUpdateAlerts(timer = 0) {
     this._clearUpdatesTask.perform(timer);
-  }
+  },
 });

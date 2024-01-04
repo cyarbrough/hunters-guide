@@ -9,5 +9,5 @@ export default Model.extend({
   slug: attr('string'),
 
   ailments: hasMany('ailment', { async: false, inverse: null }),
-  species: belongsTo('species', { async: false, inverse: null })
+  species: belongsTo('species', { async: false, inverse: null }),
 });

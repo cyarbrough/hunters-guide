@@ -15,8 +15,9 @@ export default Component.extend({
    * Sends action when inserted
    */
   didInsertElement() {
-    if(typeof this.actionInserted === 'function') {
+    this._super(...arguments);
+    if (typeof this.actionInserted === 'function') {
       this.actionInserted();
     }
-  }
+  },
 });

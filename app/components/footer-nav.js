@@ -4,5 +4,5 @@ export default Component.extend({
   /**
    * Overrides
    */
-  classNames: ['footer-nav']
+  classNames: ['footer-nav'],
 });

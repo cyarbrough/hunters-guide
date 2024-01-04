@@ -5,5 +5,5 @@ export default Component.extend({
    * Overrides
    */
   classNames: ['side-panel-tabs'],
-  tagName: 'ul'
+  tagName: 'ul',
 });

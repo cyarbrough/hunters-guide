@@ -7,12 +7,12 @@ export default Controller.extend({
   /**
    * Sample list of ailments
    */
-  ailmentList: computed(function() {
+  ailmentList: computed(function () {
     let store = this.store;
 
     return [
       store.peekRecord('ailment', 'fireBlight'),
-      store.peekRecord('ailment', 'poison')
+      store.peekRecord('ailment', 'poison'),
     ];
-  })
+  }),
 });

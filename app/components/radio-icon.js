@@ -6,5 +6,5 @@ export default Component.extend({
    */
   classNames: ['radio-icon'],
   classNameBindings: ['radioOn:is-on'],
-  tagName: 'span'
+  tagName: 'span',
 });

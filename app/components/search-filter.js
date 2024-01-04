@@ -34,14 +34,14 @@ export default Component.extend({
    * @var {function}
    */
   actionSearch: null,
-  
+
   /**
    * @var {string}
    */
-  closeBtnClassName: computed('searchTerm', function() {
+  closeBtnClassName: computed('searchTerm', function () {
     let classNames = 'close';
 
-    if(this.searchTerm) {
+    if (this.searchTerm) {
       classNames += ' is-shown';
     }
     return classNames;
@@ -49,10 +49,10 @@ export default Component.extend({
   /**
    * Set focus state then debounce
    */
-  setFocusInTask: task(function * () {
+  setFocusInTask: task(function* () {
     this.setFocusOutTask.cancelAll();
     this.set('isFocused', true);
-    if(typeof this.actionFocused === 'function') {
+    if (typeof this.actionFocused === 'function') {
       this.actionFocused(true);
     }
     yield timeout(1);
@@ -60,10 +60,10 @@ export default Component.extend({
   /**
    * Sets focus state after debounce
    */
-  setFocusOutTask: task(function * () {
+  setFocusOutTask: task(function* () {
     yield timeout(500);
     this.set('isFocused', false);
-    if(!this.hasContent && typeof this.actionFocused === 'function') {
+    if (!this.hasContent && typeof this.actionFocused === 'function') {
       this.actionFocused(false);
     }
   }).restartable(),
@@ -77,13 +77,13 @@ export default Component.extend({
 
   actions: {
     clearSearch() {
-      if(typeof this.actionSearch === 'function') {
+      if (typeof this.actionSearch === 'function') {
         this.actionSearch(null);
         this.setFocusOutTask.perform();
       }
     },
     onFocusIn() {
-      if(!this.sidePanelIsOpen){
+      if (!this.sidePanelIsOpen) {
         this.setFocusInTask.perform();
       }
     },
@@ -91,10 +91,10 @@ export default Component.extend({
       this.setFocusOutTask.perform();
     },
     onKeyUp() {
-      if(typeof this.actionSearch === 'function') {
+      if (typeof this.actionSearch === 'function') {
         this.actionSearch(this.searchTerm);
       }
       this.scrollToTop();
-    }
-  }
+    },
+  },
 });

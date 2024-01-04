@@ -10,7 +10,7 @@ export default Component.extend({
    */
   classNames: ['header-nav'],
   classNameBindings: ['searchIsOpen', 'sidePanelIsOpen'],
-  
+
   actionButton: null,
   actionSearch: null,
   /**
@@ -41,13 +41,13 @@ export default Component.extend({
    * Classes for menu button
    * @var {string}
    */
-  classNamesButton: computed('sidePanelIsOpen', 'hasAlert', function() {
+  classNamesButton: computed('sidePanelIsOpen', 'hasAlert', function () {
     let classes = 'menu';
 
-    if(this.sidePanelIsOpen){
+    if (this.sidePanelIsOpen) {
       classes += ' is-open';
     }
-    if(this.hasAlert){
+    if (this.hasAlert) {
       classes += ' has-alert';
     }
     return classes;
@@ -56,6 +56,6 @@ export default Component.extend({
   actions: {
     inputFocused(value) {
       this.set('openSearch', value);
-    }
-  }
+    },
+  },
 });

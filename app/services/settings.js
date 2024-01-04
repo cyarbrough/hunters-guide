@@ -1,5 +1,5 @@
 import Service, { inject as service } from '@ember/service';
-import { get, set } from '@ember/object';
+import { set } from '@ember/object';
 import { Base64 } from 'base64';
 
 const COOKIE_NAME = 'hg-settings';
@@ -108,12 +108,14 @@ export default Service.extend({
     let settings = {};
 
     if (this.rememberUser) {
-      settings = Base64.encode(JSON.stringify({
-        sortAlpha: this.sortAlpha,
-        lastCheck: new Date().getTime()
-      }));
+      settings = Base64.encode(
+        JSON.stringify({
+          sortAlpha: this.sortAlpha,
+          lastCheck: new Date().getTime(),
+        }),
+      );
 
       cookieService.write(COOKIE_NAME, settings, { expires, sameSite });
     }
-  }
+  },
 });
