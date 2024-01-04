@@ -79,6 +79,15 @@ export default Route.extend({
       this.metaTags.setTitle();
     },
     /**
+     * Logs event to GA
+     * @param {string} category
+     * @param {string} action
+     * @param {string} label
+     */
+    logEvent(/* category, action, label */) {
+      // this.googleAnalytics.event(category, action, label);
+    },
+    /**
      * Updates last visited route
      */
     updateLastSidePanelRoute(route) {

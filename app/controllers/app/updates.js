@@ -52,6 +52,11 @@ export default Controller.extend({
      */
     toggleSort() {
       this.settings.toggleSort();
+      if (this.sortAlpha) {
+        this.send('logEvent', 'Monster List', 'Sort by Alpha');
+      } else {
+        this.send('logEvent', 'Monster List', 'Sort by Guide');
+      }
       document.getElementById('container').scrollTo(0, 0);
     }
   }

@@ -83,13 +83,12 @@ export default Service.extend({
    * Toggles sort value, sends tracking event
    */
   toggleSort() {
-    let action = 'Sort by Guide';
-
-    this.toggleProperty('sortAlpha');
-    if (this.sortAlpha) {
-      action = 'Sort by Alpha';
-    }
+    // let action = 'Sort by Guide';
+    // if (this.sortAlpha) {
+    //   action = 'Sort by Alpha';
+    // }
     // this.googleAnalytics.event('Setting', action);
+    this.toggleProperty('sortAlpha');
     this.saveSettings();
   },
   /**

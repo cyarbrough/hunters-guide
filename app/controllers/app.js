@@ -77,10 +77,8 @@ export default Controller.extend({
   monsterList: sort('monstersFiltered', 'monsterSort'),
   monsterSort: computed('sortAlpha', function() {
     if (this.sortAlpha) {
-      this.send('logEvent', 'Monster List', 'Sort by Alpha');
       return ['id:asc'];
     }
-    this.send('logEvent', 'Monster List', 'Sort by Guide');
     return ['order:asc'];
   }),
 
@@ -211,13 +209,13 @@ export default Controller.extend({
 
   actions: {
     /**
-     * Logs event to GA
+     * Logs event to GA, bubbles to route
      * @param {string} category
      * @param {string} action
      * @param {string} label
      */
-    logEvent(category, action, label) {
-      // this.googleAnalytics.event(category, action, label);
+    logEvent(/* category, action, label */) {
+      return true;
     },
     /**
      * Toggles Side Panel
