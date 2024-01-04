@@ -23,8 +23,8 @@ export default Controller.extend({
    * Holds the last route the side panel has accessed
    * @var {string}
    */
-  defaultsidePanelRoute: 'app.updates',
-  lastSidePanelRoute: 'app.updates',
+  defaultsidePanelRoute: alias('settings.defaultsidePanelRoute'),
+  lastSidePanelRoute: alias('settings.lastSidePanelRoute'),
   /**
    * Holds query term (generally not referenced, use searchTerm instead)
    * @var {string}
@@ -44,7 +44,7 @@ export default Controller.extend({
    * Array of strings, of valid routes for the side panel
    * @var {array}
    */
-  sidePanelRoutes: ['app.updates', 'app.help'],
+  sidePanelRoutes: Array('app.updates', 'app.help'),
   /**
    * Indicates if sorting monsters by alpha
    * @var {boolean}

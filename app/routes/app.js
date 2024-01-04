@@ -91,7 +91,7 @@ export default Route.extend({
      * Updates last visited route
      */
     updateLastSidePanelRoute(route) {
-      this.controller.set('lastSidePanelRoute', route);
-    }
-  }
+      this.settings.set('lastSidePanelRoute', route);
+    },
+  },
 });

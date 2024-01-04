@@ -34,6 +34,13 @@ export default Service.extend({
   sortAlpha: false,
 
   /**
+   * Holds the last route the side panel has accessed
+   * @var {string}
+   */
+  defaultsidePanelRoute: 'app.updates',
+  lastSidePanelRoute: 'app.updates',
+
+  /**
    * Deletes cookie, resets settings
    */
   forgetUserSettings() {
