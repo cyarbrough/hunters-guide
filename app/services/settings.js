@@ -1,6 +1,7 @@
-import Service, { inject as service } from '@ember/service';
+import Service, { service } from '@ember/service';
 import { set } from '@ember/object';
 import { Base64 } from 'base64';
+import { tracked } from '@glimmer/tracking';
 
 const COOKIE_NAME = 'hg-settings';
 
@@ -13,32 +14,32 @@ function addMonths(date, months) {
   return date;
 }
 
-export default Service.extend({
-  cookies: service(),
+export default class SettingsService extends Service {
+  @service cookies;
   // googleAnalytics: service(),
 
   /**
    * Last time user checked updates
    * @var {date}
    */
-  lastCheck: null,
+  lastCheck = null;
   /**
    * Indicates if user is remembered
    * @var {boolean}
    */
-  rememberUser: false,
+  rememberUser = false;
   /**
    * Indicates if monsters are sorted by alpha
    * @var {boolean}
    */
-  sortAlpha: false,
+  @tracked sortAlpha = false;
 
   /**
    * Holds the last route the side panel has accessed
    * @var {string}
    */
-  defaultsidePanelRoute: 'app.updates',
-  lastSidePanelRoute: 'app.updates',
+  defaultsidePanelRoute = 'app.updates';
+  lastSidePanelRoute = 'app.updates';
 
   /**
    * Deletes cookie, resets settings
@@ -46,7 +47,7 @@ export default Service.extend({
   forgetUserSettings() {
     this.cookies.clear(COOKIE_NAME);
     this.resetService();
-  },
+  }
   /**
    * Gets settings from settings cookie
    */
@@ -59,7 +60,7 @@ export default Service.extend({
       jsonCookie = JSON.parse(Base64.decode(cookie));
       this.parseSettings(jsonCookie);
     }
-  },
+  }
   /**
    * Parses and sets various settings
    * @param {*} settings
@@ -70,7 +71,7 @@ export default Service.extend({
       set(this, 'sortAlpha', settings.sortAlpha);
       set(this, 'lastCheck', settings.lastCheck);
     }
-  },
+  }
   /**
    * Activates rememberUser, saves settings
    */
@@ -78,14 +79,14 @@ export default Service.extend({
     set(this, 'rememberUser', true);
     this.saveSettings();
     // this.googleAnalytics.event('Setting', 'Remember Me');
-  },
+  }
   /**
    * Resets all settings
    */
   resetService() {
     set(this, 'sortAlpha', false);
     set(this, 'rememberUser', false);
-  },
+  }
   /**
    * Toggles sort value, sends tracking event
    */
@@ -95,9 +96,9 @@ export default Service.extend({
     //   action = 'Sort by Alpha';
     // }
     // this.googleAnalytics.event('Setting', action);
-    this.toggleProperty('sortAlpha');
+    this.sortAlpha = !this.sortAlpha;
     this.saveSettings();
-  },
+  }
   /**
    * Saves settings into a cookie, if allowed
    */
@@ -117,5 +118,5 @@ export default Service.extend({
 
       cookieService.write(COOKIE_NAME, settings, { expires, sameSite });
     }
-  },
-});
+  }
+}

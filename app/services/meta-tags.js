@@ -1,7 +1,7 @@
 import Service from '@ember/service';
+import config from 'hunters-guide/config/environment';
 
 const TITLE = "Hunter's Field Guide";
-import config from 'hunters-guide/config/environment';
 
 export default class MetaTagsService extends Service {
   /**

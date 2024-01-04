@@ -20,7 +20,7 @@ export default Component.extend({
   /**
    * @var {boolean}
    */
-  hasAlert: alias('alertCenter.hasAlerts'),
+  hasAlert: alias('alertCenter.alertsUpdates'),
   /**
    * @var {boolean}
    */

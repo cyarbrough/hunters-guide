@@ -1,42 +1,32 @@
-import { readOnly } from '@ember/object/computed';
-import Service, { inject as service } from '@ember/service';
-import { set } from '@ember/object';
-import { oneWay } from '@ember/object/computed';
+import Service, { service } from '@ember/service';
 import { task, timeout } from 'ember-concurrency';
+import { tracked } from '@glimmer/tracking';
 
 const TIME_LAST_UPDATE = 7 * 24 * 60 * 60 * 1000; // 7 days in ms
 
-export default Service.extend({
-  settings: service(),
+export default class AlertCenterService extends Service {
+  @service settings;
   /**
    * Alerts specific to updates
    * @var {number}
    */
-  alertsUpdates: 0,
-  /**
-   * @var {boolean}
-   */
-  hasAlerts: readOnly('alertsUpdates'),
-  /**
-   *
-   */
-  lastCheck: oneWay('settings.lastCheck'),
+  @tracked alertsUpdates = 0;
 
   /**
    * Private task, clears alertsUpdates
    */
-  _clearUpdatesTask: task(function* (timer = 0) {
-    yield timeout(timer);
-    set(this, 'alertsUpdates', 0);
+  _clearUpdatesTask = task({ drop: true }, async (timer = 0) => {
+    await timeout(timer);
+    this.alertsUpdates = 0;
     this.settings.saveSettings();
-  }).drop(),
+  });
 
   /**
    * Checks given updates against TIME_LAST_UPDATE
    * @param {*} updates
    */
   checkForUpdateAlerts(updates) {
-    const { lastCheck } = this;
+    const { lastCheck } = this.settings;
     const lastUpdate = updates[0];
 
     if (lastCheck) {
@@ -44,7 +34,7 @@ export default Service.extend({
     } else {
       this.checkLastUpdate(lastUpdate);
     }
-  },
+  }
   /**
    * Checks user's last login verse last update
    * @param {*} lastCheck
@@ -55,9 +45,9 @@ export default Service.extend({
     const update = new Date(lastUpdate.date);
 
     if (check < update) {
-      set(this, 'alertsUpdates', 1);
+      this.alertsUpdates = 1;
     }
-  },
+  }
   /**
    * Checks time verses last update
    * @param {*} lastUpdate
@@ -68,13 +58,13 @@ export default Service.extend({
     const diff = Date.parse(update) - Date.parse(check);
 
     if (diff <= TIME_LAST_UPDATE) {
-      set(this, 'alertsUpdates', 1);
+      this.alertsUpdates = 1;
     }
-  },
+  }
   /**
    * Clears alertsUpdates
    */
   clearUpdateAlerts(timer = 0) {
     this._clearUpdatesTask.perform(timer);
-  },
-});
+  }
+}
