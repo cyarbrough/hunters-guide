@@ -17,6 +17,13 @@ export default Route.extend({
   afterModel() {
     this.metaTags.setTitle();
   },
+  setupController(controller) {
+    this._super(...arguments);
+
+    if (controller.searchQuery) {
+      controller.searchTerm = controller.searchQuery;
+    }
+  },
   /**
    * Pushes data into the payload, returns
    * @param {*} monsterData

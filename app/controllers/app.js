@@ -1,9 +1,7 @@
-import { getOwner } from '@ember/application';
-// import $ from 'jquery';
 import Controller from '@ember/controller';
 import { task, timeout } from 'ember-concurrency';
 import { inject as service } from '@ember/service';
-import { computed, observer } from '@ember/object';
+import { computed } from '@ember/object';
 import { alias, sort } from '@ember/object/computed';
 
 const TIMER_TRANSITION_FAST = 300;
@@ -16,7 +14,7 @@ export default Controller.extend({
    * Overrides
    */
   queryParams: {
-    searchQuery: 's'
+    searchQuery: 's',
   },
 
   /**
@@ -80,21 +78,6 @@ export default Controller.extend({
       return ['id:asc'];
     }
     return ['order:asc'];
-  }),
-
-  /**
-   * Sets searchTerm when searchQuery loads, if searchTerm is not set
-   */
-  setSearchTerm: observer('searchQuery', function() {
-    if (!this.searchTerm) {
-      this.set('searchTerm', this.searchQuery);
-    }
-  }),
-  /**
-   * Calls setSearchQueryTask when searchTerm is changed
-   */
-  setSearchQuery: observer('searchTerm', function() {
-    this.setSearchQueryTask.perform();
   }),
 
   /**
@@ -234,6 +217,7 @@ export default Controller.extend({
      */
     updateSearchTerm(term) {
       this.set('searchTerm', term);
-    }
-  }
+      this.setSearchQueryTask.perform();
+    },
+  },
 });
