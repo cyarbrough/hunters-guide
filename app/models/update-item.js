@@ -1,6 +1,6 @@
 import Model, { attr } from '@ember-data/model';
 
-export default Model.extend({
-  date: attr('string'),
-  title: attr('string'),
-});
+export default class UpdateItemModel extends Model {
+  @attr('string') date;
+  @attr('string') title;
+}

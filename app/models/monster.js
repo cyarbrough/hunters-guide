@@ -1,13 +1,13 @@
 import Model, { hasMany, belongsTo, attr } from '@ember-data/model';
 
-export default Model.extend({
-  name: attr('string'),
-  order: attr('number'),
-  physiology: attr(),
-  weaknesses: attr(),
-  breakpoints: attr(),
-  slug: attr('string'),
+export default class MonsterModel extends Model {
+  @attr('string') name;
+  @attr('number') order;
+  @attr physiology;
+  @attr weaknesses;
+  @attr breakpoints;
+  @attr('string') slug;
 
-  ailments: hasMany('ailment', { async: false, inverse: null }),
-  species: belongsTo('species', { async: false, inverse: null }),
-});
+  @hasMany('ailment', { async: false, inverse: null }) ailments;
+  @belongsTo('species', { async: false, inverse: null }) species;
+}
