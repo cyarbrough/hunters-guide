@@ -1,59 +1,50 @@
 import Controller from '@ember/controller';
+import { action } from '@ember/object';
+import { service } from '@ember/service';
 import { task, timeout } from 'ember-concurrency';
-import { inject as service } from '@ember/service';
-import { computed } from '@ember/object';
-import { alias, sort } from '@ember/object/computed';
+import { tracked } from '@glimmer/tracking';
 
 const TIMER_TRANSITION_FAST = 300;
 
-export default Controller.extend({
-  router: service(),
-  settings: service(),
+export default class AppController extends Controller {
+  @service router;
+  @service settings;
   // googleAnalytics: service(),
   /**
    * Overrides
    */
-  queryParams: {
-    searchQuery: 's',
-  },
+  queryParams = [
+    {
+      searchQuery: 's',
+    },
+  ];
 
-  /**
-   * Holds the last route the side panel has accessed
-   * @var {string}
-   */
-  defaultsidePanelRoute: alias('settings.defaultsidePanelRoute'),
-  lastSidePanelRoute: alias('settings.lastSidePanelRoute'),
   /**
    * Holds query term (generally not referenced, use searchTerm instead)
    * @var {string}
    */
-  searchQuery: null,
+  @tracked searchQuery = null;
   /**
    * Referenced search term
    * @var {string}
    */
-  searchTerm: null,
+  @tracked searchTerm = null;
   /**
    * Indicates if side-panel is visible
    * @var {boolean}
    */
-  sidePanelIsOpen: false,
+  @tracked sidePanelIsOpen = false;
   /**
    * Array of strings, of valid routes for the side panel
    * @var {array}
    */
-  sidePanelRoutes: Array('app.updates', 'app.help'),
-  /**
-   * Indicates if sorting monsters by alpha
-   * @var {boolean}
-   */
-  sortAlpha: alias('settings.sortAlpha'),
+  sidePanelRoutes = ['app.updates', 'app.help'];
 
   /**
    * Filtered List
    * @var {array}
    */
-  monstersFiltered: computed('model.monsters', 'searchTerm', function () {
+  get monstersFiltered() {
     const monsters = this.model.monsters;
     let search = this.searchTerm;
     let searchRay;
@@ -68,19 +59,19 @@ export default Controller.extend({
     }
 
     return monsters;
-  }),
+  }
 
   /**
    * Sorted List
    * @var {array}
    */
-  monsterList: sort('monstersFiltered', 'monsterSort'),
-  monsterSort: computed('sortAlpha', function () {
-    if (this.sortAlpha) {
-      return ['id:asc'];
-    }
-    return ['order:asc'];
-  }),
+  get monsterList() {
+    const filtered = this.monstersFiltered;
+    const field = this.settings.sortAlpha ? 'id' : 'order';
+    return filtered.slice().sort((a, b) => {
+      return a[field] > b[field] ? 1 : -1;
+    });
+  }
 
   /**
    * Checks route and auto opens side panel
@@ -92,31 +83,34 @@ export default Controller.extend({
     if (sidePanelRoutes.includes(currentRoute)) {
       this.openSidePanelTask.perform();
     }
-  },
+  }
   /**
    * Task to open side panel after delay
    * @var {task; drops}
-   * @param {numer} timer
+   * @param {number} timer
    */
-  openSidePanelTask: task(function* (timer = 50) {
-    yield timeout(timer);
-    this.set('sidePanelIsOpen', true);
-  }).drop(),
+  openSidePanelTask = task({ drop: true }, async (timer = 50) => {
+    await timeout(timer);
+    this.sidePanelIsOpen = true;
+  });
   /**
    * Task to transition to /app after delay; drops
    * @var {task; drops}
    * @param {numer} timer
    */
-  transitionToAppTask: task(function* (timer = TIMER_TRANSITION_FAST + 50) {
-    yield timeout(timer);
-    this.router.transitionTo('app');
-  }).drop(),
+  transitionToAppTask = task(
+    { drop: true },
+    async (timer = TIMER_TRANSITION_FAST + 50) => {
+      await timeout(timer);
+      this.router.transitionTo('app');
+    },
+  );
   /**
    * Sets searchQuery after debounce
    * @var {task, restarts}
    * @param {numer} timer
    */
-  setSearchQueryTask: task(function* (timer = 1500) {
+  setSearchQueryTask = task({ restartable: true }, async (timer = 1500) => {
     let { searchTerm } = this;
 
     // clear out strings
@@ -125,13 +119,13 @@ export default Controller.extend({
     }
 
     if (searchTerm) {
-      yield timeout(timer);
+      await timeout(timer);
     }
 
     // Set term
-    this.set('searchQuery', searchTerm);
+    this.searchQuery = searchTerm;
     this.logSearch(searchTerm);
-  }).restartable(),
+  });
 
   /**
    * Checks status of searchTerm, and send appropriate log event
@@ -143,7 +137,7 @@ export default Controller.extend({
     } else {
       this.send('logEvent', 'Search Cleared', '');
     }
-  },
+  }
 
   /**
    * Checks a monster object for search terms
@@ -158,7 +152,7 @@ export default Controller.extend({
       .indexOf(searchTerm);
 
     return nameMatch >= 0 || speciesMatch >= 0;
-  },
+  }
   /**
    * Checks a monster object for search terms in array
    * @param {*} monster
@@ -177,15 +171,16 @@ export default Controller.extend({
       }
     }
     return match;
-  },
+  }
   /**
    * Actions needed to open or close the side panel
    */
-  toggleSidePanel() {
-    this.toggleProperty('sidePanelIsOpen');
+  _toggleSidePanel() {
+    this.sidePanelIsOpen = !this.sidePanelIsOpen;
     // If side panels opens, go to lastSidePanelRoute
     if (this.sidePanelIsOpen) {
-      const route = this.lastSidePanelRoute || this.defaultsidePanelRoute;
+      const route =
+        this.settings.lastSidePanelRoute || this.settings.defaultsidePanelRoute;
 
       this.send('logEvent', 'Side Panel', `Open Side Panel to ${route}`);
       this.router.transitionTo(route);
@@ -193,36 +188,37 @@ export default Controller.extend({
       this.send('logEvent', 'Side Panel', 'Close Side Panel');
       this.transitionToAppTask.perform();
     }
-  },
-
-  actions: {
-    /**
-     * Logs event to GA, bubbles to route
-     * @param {string} category
-     * @param {string} action
-     * @param {string} label
-     */
-    logEvent(/* category, action, label */) {
-      return true;
-    },
-    /**
-     * Toggles Side Panel
-     */
-    toggleSidePanel() {
-      this.toggleSidePanel();
-    },
-    /**
-     * Action fired after side panel is inserted
-     */
-    sidePanelInserted() {
-      this.checkForSidePanel();
-    },
-    /**
-     * @param {string} term
-     */
-    updateSearchTerm(term) {
-      this.set('searchTerm', term);
-      this.setSearchQueryTask.perform();
-    },
-  },
-});
+  }
+  /**
+   * Logs event to GA, bubbles to route
+   * @param {string} category
+   * @param {string} action
+   * @param {string} label
+   */
+  @action
+  logEvent(/* category, action, label */) {
+    return true;
+  }
+  /**
+   * Toggles Side Panel
+   */
+  @action
+  toggleSidePanel() {
+    this._toggleSidePanel();
+  }
+  /**
+   * Action fired after side panel is inserted
+   */
+  @action
+  sidePanelInserted() {
+    this.checkForSidePanel();
+  }
+  /**
+   * @param {string} term
+   */
+  @action
+  updateSearchTerm(term) {
+    this.searchTerm = term;
+    this.setSearchQueryTask.perform();
+  }
+}
