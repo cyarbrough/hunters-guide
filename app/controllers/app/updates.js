@@ -1,61 +1,45 @@
 import Controller from '@ember/controller';
-import { inject as service } from '@ember/service';
-import { computed } from '@ember/object';
-import { not, oneWay, reads } from '@ember/object/computed';
+import { service } from '@ember/service';
+import { action } from '@ember/object';
 
-export default Controller.extend({
-  settings: service(),
+export default class UpdatesController extends Controller {
+  @service settings;
   /**
    * Group value to match for radio buttons
    * @var {string}
    */
-  groupValue: computed('sortAlpha', function () {
-    if (this.sortAlpha) {
+  get groupValue() {
+    if (this.settings.sortAlpha) {
       return 'alpha';
     }
     return 'guide';
-  }),
-  /**
-   * Indicates if user is remembered; alias
-   * @var {boolean}
-   */
-  rememberUser: oneWay('settings.rememberUser'),
-  /**
-   * Indicates if monsters are sorted by alpha; alias
-   * @var {boolean}
-   */
-  sortAlpha: oneWay('settings.sortAlpha'),
-  sortGuide: not('sortAlpha'),
-  /**
-   * Collection of update items
-   * @var {array}
-   */
-  updateItems: reads('model.updates'),
+  }
 
-  actions: {
-    /**
-     * Calls settings.forgetUserSettings
-     */
-    forgetUser() {
-      this.settings.forgetUserSettings();
-    },
-    /**
-     * Calls settings.rememberUserSettings
-     */
-    rememberUser() {
-      this.settings.rememberUserSettings();
-    },
-    /**
-     * Calls settings.toggleSort, and scrolls to top
-     */
-    toggleSort() {
-      this.settings.toggleSort();
-      if (this.sortAlpha) {
-        this.send('logEvent', 'Monster List', 'Sort by Alpha');
-      } else {
-        this.send('logEvent', 'Monster List', 'Sort by Guide');
-      }
-      document.getElementById('container').scrollTo(0, 0);
-    },
-  },
-});
+  /**
+   * Calls settings.forgetUserSettings
+   */
+  @action
+  forgetUser() {
+    this.settings.forgetUserSettings();
+  }
+  /**
+   * Calls settings.rememberUserSettings
+   */
+  @action
+  rememberUser() {
+    this.settings.rememberUserSettings();
+  }
+  /**
+   * Calls settings.toggleSort, and scrolls to top
+   */
+  @action
+  toggleSort() {
+    this.settings.toggleSort();
+    if (this.settings.sortAlpha) {
+      this.send('logEvent', 'Monster List', 'Sort by Alpha');
+    } else {
+      this.send('logEvent', 'Monster List', 'Sort by Guide');
+    }
+    document.getElementById('container').scrollTo(0, 0);
+  }
+}

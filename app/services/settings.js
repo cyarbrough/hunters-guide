@@ -33,6 +33,9 @@ export default class SettingsService extends Service {
    * @var {boolean}
    */
   @tracked sortAlpha = false;
+  get sortGuide() {
+    return !this.sortAlpha;
+  }
 
   /**
    * Holds the last route the side panel has accessed

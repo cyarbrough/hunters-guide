@@ -11,7 +11,7 @@
         @changed={{action "toggleSort"}}
         @classNames="radio-label"
       >
-          <RadioIcon @radioOn={{this.sortGuide}} />
+          <RadioIcon @radioOn={{this.settings.sortGuide}} />
           Guide
       </RadioButton>
 
@@ -22,14 +22,14 @@
         @changed={{action "toggleSort"}}
         @classNames="radio-label"
       >
-          <RadioIcon @radioOn={{this.sortAlpha}} />
+          <RadioIcon @radioOn={{this.settings.sortAlpha}} />
           Name
       </RadioButton>
     </div>
   </div>
   <TwoStateButton
     @classNames="remember-me"
-    @isOn={{this.rememberUser}}
+    @isOn={{this.settings.rememberUser}}
     @labelOn="Forget Me"
     @labelOff="Remember Me"
     @actionOn={{action "forgetUser"}}
@@ -39,7 +39,7 @@
 
 <h2 class="title">Updates</h2>
 <table class="update-table">
-  {{#each this.updateItems as |item|}}
+  {{#each this.model.updates as |item|}}
     <UpdateItem @item={{item}} />
   {{/each}}
 </table>
