@@ -1,29 +1,30 @@
 import Route from '@ember/routing/route';
 import fetch from 'fetch';
 import config from 'hunters-guide/config/environment';
-import { inject as service } from '@ember/service';
+import { action } from '@ember/object';
+import { service } from '@ember/service';
 
-export default Route.extend({
-  alertCenter: service(),
-  metaTags: service(),
-  settings: service(),
-  store: service(),
+export default class AppRoute extends Route {
+  @service alertCenter;
+  @service metaTags;
+  @service settings;
+  @service store;
   /**
    * Lifecycle function
    */
   beforeModel() {
     this.settings.getSettings();
-  },
+  }
   afterModel() {
     this.metaTags.setTitle();
-  },
+  }
   setupController(controller) {
-    this._super(...arguments);
+    super.setupController(...arguments);
 
     if (controller.searchQuery) {
       controller.searchTerm = controller.searchQuery;
     }
-  },
+  }
   /**
    * Pushes data into the payload, returns
    * @param {*} monsterData
@@ -37,7 +38,7 @@ export default Route.extend({
     return {
       monsters: store.peekAll('monster'),
     };
-  },
+  }
   /**
    * Pushes data into the payload, returns
    * @param {*} itemData
@@ -50,7 +51,7 @@ export default Route.extend({
 
     data = store.peekAll('update-item');
     this.alertCenter.checkForUpdateAlerts(data);
-  },
+  }
   /**
    * Main model data for App
    */
@@ -69,7 +70,7 @@ export default Route.extend({
     return {
       monsters: [],
     };
-  },
+  }
   /**
    * Fetch update items
    */
@@ -81,26 +82,28 @@ export default Route.extend({
       updateData = await response.json();
       return this.handleUpdateItemsSuccess(updateData);
     }
-  },
+  }
 
-  actions: {
-    didTransition() {
-      this.metaTags.setTitle();
-    },
-    /**
-     * Logs event to GA
-     * @param {string} category
-     * @param {string} action
-     * @param {string} label
-     */
-    logEvent(/* category, action, label */) {
-      // this.googleAnalytics.event(category, action, label);
-    },
-    /**
-     * Updates last visited route
-     */
-    updateLastSidePanelRoute(route) {
-      this.settings.set('lastSidePanelRoute', route);
-    },
-  },
-});
+  @action
+  didTransition() {
+    this.metaTags.setTitle();
+  }
+  /**
+   * Logs event to GA
+   * @param {string} category
+   * @param {string} action
+   * @param {string} label
+   */
+  @action
+  logEvent(/* category, action, label */) {
+    // this.googleAnalytics.event(category, action, label);
+  }
+  /**
+   * Updates last visited route
+   * @param {string} route
+   */
+  @action
+  updateLastSidePanelRoute(route) {
+    this.settings.set('lastSidePanelRoute', route);
+  }
+}

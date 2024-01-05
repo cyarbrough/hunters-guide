@@ -1,17 +1,18 @@
 import Route from '@ember/routing/route';
-import { inject as service } from '@ember/service';
+import { action } from '@ember/object';
+import { service } from '@ember/service';
 
-export default Route.extend({
-  metaTags: service(),
+export default class HelpRoute extends Route {
+  @service metaTags;
   /**
    * Lifecycle function
    */
   afterModel() {
     this.metaTags.setTitle('Help');
-  },
-  actions: {
-    didTransition() {
-      this.send('updateLastSidePanelRoute', this.routeName);
-    },
-  },
-});
+  }
+
+  @action
+  didTransition() {
+    this.send('updateLastSidePanelRoute', this.routeName);
+  }
+}
