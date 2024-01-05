@@ -1,18 +1,17 @@
 import Controller from '@ember/controller';
-import { computed } from '@ember/object';
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 
-export default Controller.extend({
-  store: service(),
+export default class HelpController extends Controller {
+  @service store;
   /**
    * Sample list of ailments
    */
-  ailmentList: computed(function () {
+  get ailmentList() {
     let store = this.store;
 
     return [
       store.peekRecord('ailment', 'fireBlight'),
       store.peekRecord('ailment', 'poison'),
     ];
-  }),
-});
+  }
+}
