@@ -16,18 +16,15 @@ export default class UpdatesController extends Controller {
   }
 
   /**
-   * Calls settings.forgetUserSettings
+   * Checks if user cookie is set and clears, or sets if clear
    */
   @action
-  forgetUser() {
-    this.settings.forgetUserSettings();
-  }
-  /**
-   * Calls settings.rememberUserSettings
-   */
-  @action
-  rememberUser() {
-    this.settings.rememberUserSettings();
+  toggleUserCookie() {
+    if (this.settings.rememberUser) {
+      this.settings.forgetUserSettings();
+    } else {
+      this.settings.rememberUserSettings();
+    }
   }
   /**
    * Calls settings.toggleSort, and scrolls to top

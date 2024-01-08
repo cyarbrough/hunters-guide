@@ -27,14 +27,12 @@
       </RadioButton>
     </div>
   </div>
-  <TwoStateButton
-    @classNames="remember-me"
-    @isOn={{this.settings.rememberUser}}
-    @labelOn="Forget Me"
-    @labelOff="Remember Me"
-    @actionOn={{action "forgetUser"}}
-    @actionOff={{action "rememberUser"}}
-  />
+  <button
+    class="two-state remember-me"
+    {{on 'click' this.toggleUserCookie}}
+  >
+    {{if this.settings.rememberUser "Forget Me" "Remember Me"}}
+  </button>
 </fieldset>
 
 <h2 class="title">Updates</h2>
