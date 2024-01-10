@@ -1,91 +1,59 @@
-import Component from '@ember/component';
-import { inject as service } from '@ember/service';
+import Component from '@glimmer/component';
+import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
-export default Component.extend({
-  inViewport: service(),
-  /**
-   * Overrides
-   */
-  classNames: ['monster-row'],
-  classNameBindings: ['inView:is-active', 'showAlternate:is-open'],
+export default class MonsterRowComponent extends Component {
   /**
    * @var {boolean}
    */
-  inView: false,
-  /**
-   * @var {object}
-   */
-  monster: null,
+  @tracked inView = false;
   /**
    * @var {boolean}
    */
-  showAlternate: false,
-  /**
-   * Overrides
-   */
-  didRender() {
-    this._super(...arguments);
-    this.setupInViewport();
-  },
-  willDestroy() {
-    const element = document.getElementById(this.elementId);
-    this.inViewport.stopWatching(element);
-    this._super(...arguments);
-  },
-  /**
-   * Sets inView on inViewport.didEnterViewport
-   */
-  didEnterViewport() {
-    if (!this.inView) {
-      this.set('inView', true);
-    }
-  },
+  @tracked showAlternate = false;
   /**
    * Sends logEvent action with Open/Close panel info
    */
   logToggle() {
     let action = 'Close ',
       isAlt = this.showAlternate,
-      name = this.monster.name,
-      slug = this.monster.slug;
+      name = this.args.monster.name,
+      slug = this.args.monster.slug;
 
     if (isAlt) {
       action = 'Open ';
     }
     action += name;
-    this.logEvent('Monster', action, slug);
-  },
+    this.args.logEvent('Monster', action, slug);
+  }
   /**
    * Toggles `showAlternate` boolean
    */
   toggleAlternateLogo() {
-    this.toggleProperty('showAlternate');
-  },
+    this.showAlternate = !this.showAlternate;
+  }
   /**
    * Toggles Weakness Grid & Alt Image
    */
   toggleWeaknessGrid() {
-    this.toggleProperty('showAlternate');
+    this.toggleAlternateLogo();
     this.logToggle();
-  },
+  }
   /**
-   * Sets up InViewport to watch monster-row component
+   * Sets inView to show logo image
    */
-  setupInViewport() {
-    const element = document.getElementById(this.elementId);
-    const viewportTolerance = { top: 250, bottom: 250 };
-    const { onEnter } = this.inViewport.watchElement(element, {
-      viewportTolerance,
-    });
-    onEnter(this.didEnterViewport.bind(this));
-  },
-
-  actions: {
-    toggleGrid() {
-      this.toggleWeaknessGrid();
-    },
-    toggleLogo() {
-      this.toggleAlternateLogo();
-    },
-  },
-});
+  @action
+  onEnter() {
+    if (!this.inView) {
+      this.inView = true;
+    }
+  }
+  @action
+  toggleGrid() {
+    this.toggleWeaknessGrid();
+  }
+  @action
+  toggleLogo() {
+    this.toggleAlternateLogo();
+  }
+}

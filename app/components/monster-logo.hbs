@@ -1,0 +1,8 @@
+<button
+  class="monster-logo
+    {{if @isHidden 'is-hidden'}}
+    {{if @alternate 'is-alt'}}
+    {{if @slug (concat 'is-' @slug)}}
+  "
+  {{on 'click' (action 'click')}}
+/>
