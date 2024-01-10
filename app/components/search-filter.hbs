@@ -1,0 +1,27 @@
+<div class="search-filter
+  {{if this.isFocused 'is-focused'}}
+  {{if this.hasContent 'has-content'}}
+">
+  <button
+    class="search"
+    aria-label="search"
+    {{action 'onFocusIn'}}
+  >
+    <i class="fas fa-search"></i>
+  </button>
+  <Input
+    placeholder="Monster or Species"
+    class="input"
+    @value={{@searchTerm}}
+    {{action "onKeyUp" on="keyUp"}}
+    {{action "onFocusIn" on="focusIn"}}
+    {{action "onFocusOut" on="focusOut"}}
+  />
+  <button
+    class="close {{if this.hasContent 'is-shown'}}"
+    aria-label="clear search"
+    {{action 'clearSearch'}}
+  >
+    <i class="fas fa-times"></i>
+  </button>
+</div>

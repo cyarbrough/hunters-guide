@@ -1,100 +1,71 @@
-import { bool } from '@ember/object/computed';
-import { computed } from '@ember/object';
-import Component from '@ember/component';
+import Component from '@glimmer/component';
+import { action } from '@ember/object';
 import { task, timeout } from 'ember-concurrency';
+import { isPresent } from '@ember/utils';
+import { tracked } from '@glimmer/tracking';
 
-export default Component.extend({
-  /**
-   * Overrides
-   */
-  classNames: ['search-filter'],
-  classNameBindings: ['isFocused', 'hasContent'],
-
-  /**
-   * @var {string}
-   */
-  searchTerm: null,
+export default class SearchFilterComponent extends Component {
   /**
    * @var {boolean}
    */
-  sidePanelIsOpen: false,
+  @tracked isFocused = false;
   /**
    * @var {boolean}
    */
-  isFocused: false,
-  /**
-   * @var {boolean}
-   */
-  hasContent: bool('searchTerm'),
-  /**
-   * @var {function}
-   */
-  actionFocused: null,
-  /**
-   * @var {function}
-   */
-  actionSearch: null,
-
-  /**
-   * @var {string}
-   */
-  closeBtnClassName: computed('searchTerm', function () {
-    let classNames = 'close';
-
-    if (this.searchTerm) {
-      classNames += ' is-shown';
-    }
-    return classNames;
-  }),
+  get hasContent() {
+    return isPresent(this.args.searchTerm);
+  }
   /**
    * Set focus state then debounce
    */
-  setFocusInTask: task(function* () {
+  setFocusInTask = task({ drop: true }, async () => {
     this.setFocusOutTask.cancelAll();
-    this.set('isFocused', true);
-    if (typeof this.actionFocused === 'function') {
-      this.actionFocused(true);
+    this.isFocused = true;
+    if (typeof this.args.actionFocused === 'function') {
+      this.args.actionFocused(true);
     }
-    yield timeout(1);
-  }).drop(),
+    await timeout(1);
+  });
   /**
    * Sets focus state after debounce
    */
-  setFocusOutTask: task(function* () {
-    yield timeout(500);
-    this.set('isFocused', false);
-    if (!this.hasContent && typeof this.actionFocused === 'function') {
-      this.actionFocused(false);
+  setFocusOutTask = task({ restartable: true }, async () => {
+    await timeout(500);
+    this.isFocused = false;
+    if (!this.hasContent && typeof this.args.actionFocused === 'function') {
+      this.args.actionFocused(false);
     }
-  }).restartable(),
+  });
 
   /**
    * Scrolls window to top of content
    */
   scrollToTop() {
     window.scrollTo(0, 0);
-  },
+  }
 
-  actions: {
-    clearSearch() {
-      if (typeof this.actionSearch === 'function') {
-        this.actionSearch(null);
-        this.setFocusOutTask.perform();
-      }
-    },
-    onFocusIn() {
-      if (!this.sidePanelIsOpen) {
-        this.setFocusInTask.perform();
-      }
-    },
-    onFocusOut() {
+  @action
+  clearSearch() {
+    if (typeof this.args.actionSearch === 'function') {
+      this.args.actionSearch(null);
       this.setFocusOutTask.perform();
-    },
-    onKeyUp() {
-      if (typeof this.actionSearch === 'function') {
-        this.actionSearch(this.searchTerm);
-      }
-      this.scrollToTop();
-    },
-  },
-});
+    }
+  }
+  @action
+  onFocusIn() {
+    if (!this.args.sidePanelIsOpen) {
+      this.setFocusInTask.perform();
+    }
+  }
+  @action
+  onFocusOut() {
+    this.setFocusOutTask.perform();
+  }
+  @action
+  onKeyUp() {
+    if (typeof this.args.actionSearch === 'function') {
+      this.args.actionSearch(this.args.searchTerm);
+    }
+    this.scrollToTop();
+  }
+}
