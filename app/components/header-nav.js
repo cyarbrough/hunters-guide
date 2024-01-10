@@ -1,61 +1,41 @@
-import { bool, alias, or } from '@ember/object/computed';
-import Component from '@ember/component';
-import { inject as service } from '@ember/service';
-import { computed } from '@ember/object';
+import Component from '@glimmer/component';
+import { action } from '@ember/object';
+import { service } from '@ember/service';
+import { isPresent } from '@ember/utils';
+import { tracked } from '@glimmer/tracking';
 
-export default Component.extend({
-  alertCenter: service(),
-  /**
-   * Overrides
-   */
-  classNames: ['header-nav'],
-  classNameBindings: ['searchIsOpen', 'sidePanelIsOpen'],
+export default class HeaderNavComponent extends Component {
+  @service alertCenter;
 
-  actionButton: null,
-  actionSearch: null,
   /**
    * @var {boolean}
    */
-  hasContent: bool('searchTerm'),
+  get hasContent() {
+    return isPresent(this.searchTerm);
+  }
   /**
    * @var {boolean}
    */
-  hasAlert: alias('alertCenter.alertsUpdates'),
+  get hasAlert() {
+    return this.alertCenter.alertsUpdates;
+  }
   /**
    * @var {boolean}
    */
-  openSearch: false,
+  @tracked openSearch = false;
   /**
    * @var {boolean}
    */
-  searchIsOpen: or('hasContent', 'openSearch'),
+  get searchIsOpen() {
+    return this.hasContent || this.openSearch;
+  }
   /**
    * @var {string}
    */
-  searchTerm: null,
-  /**
-   * @var {boolean}
-   */
-  sidePanelIsOpen: false,
-  /**
-   * Classes for menu button
-   * @var {string}
-   */
-  classNamesButton: computed('sidePanelIsOpen', 'hasAlert', function () {
-    let classes = 'menu';
+  @tracked searchTerm = null;
 
-    if (this.sidePanelIsOpen) {
-      classes += ' is-open';
-    }
-    if (this.hasAlert) {
-      classes += ' has-alert';
-    }
-    return classes;
-  }),
-
-  actions: {
-    inputFocused(value) {
-      this.set('openSearch', value);
-    },
-  },
-});
+  @action
+  inputFocused(value) {
+    this.openSearch = value;
+  }
+}

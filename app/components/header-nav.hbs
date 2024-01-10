@@ -1,0 +1,25 @@
+<div class="header-nav
+  {{if this.searchIsOpen 'search-is-open'}}
+  {{if @sidePanelIsOpen 'side-panel-is-open'}}
+">
+  <button
+    class="menu
+      {{if @sidePanelIsOpen 'is-open'}}
+      {{if this.hasAlert 'has-alert'}}
+    "
+    aria-hidden="true"
+    {{action @actionButton}}
+  >
+      <i class="fas fa-paw"></i>
+  </button>
+  <h1 class="title">
+    Hunter's Field Guide
+  </h1>
+  <SearchFilter
+    @sidePanelIsOpen={{@sidePanelIsOpen}}
+    @searchTerm={{@searchTerm}}
+    @actionSearch={{action @actionSearch}}
+    @actionFocused={{action 'inputFocused'}}
+  />
+</div>
+  
