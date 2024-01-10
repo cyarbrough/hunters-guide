@@ -1,69 +1,53 @@
-import { computed } from '@ember/object';
 import { isNone } from '@ember/utils';
-import Component from '@ember/component';
+import Component from '@glimmer/component';
 
-export default Component.extend({
-  /**
-   * Overrides
-   */
-  classNames: ['status-rating'],
-  classNameBindings: ['elementClassName', 'starClassName', 'starClassNameAlt'],
+export default class StatusRatingComponent extends Component {
+  tagName = '';
+  get dynamicClasses() {
+    return `${this.elementClassName} ${this.starClassName} ${this.starClassNameAlt}`;
+  }
   /**
    * @var {string}
    */
-  elementType: 'unknown',
-  /**
-   * @var {boolean}
-   */
-  noRating: false,
-  /**
-   * @var {integer}
-   */
-  ratingAmount: 0,
-  ratingAlt: null,
-
-  /**
-   * @var {string}
-   */
-  elementClassName: computed('elementType', function () {
-    let elementName = this.elementType || 'unknown';
+  get elementClassName() {
+    let elementName = this.args.elementType || 'unknown';
 
     return `is-status-${elementName}`;
-  }),
+  }
   /**
    * @var {boolean}
    */
-  showRatingAlt: computed('ratingAlt', function () {
-    return !isNone(this.ratingAlt);
-  }),
+  get showRatingAlt() {
+    return !isNone(this.args.ratingAlt);
+  }
   /**
    * @var {string}
    */
-  starClassName: computed('noRating', 'ratingAmount', function () {
-    let rating = this.ratingAmount || 0;
+  get starClassName() {
+    let rating = this.args.ratingAmount || 0;
 
-    if (this.noRating) {
+    if (this.args.noRating) {
       return 'is-label';
     }
     return `is-rating-${rating}`;
-  }),
+  }
   /**
    * @var {string}
    */
-  starClassNameAlt: computed('ratingAlt', 'showRatingAlt', function () {
-    let rating = this.ratingAlt || 0;
+  get starClassNameAlt() {
+    let rating = this.args.ratingAlt || 0;
 
     if (this.showRatingAlt) {
       return `is-rating-${rating}`;
     }
     return null;
-  }),
+  }
   /**
    * Array of items, based on ratingAmount
    * @var {array|null}
    */
-  starList: computed('ratingAmount', function () {
-    let ratingAmount = this.ratingAmount;
+  get starList() {
+    let ratingAmount = this.args.ratingAmount;
 
     if (ratingAmount) {
       let i,
@@ -75,13 +59,13 @@ export default Component.extend({
       return stars;
     }
     return null;
-  }),
+  }
   /**
    * Array of items, based on ratingAlt
    * @var {array|null}
    */
-  starListAlt: computed('ratingAlt', function () {
-    let ratingAlt = this.ratingAlt;
+  get starListAlt() {
+    let ratingAlt = this.args.ratingAlt;
 
     if (ratingAlt) {
       let i,
@@ -93,5 +77,5 @@ export default Component.extend({
       return stars;
     }
     return null;
-  }),
-});
+  }
+}
