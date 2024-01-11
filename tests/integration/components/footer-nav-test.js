@@ -17,7 +17,7 @@ describe('Integration | Component | footer-nav', function (hooks) {
     //   {{/footer-nav}}
     // `);
 
-    render(hbs`{{footer-nav}}`);
+    render(hbs`<FooterNav />`);
     // expect(this.$()).to.have.length(1);
   });
 });

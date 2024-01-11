@@ -1,14 +1,14 @@
 <HeaderNav
   @sidePanelIsOpen={{this.sidePanelIsOpen}}
   @searchTerm={{this.searchTerm}}
-  @actionSearch={{action "updateSearchTerm"}}
-  @actionButton={{action "toggleSidePanel"}}
+  @actionSearch={{this.updateSearchTerm}}
+  @actionButton={{this.toggleSidePanel}}
 />
 
 <div id="container" class="container">
   <div id="monsterList" class="monster-list">
     {{#each this.monsterList as |monster|}}
-      <MonsterRow @monster={{monster}} @logEvent={{action "logEvent"}} />
+      <MonsterRow @monster={{monster}} @logEvent={{this.logEvent}} />
     {{/each}}
   </div>
 
@@ -17,7 +17,7 @@
 
 <SidePanel 
   @isOpen={{this.sidePanelIsOpen}}
-  @actionClose={{action "toggleSidePanel"}}
+  @actionClose={{this.toggleSidePanel}}
 >
   {{outlet}}
 </SidePanel>

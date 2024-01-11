@@ -40,7 +40,7 @@ export default class StatusRatingComponent extends Component {
     if (this.showRatingAlt) {
       return `is-rating-${rating}`;
     }
-    return null;
+    return '';
   }
   /**
    * Array of items, based on ratingAmount

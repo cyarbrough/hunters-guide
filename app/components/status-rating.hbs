@@ -1,7 +1,7 @@
 <div class="status-rating {{this.dynamicClasses}}">
-  {{#unless this.noRating}}
+  {{#if @ratingAmount}}
     <div class="is-rating">
-      {{#each this.starList as |star index|}}
+      {{#each this.starList as |star|}}
         <i class="star-rating is-star-{{star.count}}">&Star;</i>
       {{else}}
         <i class="star-rating is-star-x">x</i>
@@ -9,7 +9,7 @@
     </div>
     {{#if this.showRatingAlt}}
       <div class="is-alt-rating">
-        {{#each this.starListAlt as |star index|}}
+        {{#each this.starListAlt as |star|}}
           <i class="star-rating is-star-{{star.count}}">&Star;</i>
         {{else}}
           <i class="star-rating is-star-x">x</i>
@@ -17,6 +17,6 @@
       </div>
     {{/if}}
   {{else}}
-    <div class="is-text">{{this.elementType}}</div>
-  {{/unless}}
+    <div class="is-text">{{@elementType}}</div>
+  {{/if}}
 </div>

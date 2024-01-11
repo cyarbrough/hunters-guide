@@ -17,7 +17,7 @@ describe('Integration | Component | monster-row', function (hooks) {
     //   {{/monster-row}}
     // `);
 
-    render(hbs`{{monster-row}}`);
+    render(hbs`<MonsterRow />`);
     // expect(this.$()).to.have.length(1);
   });
 });

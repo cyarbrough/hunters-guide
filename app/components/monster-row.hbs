@@ -3,7 +3,7 @@
     {{if this.inView 'is-active'}}
     {{if this.showAlternate 'is-open'}}
   "
-  {{in-viewport onEnter=(action this.onEnter)}}
+  {{in-viewport onEnter=this.onEnter}}
 >
   <h2 class="title">{{@monster.name}}</h2>
   <h3 class="subtitle">{{@monster.species.name}}</h3>
@@ -11,7 +11,7 @@
     <MonsterLogo
       @slug={{@monster.slug}}
       @alternate={{this.showAlternate}}
-      @toggle={{action "toggleGrid"}}
+      @toggle={{this.toggleGrid}}
     />
     <StatusGrid
     @physiology={{@monster.physiology}}

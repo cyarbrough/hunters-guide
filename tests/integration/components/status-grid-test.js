@@ -17,7 +17,7 @@ describe('Integration | Component | status-grid', function (hooks) {
     //   {{/status-grid}}
     // `);
 
-    render(hbs`{{status-grid}}`);
+    render(hbs`<StatusGrid />`);
     // expect(this.$()).to.have.length(1);
   });
 });

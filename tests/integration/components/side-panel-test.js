@@ -17,7 +17,7 @@ describe('Integration | Component | side panel', function (hooks) {
     //   {{/side-panel}}
     // `);
 
-    render(hbs`{{side-panel}}`);
+    render(hbs`<SidePanel />`);
     // expect(this.$()).to.have.length(1);
   });
 });

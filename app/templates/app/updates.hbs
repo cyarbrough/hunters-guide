@@ -8,7 +8,7 @@
         @value="guide"
         @groupValue={{this.groupValue}}
         @name="sort"
-        @changed={{action "toggleSort"}}
+        @changed={{this.toggleSort}}
         @classNames="radio-label"
       >
           <RadioIcon @radioOn={{this.settings.sortGuide}} />
@@ -19,7 +19,7 @@
         @value="alpha"
         @groupValue={{this.groupValue}}
         @name="sort"
-        @changed={{action "toggleSort"}}
+        @changed={{this.toggleSort}}
         @classNames="radio-label"
       >
           <RadioIcon @radioOn={{this.settings.sortAlpha}} />
@@ -29,6 +29,7 @@
   </div>
   <button
     class="two-state remember-me"
+    type="button"
     {{on 'click' this.toggleUserCookie}}
   >
     {{if this.settings.rememberUser "Forget Me" "Remember Me"}}
@@ -37,7 +38,9 @@
 
 <h2 class="title">Updates</h2>
 <table class="update-table">
-  {{#each this.model.updates as |item|}}
-    <UpdateItem @item={{item}} />
-  {{/each}}
+  <tbody>
+    {{#each this.model.updates as |item|}}
+      <UpdateItem @item={{item}} />
+    {{/each}}
+  </tbody>
 </table>

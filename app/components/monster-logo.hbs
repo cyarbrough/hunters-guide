@@ -4,5 +4,6 @@
     {{if @alternate 'is-alt'}}
     {{if @slug (concat 'is-' @slug)}}
   "
-  {{on 'click' (action 'click')}}
+  type="button"
+  {{on 'click' this.click}}
 />

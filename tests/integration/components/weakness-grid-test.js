@@ -17,7 +17,7 @@ describe('Integration | Component | weakness grid', function (hooks) {
     //   {{/weakness-grid}}
     // `);
 
-    render(hbs`{{weakness-grid}}`);
+    render(hbs`<WeaknessGrid />`);
     // expect(this.$()).to.have.length(1);
   });
 });

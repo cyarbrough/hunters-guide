@@ -17,7 +17,7 @@ describe('Integration | Component | status-rating', function (hooks) {
     //   {{/status-rating}}
     // `);
 
-    render(hbs`{{status-rating}}`);
+    render(hbs`<StatusRating />`);
     // expect(this.$()).to.have.length(1);
   });
 });

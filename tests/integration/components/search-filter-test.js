@@ -17,7 +17,7 @@ describe('Integration | Component | search-filter', function (hooks) {
     //   {{/search-filter}}
     // `);
 
-    render(hbs`{{search-filter}}`);
+    render(hbs`<SearchFilter />`);
     // expect(this.$()).to.have.length(1);
   });
 });

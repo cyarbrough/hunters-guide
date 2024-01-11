@@ -7,5 +7,10 @@
       {{yield}}
     </div>
   </div>
-  <a href="javascript:void(0);" class="backdrop" {{action @actionClose}}></a>
+  <a
+    href="javascript:void(0);"
+    class="backdrop"
+    aria-label="Close side panel"
+    {{on 'click' @actionClose}}
+  />
 </div>

@@ -17,7 +17,7 @@ describe('Integration | Component | ailment-info', function (hooks) {
     //   {{/ailment-info}}
     // `);
 
-    render(hbs`{{ailment-info}}`);
+    render(hbs`<AilmentInfo />`);
     // expect(this.$()).to.have.length(1);
   });
 });

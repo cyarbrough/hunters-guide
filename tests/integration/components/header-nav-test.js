@@ -17,7 +17,7 @@ describe('Integration | Component | header-nav', function (hooks) {
     //   {{/header-nav}}
     // `);
     this.set('actionSearch', () => {});
-    render(hbs`{{header-nav actionSearch=actionSearch}}`);
+    render(hbs`<HeaderNav />`);
     // expect(this.$()).to.have.length(1);
   });
 });

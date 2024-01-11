@@ -17,7 +17,7 @@ describe('Integration | Component | update item', function (hooks) {
     //   {{/update-item}}
     // `);
 
-    render(hbs`{{update-item}}`);
+    render(hbs`<UpdateItem />`);
     // expect(this.$()).to.have.length(1);
   });
 });

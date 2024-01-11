@@ -3,12 +3,13 @@
   {{if @sidePanelIsOpen 'side-panel-is-open'}}
 ">
   <button
+    aria-hidden="true"
     class="menu
       {{if @sidePanelIsOpen 'is-open'}}
       {{if this.hasAlert 'has-alert'}}
     "
-    aria-hidden="true"
-    {{action @actionButton}}
+    type="button"
+    {{on 'click' @actionButton}}
   >
       <i class="fas fa-paw"></i>
   </button>
@@ -18,8 +19,8 @@
   <SearchFilter
     @sidePanelIsOpen={{@sidePanelIsOpen}}
     @searchTerm={{@searchTerm}}
-    @actionSearch={{action @actionSearch}}
-    @actionFocused={{action 'inputFocused'}}
+    @actionSearch={{@actionSearch}}
+    @actionFocused={{this.inputFocused}}
   />
 </div>
   

@@ -17,7 +17,7 @@ describe('Integration | Component | monster-logo', function (hooks) {
     //   {{/monster-logo}}
     // `);
 
-    render(hbs`{{monster-logo}}`);
+    render(hbs`<MonsterLogo />`);
     // expect(this.$()).to.have.length(1);
   });
 });

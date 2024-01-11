@@ -17,7 +17,7 @@ describe('Integration | Component | radio icon', function (hooks) {
     //   {{/radio-icon}}
     // `);
 
-    render(hbs`{{radio-icon}}`);
+    render(hbs`<RadioIcon />`);
     // expect(this.$()).to.have.length(1);
   });
 });
