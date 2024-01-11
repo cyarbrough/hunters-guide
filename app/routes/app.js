@@ -7,6 +7,7 @@ import { service } from '@ember/service';
 export default class AppRoute extends Route {
   @service alertCenter;
   @service metaTags;
+  @service router;
   @service settings;
   @service store;
   /**
@@ -18,12 +19,13 @@ export default class AppRoute extends Route {
   afterModel() {
     this.metaTags.setTitle();
   }
-  setupController(controller) {
+  setupController(controller, model, transition) {
     super.setupController(...arguments);
 
     if (controller.searchQuery) {
       controller.searchTerm = controller.searchQuery;
     }
+    controller.checkForSidePanel(transition.to.name);
   }
   /**
    * Pushes data into the payload, returns

@@ -76,12 +76,12 @@ export default class AppController extends Controller {
   /**
    * Checks route and auto opens side panel
    */
-  checkForSidePanel() {
-    const currentRoute = this.router.currentRouteName;
+  checkForSidePanel(routeName) {
+    const currentRoute = routeName || this.router.currentRouteName;
     const { sidePanelRoutes } = this;
 
     if (sidePanelRoutes.includes(currentRoute)) {
-      this.openSidePanelTask.perform();
+      this.sidePanelIsOpen = true;
     }
   }
   /**
@@ -205,13 +205,6 @@ export default class AppController extends Controller {
   @action
   toggleSidePanel() {
     this._toggleSidePanel();
-  }
-  /**
-   * Action fired after side panel is inserted
-   */
-  @action
-  sidePanelInserted() {
-    this.checkForSidePanel();
   }
   /**
    * @param {string} term

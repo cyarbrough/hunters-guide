@@ -1,0 +1,11 @@
+<div class="side-panel
+  {{if @isOpen 'is-open'}}
+">
+  <div class="panel">
+    <SidePanelTabs />
+    <div class="is-content">
+      {{yield}}
+    </div>
+  </div>
+  <a href="javascript:void(0);" class="backdrop" {{action @actionClose}}></a>
+</div>
